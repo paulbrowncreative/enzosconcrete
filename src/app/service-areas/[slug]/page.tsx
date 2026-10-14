@@ -32,7 +32,7 @@ export default async function CityPage({ params }: Props) {
   if (!city) notFound();
 
   const lead = projectById(city.leadProject);
-  const focusSlugs = city.focus.map((f) => f.service);
+  const focusSlugs: string[] = city.focus.map((f) => f.service);
   const otherServices = services.filter((s) => !focusSlugs.includes(s.slug));
   // Photos from the services that matter most here, then the rest, so each page leads differently.
   const gallery = [

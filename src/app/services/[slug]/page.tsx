@@ -39,7 +39,7 @@ export default async function ServicePage({ params }: Props) {
   const lead = projectById(service.leadProject);
   const own = projectsFor(service.slug);
   // Show this service's photos first, then related work so every page has visual proof.
-  const gallery = [...own, ...projects.filter((p) => p.service !== service.slug)].slice(0, 3);
+  const gallery = [...own, ...projects.filter((p) => p.service !== service.slug)].slice(0, Math.max(3, Math.min(own.length, 9)));
   const related = service.related.map((slug) => serviceBySlug(slug)!);
   const estimateHref = `/contact?service=${service.slug}`;
 

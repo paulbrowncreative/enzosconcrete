@@ -33,3 +33,83 @@ Alt text for each photo is in `src/content/projects.ts`. It describes only what'
 | `https://cdn.b12.io/media/e5299dba-…-jpg-hero_image.jpeg` (NYC skyline) | ❌ Not migrated. B12 template stock image unrelated to the business. |
 
 No image was inaccessible: all 19 referenced files downloaded successfully (HTTP 200).
+
+## Facebook project photos (52 migrated)
+
+Source: five screenshots of the Enzo’s Concrete Facebook photo grid supplied by the owner (2026-10-14),
+150 tiles in total. Tiles were sliced automatically along the grid gutters, trimmed to remove the rounded
+corners, and upscaled 4× with the EDSR super-resolution model (OpenCV `dnn_superres`), then lightly
+sharpened and saved at ≤1200px in `src/assets/projects/fb/`. Tile IDs below are `screenshot-rowcolumn`.
+
+**Quality note:** the source tiles are only ~318px, so super-resolution makes them sharper than a plain
+resize but cannot recover real detail. They look fine at gallery size but are softer than the original
+website photos. **Replacing them with the full-size originals from Facebook (or the phone camera roll)
+is recommended**; keep the same filenames and nothing else needs to change.
+
+| Tile | Local file | Category | Title |
+|---|---|---|---|
+| 1-46 | `fb/driveway-two-car-garage.jpg` | Driveways | Driveway at a two-car garage |
+| 1-44 | `fb/driveway-apron-garage.jpg` | Driveways | Driveway pour at the garage |
+| 1-22 | `fb/long-driveway-detached-garage.jpg` | Driveways | Long driveway to a detached garage |
+| 1-24 | `fb/driveway-slab-caution-tape.jpg` | Driveways | Fresh driveway slab |
+| 1-45 | `fb/driveway-pour-caution-tape.jpg` | Driveways | Driveway replacement |
+| 3-43 | `fb/side-driveway-tan-house.jpg` | Driveways | Side driveway along the house |
+| 5-23 | `fb/long-driveway-single-story.jpg` | Driveways | Long driveway, finished |
+| 5-22 | `fb/driveway-wide-view-cones.jpg` | Driveways | Driveway pour, wide view |
+| 3-44 | `fb/parking-pad-beside-house.jpg` | Driveway expansions | Parking pad beside the house |
+| 3-42 | `fb/new-section-tied-into-existing.jpg` | Driveway expansions | New section tied into existing concrete |
+| 1-35 | `fb/curved-patio-matching-step.jpg` | Patios | Curved patio with matching step |
+| 1-34 | `fb/exposed-aggregate-patio-two-story.jpg` | Patios | Patio across the back of the home |
+| 5-13 | `fb/stamped-patio-fire-pit.jpg` | Patios | Stamped patio with fire-pit inset |
+| 4-52 | `fb/stamped-patio-wide-view.jpg` | Patios | Stamped patio, wide view |
+| 4-51 | `fb/curved-patio-planter-in-progress.jpg` | Patios | Curved patio around a planter |
+| 5-11 | `fb/circular-planter-cutout.jpg` | Patios | Circular planter cut-out |
+| 2-15 | `fb/large-backyard-patio.jpg` | Patios | Large backyard patio |
+| 2-16 | `fb/rinsing-new-patio.jpg` | Patios | Rinsing a new patio |
+| 2-22 | `fb/patio-edge-control-joints.jpg` | Patios | Patio edge detail |
+| 3-41 | `fb/patio-trowelled-border.jpg` | Patios | Patio with a trowelled border |
+| 3-54 | `fb/slab-white-sided-house.jpg` | Patios | Patio slab beside the house |
+| 4-26 | `fb/backyard-patio-control-joints.jpg` | Patios | Backyard patio |
+| 4-22 | `fb/bull-floating-patio.jpg` | Patios | Finishing a fresh pour |
+| 4-21 | `fb/edging-patio-pour.jpg` | Patios | Edging a patio pour |
+| 5-35 | `fb/patio-pour-brick-ranch.jpg` | Patios | Patio pour behind a brick ranch |
+| 5-44 | `fb/finished-patio-brick-ranch.jpg` | Patios | Finished patio at the back door |
+| 5-41 | `fb/hosing-patio-brick-ranch.jpg` | Patios | Curing a new patio |
+| 4-15 | `fb/covered-porch-slab.jpg` | Patios | Covered porch slab |
+| 2-12 | `fb/pool-deck-kidney-pool.jpg` | Pool decks | Pool deck surround |
+| 2-11 | `fb/pool-deck-walkway.jpg` | Pool decks | Walkway to the pool deck |
+| 1-11 | `fb/front-steps-brick-porch.jpg` | Walkways & steps | Front steps replacement |
+| 3-12 | `fb/rebuilt-porch-steps.jpg` | Walkways & steps | Rebuilt porch steps |
+| 3-31 | `fb/porch-steps-front-walk.jpg` | Walkways & steps | Porch steps and front walk |
+| 3-26 | `fb/porch-steps-side-view.jpg` | Walkways & steps | Porch steps, side view |
+| 2-42 | `fb/steps-along-brick-home.jpg` | Walkways & steps | Steps along a brick home |
+| 3-23 | `fb/stepped-walkway-slope.jpg` | Walkways & steps | Stepped walkway down a slope |
+| 1-41 | `fb/side-steps-and-landing.jpg` | Walkways & steps | Side-yard steps and landing |
+| 1-42 | `fb/long-side-walkway.jpg` | Walkways & steps | Long side-yard walkway |
+| 1-32 | `fb/aggregate-side-walk-border.jpg` | Walkways & steps | Side walk with contrasting border |
+| 1-31 | `fb/aggregate-walkway-new-build.jpg` | Walkways & steps | Side walkway at a new build |
+| 2-46 | `fb/front-walk-aggregate-borders.jpg` | Walkways & steps | Front walk with aggregate borders |
+| 3-21 | `fb/walkway-border-detail.jpg` | Walkways & steps | Walkway border detail |
+| 3-36 | `fb/curved-garden-sidewalk.jpg` | Walkways & steps | Curved garden sidewalk |
+| 2-52 | `fb/walk-along-brick-wall.jpg` | Walkways & steps | Walk along a brick wall |
+| 5-56 | `fb/aggregate-front-walk-lawn.jpg` | Walkways & steps | Exposed-aggregate front walk |
+| 5-55 | `fb/back-door-walk-curved-landing.jpg` | Walkways & steps | Back-door walk with curved landing |
+| 2-24 | `fb/pole-barn-floor-finishing.jpg` | Slabs & floors | Pole barn floor |
+| 2-31 | `fb/pole-barn-floor-wide.jpg` | Slabs & floors | Pole barn floor, wide view |
+| 2-36 | `fb/pole-barn-floor-smooth.jpg` | Slabs & floors | Smooth barn floor |
+| 2-25 | `fb/pole-barn-porch-slab.jpg` | Slabs & floors | Pole barn porch slab |
+| 2-43 | `fb/shed-pad-backyard.jpg` | Slabs & floors | Shed pad |
+| 2-44 | `fb/shed-pad-landscaped-yard.jpg` | Slabs & floors | Shed pad in a landscaped yard |
+
+### Tiles intentionally not used (98)
+- **Duplicates or near-duplicates:** repeated shots of the same project from the same angle (e.g. several frames of the same pool deck, patio, driveway or barn floor), plus tiles that show projects already on the site from the original B12 photos (curved patio 1-13/1-36, pool 1-55/2-13, side walkway 4-41/4-55/5-25, garden wall 5-12, driveway wash-down 5-24).
+- **Logo tiles:** 4-43, 5-34 (the logo is already in the site).
+- **Close-up texture shots and partial frames:** e.g. 1-15, 2-33, 3-14, 4-33, 4-44, 5-14, 5-32, and frames with the photographer's shadow covering the work (4-31, 4-53, 5-15).
+- **A young child:** 3-33, 3-34, 3-35 (sidewalk finishing). Not published, for the child's privacy.
+- **Dump truck:** 3-32. It shows another business's signage and a USDOT number, and isn't a finished project.
+- **In-progress forms with no finished result:** e.g. 2-53, 3-11, 2-56, 4-36.
+
+### New category: "Slabs & Floors"
+Six photos show pole barn floors, a pole barn porch slab and shed pads. That work isn't one of the six
+service pages, so these photos appear in the gallery under "Slabs & Floors" with no service link.
+**If you want to market this work, confirm it and a dedicated service page can be added.**

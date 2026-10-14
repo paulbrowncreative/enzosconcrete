@@ -1931,6 +1931,7 @@ main:focus {
   margin-bottom: var(--space-7);
 }
 
+.filter-links button,
 .filter-links a {
   display: inline-flex;
   align-items: center;
@@ -1945,6 +1946,24 @@ main:focus {
   background: #fff;
 }
 
+.filter-links button {
+  font: inherit;
+  font-size: var(--fs-sm);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.filter-links button[aria-pressed="true"] {
+  color: #fff;
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.filter-links button[aria-pressed="true"] span {
+  color: var(--accent);
+}
+
+.filter-links button:hover,
 .filter-links a:hover {
   border-color: var(--ink);
 }

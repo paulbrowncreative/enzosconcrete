@@ -7,24 +7,30 @@ import sideWalk from "@/assets/projects/exposed-aggregate-side-walkway-step.jpg"
 import frontWalk from "@/assets/projects/exposed-aggregate-front-walk-border.jpg";
 import gardenWall from "@/assets/projects/exposed-aggregate-garden-wall.jpg";
 import poolDeck from "@/assets/projects/concrete-pool-deck.jpg";
-import type { ServiceSlug } from "./services";
+import { facebookProjects } from "./projects-facebook";
+import { serviceBySlug, type ServiceSlug } from "./services";
+
+/** A service page, or "slabs" for pole barn floors and shed pads (no dedicated page yet). */
+export type ProjectCategory = ServiceSlug | "slabs";
 
 export type Project = {
   id: string;
   title: string;
-  service: ServiceSlug;
+  service: ProjectCategory;
   finish: string;
   image: StaticImageData;
   alt: string;
   /** object-position for cropped placements, when the subject isn't centered. */
   focus?: string;
+  /** Where the photo came from (see docs/asset-manifest.md). */
+  source?: "website" | "facebook";
 };
 
 /**
  * Every project photo published on the previous site (see docs/asset-manifest.md).
  * Titles describe only what is visible in each photo — no invented locations or specs.
  */
-export const projects: Project[] = [
+const websiteProjects: Project[] = [
   {
     id: "curved-patio",
     title: "Curved exposed-aggregate patio",
@@ -91,6 +97,10 @@ export const projects: Project[] = [
     alt: "Exposed-aggregate concrete front walk with a darker aggregate border running past a brick entry column",
   },
 ];
+
+export const projects: Project[] = [...websiteProjects, ...facebookProjects];
+
+export const categoryLabel = (cat: ProjectCategory) => (cat === "slabs" ? "Slabs & Floors" : serviceBySlug(cat)!.name);
 
 export const projectsFor = (slug: ServiceSlug) => projects.filter((p) => p.service === slug);
 export const projectById = (id: string) => projects.find((p) => p.id === id)!;

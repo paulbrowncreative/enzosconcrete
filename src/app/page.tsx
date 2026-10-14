@@ -19,7 +19,7 @@ export const metadata = pageMetadata({
 });
 
 const heroProject = projectById("curved-patio");
-const featured = ["curved-walkway", "driveway-washdown", "garden-wall", "side-walkway", "pool-deck", "driveway-expansion"].map(
+const featured = ["curved-walkway", "driveway-washdown", "fb-stamped-patio-fire-pit", "garden-wall", "fb-front-steps-brick-porch", "pool-deck"].map(
   projectById,
 );
 

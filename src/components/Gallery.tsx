@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Project } from "@/content/projects";
+import { categoryLabel, type Project } from "@/content/projects";
 import { serviceBySlug, servicePath } from "@/content/services";
 import { Icon } from "./Icon";
 
@@ -57,7 +57,7 @@ export function Gallery({
     <>
       <ul className="gallery" role="list">
         {projects.map((p, i) => {
-          const service = serviceBySlug(p.service)!;
+          const service = serviceBySlug(p.service);
           return (
             <li key={p.id} className="gallery__item">
               <figure>
@@ -76,9 +76,13 @@ export function Gallery({
                 </button>
                 <figcaption className="gallery__caption">
                   <Heading className="gallery__title">{p.title}</Heading>
-                  <Link href={servicePath(p.service)} className="gallery__tag">
-                    {service.name}
-                  </Link>
+                  {service ? (
+                    <Link href={servicePath(service.slug)} className="gallery__tag">
+                      {service.name}
+                    </Link>
+                  ) : (
+                    <span className="gallery__tag">{categoryLabel(p.service)}</span>
+                  )}
                 </figcaption>
               </figure>
             </li>
@@ -108,13 +112,15 @@ export function Gallery({
                 <strong>{current.title}</strong>
                 <span>
                   {current.finish}
-                  {currentService && (
+                  {currentService ? (
                     <>
                       {" · "}
-                      <Link href={servicePath(current.service)} onClick={close}>
+                      <Link href={servicePath(currentService.slug)} onClick={close}>
                         {currentService.name}
                       </Link>
                     </>
+                  ) : (
+                    ` · ${categoryLabel(current.service)}`
                   )}
                 </span>
               </p>

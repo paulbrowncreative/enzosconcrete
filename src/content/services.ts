@@ -134,7 +134,7 @@ export const services: Service[] = [
     slug: "concrete-walkways",
     name: "Concrete Walkways & Pathways",
     label: "Walkways",
-    summary: "Front walks, side-yard paths and garden pathways that connect your property.",
+    summary: "Front walks, steps, side-yard paths and garden pathways that connect your property.",
     metaTitle: "Concrete Walkways & Pathways in New Haven, MI",
     metaDescription:
       "Concrete and exposed-aggregate walkways, front walks and garden paths in New Haven and Macomb County, MI. See real project photos. Call (586) 231-4217.",
