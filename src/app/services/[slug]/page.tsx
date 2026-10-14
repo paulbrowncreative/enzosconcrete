@@ -9,6 +9,7 @@ import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
 import { ServiceCard } from "@/components/ServiceCard";
 import { business } from "@/content/business";
+import { cities, cityPath } from "@/content/cities";
 import { projectById, projects, projectsFor } from "@/content/projects";
 import { serviceBySlug, services } from "@/content/services";
 import { pageMetadata, serviceSchema } from "@/lib/seo";
@@ -165,6 +166,21 @@ export default async function ServicePage({ params }: Props) {
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      <section className="section section--tight" aria-labelledby="areas-title">
+        <div className="container">
+          <h2 id="areas-title" className="area__heading">
+            {service.name} near you
+          </h2>
+          <ul className="chips chips--dark" role="list">
+            {cities.map((c) => (
+              <li key={c.slug}>
+                <Link href={cityPath(c.slug)}>{c.name}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

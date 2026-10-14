@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { absoluteUrl, business } from "@/content/business";
-import type { Service } from "@/content/services";
+import type { City } from "@/content/cities";
+import { cities } from "@/content/cities";
+import { services, type Service } from "@/content/services";
 
 // Child metadata replaces (not merges) openGraph, so every page re-declares the image.
 const ogImage = {
@@ -60,10 +62,10 @@ export function businessSchema() {
       postalCode: business.address.postalCode,
       addressCountry: business.address.country,
     },
-    areaServed: business.serviceCounties.map((name) => ({
-      "@type": "AdministrativeArea",
-      name: `${name}, Michigan`,
-    })),
+    areaServed: [
+      ...business.serviceCounties.map((name) => ({ "@type": "AdministrativeArea", name: `${name}, Michigan` })),
+      ...cities.map((c) => ({ "@type": c.kind === "city" ? "City" : "AdministrativeArea", name: `${c.name}, Michigan` })),
+    ],
     sameAs: [business.bbb.profileUrl],
     knowsAbout: ["Concrete driveways", "Concrete patios", "Exposed aggregate concrete", "Concrete walkways", "Retaining walls", "Pool decks"],
     ...(business.hours
@@ -113,5 +115,31 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
       name: item.name,
       item: absoluteUrl(item.path),
     })),
+  };
+}
+
+export function cityServiceSchema(city: City) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": absoluteUrl(`/service-areas/${city.slug}#service`),
+    name: `Concrete contractor in ${city.name}, MI`,
+    serviceType: "Residential concrete contractor",
+    description: city.metaDescription,
+    url: absoluteUrl(`/service-areas/${city.slug}`),
+    provider: { "@id": orgId },
+    areaServed: {
+      "@type": city.kind === "city" ? "City" : "AdministrativeArea",
+      name: `${city.name}, Michigan`,
+      containedInPlace: { "@type": "AdministrativeArea", name: `${city.county} County, Michigan` },
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `Concrete services in ${city.name}`,
+      itemListElement: services.map((s) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: s.name, url: absoluteUrl(`/services/${s.slug}`) },
+      })),
+    },
   };
 }

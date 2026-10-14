@@ -4,14 +4,14 @@ import { CtaBand } from "@/components/CtaBand";
 import { Gallery } from "@/components/Gallery";
 import { Icon } from "@/components/Icon";
 import { ServiceCard } from "@/components/ServiceCard";
-import { nearbyCommunities } from "@/content/areas";
 import { business } from "@/content/business";
+import { cities, cityPath } from "@/content/cities";
 import { projectById, projects } from "@/content/projects";
 import { services } from "@/content/services";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: `Concrete Contractor in New Haven, MI | ${business.name}`,
+  title: `New Haven & Macomb County Concrete Contractor | ${business.shortName}`,
   absoluteTitle: true,
   description:
     "Family-owned concrete contractor in New Haven, MI. Driveways, patios, walkways, retaining walls and pool decks across Macomb County. BBB A+ accredited. Call (586) 231-4217.",
@@ -307,10 +307,12 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="area__panel">
-            <h3 className="area__heading">Communities near our New Haven base</h3>
+            <h3 className="area__heading">Communities we serve</h3>
             <ul className="chips" role="list">
-              {nearbyCommunities.map((c) => (
-                <li key={c}>{c}</li>
+              {cities.map((c) => (
+                <li key={c.slug}>
+                  <Link href={cityPath(c.slug)}>{c.name}</Link>
+                </li>
               ))}
             </ul>
             <p className="fine-print">

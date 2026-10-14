@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/brand/logo-light.png";
 import { business } from "@/content/business";
+import { cities, cityPath } from "@/content/cities";
 import { services, servicePath } from "@/content/services";
 import { Icon } from "./Icon";
 import { primaryNav } from "./nav";
@@ -66,6 +67,19 @@ export function Footer() {
             {services.map((s) => (
               <li key={s.slug}>
                 <Link href={servicePath(s.slug)}>{s.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-areas">
+          <h2 className="site-footer__heading" id="footer-areas">
+            Service Areas
+          </h2>
+          <ul className="site-footer__links site-footer__links--cols">
+            {cities.map((c) => (
+              <li key={c.slug}>
+                <Link href={cityPath(c.slug)}>{c.name}</Link>
               </li>
             ))}
           </ul>

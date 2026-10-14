@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/content/business";
+import { cities } from "@/content/cities";
 import { services } from "@/content/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/our-work",
     "/about",
     "/service-areas",
+    ...cities.map((c) => `/service-areas/${c.slug}`),
     "/contact",
     "/privacy-policy",
   ];

@@ -50,7 +50,7 @@ _Prepared 2026-10-14. Covers the audit of the existing B12 site, the strategy, t
 
 | Page | Primary intent / target query cluster | Title |
 |---|---|---|
-| `/` | concrete contractor New Haven MI · concrete company New Haven Michigan | Concrete Contractor in New Haven, MI \| Enzo’s Concrete LLC |
+| `/` | concrete contractor Macomb County · brand | New Haven & Macomb County Concrete Contractor \| Enzo’s Concrete |
 | `/services` | residential concrete services New Haven / Macomb County | Residential Concrete Services in New Haven, MI |
 | `/services/concrete-driveways` | concrete driveway contractor / replacement near New Haven MI | Concrete Driveway Contractor in New Haven, MI |
 | `/services/concrete-patios` | concrete patio contractor · exposed aggregate patio Macomb County | Custom Concrete Patios in New Haven, MI |
@@ -60,16 +60,24 @@ _Prepared 2026-10-14. Covers the audit of the existing B12 site, the strategy, t
 | `/services/pool-decks` | concrete pool deck contractor | Concrete Pool Decks in New Haven, MI |
 | `/our-work` | concrete contractor photos / portfolio (trust) | Our Work: Concrete Project Gallery |
 | `/about` | navigational / trust | About Us \| Family-Owned Concrete Contractor |
-| `/service-areas` | local coverage | Service Area: New Haven & Southeast Michigan |
+| `/service-areas` | local coverage hub | Service Areas: Concrete Contractor in Macomb County, MI |
 | `/contact` | transactional | Request a Concrete Estimate |
+| `/service-areas/{city}` ×13 | concrete contractor {city} MI · concrete driveway/patio {city} | e.g. Concrete Contractor in Macomb Township, MI |
 
 The query clusters are hypotheses based on the services, the location and the competitor review. No keyword
 tool (volume or difficulty data) was available, so none is claimed. Validate with Search Console data after launch.
 
-**Location pages:** intentionally **not** created. There's no verified project history by city, and
-city-swapped pages would be thin or doorway content. One substantive `/service-areas` hub covers the
-counties (from BBB) and nearby communities, clearly labeled as geography rather than claimed jobs. Add
-city pages only when there are real projects, photos and local detail for that city.
+**Location pages (added in a second pass):** 13 local landing pages at `/service-areas/[slug]`: New Haven, Lenox Township, New Baltimore, Chesterfield Township, Richmond, Ray Township, Armada, Macomb Township, Washington Township, Harrison Township, Clinton Township, Shelby Township and Sterling Heights. These are the Macomb County communities closest to the New Haven base. To avoid doorway pages, each one is built from researched, cited local facts and has its own:
+- **Title, meta description, H1 and lede**, aligned to "concrete contractor in {city}" intent and to that community's most likely projects
+- **Local context**: geography, growth and housing history, water and drainage factors (Wikipedia, citing the 2020 Census). Sources are recorded per city in `src/content/cities.ts`
+- **Services ranked by local relevance**, with city-specific reasoning, plus links to all six service pages
+- **Permit and planning guidance:** Macomb Township's published concrete requirements (driveway widths, setbacks, base and rebar, inspections) and the Macomb County Department of Roads approach-permit process are quoted from official sources. Where a city's rules couldn't be verified, the page tells homeowners to check with that municipality rather than inventing requirements
+- **City-specific FAQs**, a project gallery ordered to match local priorities, links to 4 nearby communities, and a CTA that pre-fills the city on the estimate form
+- **`Service` JSON-LD** with `areaServed` set to that city (inside Macomb County) and an offer catalog of the six services. The business schema's `areaServed` also lists every city
+
+What the pages deliberately do **not** do: claim past projects, reviews or customers in any city (none are verified), or publish permit fees or rules that weren't confirmed. **Oakland and Wayne counties** get county-level coverage only. Together they contain dozens of municipalities, many of them farther from New Haven, and pages for them would be thin until there are real local projects to show.
+
+**Best upgrade for these pages:** add real jobs, with photos, the neighborhood and a review, to the matching city entry. Local proof is what separates a ranking city page from a template.
 
 ### Competitor review (public listings, not independently verified)
 
@@ -122,6 +130,14 @@ All tests ran against a production build (`next build && next start`) on localho
 
 Not measured yet: real-user Core Web Vitals (they need production traffic in CrUX or Search Console), Google's Rich Results Test against the live URL, and actual Google indexing.
 
+### Local pages QA (second pass)
+| Check | Result |
+|---|---|
+| All 27 URLs (26 sitemap URLs + the 404) at 390, 768 and 1440px | ✅ 200s, no overflow, no broken images, one H1 each, **0 axe violations**, no duplicate titles |
+| City prefill: city page CTA → `/contact?city=New Baltimore` fills the city field | ✅ |
+| City `Service` schema parses, `areaServed` correct | ✅ |
+| Lighthouse (mobile, simulated): Macomb Township page / hub | 84 / 96 performance; **100 accessibility, best practices and SEO** on both |
+
 ## 7. Owner checklist (needed before or at launch)
 
 1. **Domain:** which domain will the site live on? Set `NEXT_PUBLIC_SITE_URL` and point DNS at the deployment.
@@ -133,7 +149,8 @@ Not measured yet: real-user Core Web Vitals (they need production traffic in CrU
 
 ## 8. Prioritized opportunities
 
-1. **Google Business Profile:** claim and verify it as a service-area business (hide the street address, list the counties and towns you serve), use the same name, phone and locality as the site, set the website URL to the new domain and the category to "Concrete contractor". This drives local pack rankings more than anything else.
+1. **Google Business Profile service areas:** list the same 13 communities (plus counties) as service areas in GBP, so the profile and the city pages reinforce each other.
+   **Google Business Profile setup:** claim and verify it as a service-area business (hide the street address, list the counties and towns you serve), use the same name, phone and locality as the site, set the website URL to the new domain and the category to "Concrete contractor". This drives local pack rankings more than anything else.
 2. **Reviews:** ask every completed customer for a Google review (and BBB). Then add verified quotes to `business.reviews` with source links. This is the largest competitive gap.
 3. **More project photos:** add wide shots plus before/after pairs, tagged by service and (with permission) city. More photos strengthen every service page. City-tagged projects are the legitimate basis for future city pages.
 4. **Search Console + GA4:** verify the property, submit `sitemap.xml`, set `NEXT_PUBLIC_GA_ID`, and mark `generate_lead` and `phone_click` as key events. If you run Google Ads, add the Ads conversion tag through GA4 or GTM.

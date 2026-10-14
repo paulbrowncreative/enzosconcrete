@@ -23,8 +23,13 @@ export function EstimateForm() {
 
   // Preselect a service when arriving from a service page (?service=slug).
   useEffect(() => {
-    const requested = new URLSearchParams(window.location.search).get("service");
+    const params = new URLSearchParams(window.location.search);
+    const requested = params.get("service");
     if (requested && serviceOptions.some((o) => o.value === requested)) setService(requested);
+    // ...and the city when arriving from a local service-area page (?city=Name).
+    const city = params.get("city");
+    const cityInput = formRef.current?.elements.namedItem("city");
+    if (city && cityInput instanceof HTMLInputElement && !cityInput.value) cityInput.value = city.slice(0, limits.city);
   }, []);
 
   useEffect(() => {
