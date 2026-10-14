@@ -10,8 +10,13 @@ import poolDeck from "@/assets/projects/concrete-pool-deck.jpg";
 import { facebookProjects } from "./projects-facebook";
 import { serviceBySlug, type ServiceSlug } from "./services";
 
-/** A service page, or "slabs" for pole barn floors and shed pads (no dedicated page yet). */
-export type ProjectCategory = ServiceSlug | "slabs";
+/**
+ * A service page, or a gallery-only category for work shown on Facebook that has no
+ * dedicated page yet: "slabs" (pole barn floors, shed pads) and "sealing" (cleaning & sealing).
+ */
+export type ProjectCategory = ServiceSlug | "slabs" | "sealing";
+
+const extraCategoryLabels = { slabs: "Slabs & Floors", sealing: "Cleaning & Sealing" } as const;
 
 export type Project = {
   id: string;
@@ -100,7 +105,8 @@ const websiteProjects: Project[] = [
 
 export const projects: Project[] = [...websiteProjects, ...facebookProjects];
 
-export const categoryLabel = (cat: ProjectCategory) => (cat === "slabs" ? "Slabs & Floors" : serviceBySlug(cat)!.name);
+export const categoryLabel = (cat: ProjectCategory) =>
+  cat === "slabs" || cat === "sealing" ? extraCategoryLabels[cat] : serviceBySlug(cat)!.name;
 
 export const projectsFor = (slug: ServiceSlug) => projects.filter((p) => p.service === slug);
 export const projectById = (id: string) => projects.find((p) => p.id === id)!;

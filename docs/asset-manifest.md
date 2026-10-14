@@ -113,3 +113,37 @@ is recommended**; keep the same filenames and nothing else needs to change.
 Six photos show pole barn floors, a pole barn porch slab and shed pads. That work isn't one of the six
 service pages, so these photos appear in the gallery under "Slabs & Floors" with no service link.
 **If you want to market this work, confirm it and a dedicated service page can be added.**
+
+## Facebook project photos, batch 2 (15 migrated)
+
+Source: a sixth screenshot of the Facebook photo grid (29 tiles), processed the same way (FSRCNN 4×
+super-resolution, ≤1200px).
+
+| Tile | Local file | Category | Title |
+|---|---|---|---|
+| 6-11 | `fb/aggregate-slab-brick-home.jpg` | Patios | Exposed-aggregate slab behind a brick home |
+| 6-14 | `fb/stamped-patio-fire-pit-corner.jpg` | Patios | Stamped patio, fire-pit corner |
+| 6-44 | `fb/stamped-patio-sealed-wide.jpg` | Patios | Colored stamped patio |
+| 6-12 | `fb/aggregate-front-walk-porch-step.jpg` | Walkways & steps | Exposed-aggregate front walk and step |
+| 6-23 | `fb/aggregate-side-walk-brick.jpg` | Walkways & steps | Side walkway along a brick home |
+| 6-24 | `fb/aggregate-walk-beside-sidewalk.jpg` | Walkways & steps | Walkway beside the public sidewalk |
+| 6-25 | `fb/aggregate-walk-hostas.jpg` | Walkways & steps | Front walk through the hostas |
+| 6-21 | `fb/pressure-washing-driveway.jpg` | Cleaning & sealing | Pressure washing a driveway |
+| 6-32 | `fb/pressure-washing-patio.jpg` | Cleaning & sealing | Pressure washing a patio |
+| 6-36 | `fb/washing-driveway-garage.jpg` | Cleaning & sealing | Cleaning a driveway at the garage |
+| 6-35 | `fb/cleaned-patio-wet.jpg` | Cleaning & sealing | Freshly cleaned slab |
+| 6-41 | `fb/sealed-stamped-patio.jpg` | Cleaning & sealing | Sealed stamped patio |
+| 6-43 | `fb/sealed-stamped-patio-lawn.jpg` | Cleaning & sealing | Sealed stamped patio edge |
+| 6-52 | `fb/sealing-aggregate-roller.jpg` | Cleaning & sealing | Sealing exposed aggregate |
+| 6-55 | `fb/sealing-aggregate-new-home.jpg` | Cleaning & sealing | Sealing a new exposed-aggregate patio |
+
+**Not used (14):** close-up texture shots (6-13, 6-53, 6-54), near-duplicates of photos already on the site
+(stamped patio 6-15/6-16, curved patio in progress 6-45, side walkway 6-51, walkway 6-26/6-31, sealed patio
+6-42), close-ups of the pressure-washer spray (6-22, 6-33, 6-34), and the "Decorative concrete sealing
+BEFORE/AFTER" graphic (6-46). That graphic has overlaid text and may be a stock marketing image; if it shows
+your own job, send the original and it can be added.
+
+### New category: "Cleaning & Sealing"
+These photos show pressure washing, and sealing of stamped and exposed-aggregate concrete. They appear in the
+gallery under "Cleaning & Sealing". **If this is a service you offer, confirm it and a dedicated service page
+can be added** ("concrete sealing near me" is a common local search).

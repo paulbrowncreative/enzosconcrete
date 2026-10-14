@@ -51,6 +51,21 @@ import fbPoleBarnFloorSmooth from "@/assets/projects/fb/pole-barn-floor-smooth.j
 import fbPoleBarnPorchSlab from "@/assets/projects/fb/pole-barn-porch-slab.jpg";
 import fbShedPadBackyard from "@/assets/projects/fb/shed-pad-backyard.jpg";
 import fbShedPadLandscapedYard from "@/assets/projects/fb/shed-pad-landscaped-yard.jpg";
+import fbAggregateSlabBrickHome from "@/assets/projects/fb/aggregate-slab-brick-home.jpg";
+import fbStampedPatioFirePitCorner from "@/assets/projects/fb/stamped-patio-fire-pit-corner.jpg";
+import fbStampedPatioSealedWide from "@/assets/projects/fb/stamped-patio-sealed-wide.jpg";
+import fbAggregateFrontWalkPorchStep from "@/assets/projects/fb/aggregate-front-walk-porch-step.jpg";
+import fbAggregateSideWalkBrick from "@/assets/projects/fb/aggregate-side-walk-brick.jpg";
+import fbAggregateWalkBesideSidewalk from "@/assets/projects/fb/aggregate-walk-beside-sidewalk.jpg";
+import fbAggregateWalkHostas from "@/assets/projects/fb/aggregate-walk-hostas.jpg";
+import fbPressureWashingDriveway from "@/assets/projects/fb/pressure-washing-driveway.jpg";
+import fbPressureWashingPatio from "@/assets/projects/fb/pressure-washing-patio.jpg";
+import fbWashingDrivewayGarage from "@/assets/projects/fb/washing-driveway-garage.jpg";
+import fbCleanedPatioWet from "@/assets/projects/fb/cleaned-patio-wet.jpg";
+import fbSealedStampedPatio from "@/assets/projects/fb/sealed-stamped-patio.jpg";
+import fbSealedStampedPatioLawn from "@/assets/projects/fb/sealed-stamped-patio-lawn.jpg";
+import fbSealingAggregateRoller from "@/assets/projects/fb/sealing-aggregate-roller.jpg";
+import fbSealingAggregateNewHome from "@/assets/projects/fb/sealing-aggregate-new-home.jpg";
 
 /**
  * Project photos from the Enzo’s Concrete Facebook page, cropped from the page grid and
@@ -110,4 +125,19 @@ export const facebookProjects: Project[] = [
   { id: "fb-pole-barn-porch-slab", title: "Pole barn porch slab", service: "slabs", finish: "Broom finish", image: fbPoleBarnPorchSlab, alt: "New concrete slab under the covered porch of a pole barn", source: "facebook" },
   { id: "fb-shed-pad-backyard", title: "Shed pad", service: "slabs", finish: "Broom finish", image: fbShedPadBackyard, alt: "New concrete shed pad on a prepared base in a large backyard", source: "facebook" },
   { id: "fb-shed-pad-landscaped-yard", title: "Shed pad in a landscaped yard", service: "slabs", finish: "Broom finish", image: fbShedPadLandscapedYard, alt: "Small new concrete pad on a level base in a landscaped backyard, with a shed nearby", source: "facebook" },
+  { id: "fb-aggregate-slab-brick-home", title: "Exposed-aggregate slab behind a brick home", service: "concrete-patios", finish: "Exposed aggregate with control joints", image: fbAggregateSlabBrickHome, alt: "Large exposed-aggregate concrete slab with control joints behind a red brick home with raised garden beds", source: "facebook" },
+  { id: "fb-stamped-patio-fire-pit-corner", title: "Stamped patio, fire-pit corner", service: "concrete-patios", finish: "Stamped, with contrasting border", image: fbStampedPatioFirePitCorner, alt: "Stamped stone-pattern concrete patio with a charcoal border and square fire-pit opening behind a red brick home", source: "facebook" },
+  { id: "fb-stamped-patio-sealed-wide", title: "Colored stamped patio", service: "concrete-patios", finish: "Stamped, colored and sealed", image: fbStampedPatioSealedWide, alt: "Wide view of a warm-toned stamped concrete patio with a curved edge behind a single-story home", source: "facebook" },
+  { id: "fb-aggregate-front-walk-porch-step", title: "Exposed-aggregate front walk and step", service: "concrete-walkways", finish: "Exposed aggregate", image: fbAggregateFrontWalkPorchStep, alt: "Exposed-aggregate concrete front walk with a matching step up to a brick porch", source: "facebook" },
+  { id: "fb-aggregate-side-walk-brick", title: "Side walkway along a brick home", service: "concrete-walkways", finish: "Exposed aggregate", image: fbAggregateSideWalkBrick, alt: "Narrow exposed-aggregate walkway running along the side of a brick home past a garden gate", source: "facebook" },
+  { id: "fb-aggregate-walk-beside-sidewalk", title: "Walkway beside the public sidewalk", service: "concrete-walkways", finish: "Exposed aggregate", image: fbAggregateWalkBesideSidewalk, alt: "Exposed-aggregate walkway running alongside a broom-finished public sidewalk and lawn", source: "facebook" },
+  { id: "fb-aggregate-walk-hostas", title: "Front walk through the hostas", service: "concrete-walkways", finish: "Exposed aggregate", image: fbAggregateWalkHostas, alt: "Exposed-aggregate front walk leading between hosta beds to the steps of a brick home", source: "facebook" },
+  { id: "fb-pressure-washing-driveway", title: "Pressure washing a driveway", service: "sealing", finish: "Cleaning before sealing", image: fbPressureWashingDriveway, alt: "Driveway being pressure washed in clean stripes in front of a brick home's open garage", source: "facebook" },
+  { id: "fb-pressure-washing-patio", title: "Pressure washing a patio", service: "sealing", finish: "Cleaning before sealing", image: fbPressureWashingPatio, alt: "Close view of a pressure washer cleaning a concrete patio beside a fenced yard", source: "facebook" },
+  { id: "fb-washing-driveway-garage", title: "Cleaning a driveway at the garage", service: "sealing", finish: "Cleaning before sealing", image: fbWashingDrivewayGarage, alt: "Crew member pressure washing a concrete driveway in front of a two-car garage", source: "facebook" },
+  { id: "fb-cleaned-patio-wet", title: "Freshly cleaned slab", service: "sealing", finish: "Cleaning before sealing", image: fbCleanedPatioWet, alt: "Concrete slab with control joints, still wet after pressure washing, beside a fenced yard", source: "facebook" },
+  { id: "fb-sealed-stamped-patio", title: "Sealed stamped patio", service: "sealing", finish: "Stamped, colored and sealed", image: fbSealedStampedPatio, alt: "Glossy, freshly sealed stamped concrete patio in warm tones behind a tan brick home", source: "facebook" },
+  { id: "fb-sealed-stamped-patio-lawn", title: "Sealed stamped patio edge", service: "sealing", finish: "Stamped, colored and sealed", image: fbSealedStampedPatioLawn, alt: "Freshly sealed stamped concrete patio with a rich warm color meeting the lawn", source: "facebook" },
+  { id: "fb-sealing-aggregate-roller", title: "Sealing exposed aggregate", service: "sealing", finish: "Exposed aggregate, sealing in progress", image: fbSealingAggregateRoller, alt: "Roller and sealer bucket on an exposed-aggregate concrete patio partway through sealing", source: "facebook" },
+  { id: "fb-sealing-aggregate-new-home", title: "Sealing a new exposed-aggregate patio", service: "sealing", finish: "Exposed aggregate, sealing in progress", image: fbSealingAggregateNewHome, alt: "Crew member applying sealer to an exposed-aggregate patio behind a newly built home", source: "facebook" },
 ];
