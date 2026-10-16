@@ -4,12 +4,26 @@
  * and the items that still need owner confirmation.
  */
 
+/**
+ * Canonical origin. Set NEXT_PUBLIC_SITE_URL for the real domain; otherwise fall back to the
+ * host's own URL (Netlify: URL for production deploys, DEPLOY_PRIME_URL for branch/preview
+ * deploys; Vercel: VERCEL_PROJECT_PRODUCTION_URL) so canonicals and the sitemap match where
+ * the site is actually served.
+ */
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000")
+  (process.env.NETLIFY && (process.env.CONTEXT === "production" ? process.env.URL : process.env.DEPLOY_PRIME_URL)) ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "") ||
+  "http://localhost:3000"
 ).replace(/\/$/, "");
+
+/**
+ * Review/staging copies must stay out of search results so they never compete with the real
+ * domain. Anything on a platform subdomain or localhost is noindexed automatically, as is any
+ * deploy with SITE_NOINDEX=true. Keep in sync with the X-Robots-Tag logic in next.config.ts.
+ */
+export const indexable =
+  process.env.SITE_NOINDEX !== "true" && !/\.netlify\.app|\.vercel\.app|localhost/.test(siteUrl);
 
 export const business = {
   name: "Enzo’s Concrete LLC",

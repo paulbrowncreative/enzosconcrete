@@ -41,7 +41,29 @@ Requires Node 20.9+.
 - **Add or improve a city page:** add an entry to `src/content/cities.ts`. The page, sitemap entry, hub card, footer link, service-page links and schema are generated automatically. Only use facts you can cite, and never copy another city's paragraphs. Adding real local projects, photos or reviews is the best upgrade a city page can get.
 - **Publish business hours:** set `business.hours` (for example `[{ days: "Monday-Friday", opens: "08:00", closes: "17:00" }]`). They appear in the footer and in the structured data.
 
-## Deployment (Vercel recommended)
+## Deploying to Netlify (client review)
+
+`netlify.toml` is included. Netlify detects Next.js and applies its Next.js runtime automatically:
+the estimate API becomes a Netlify Function, and `next/image` uses the Netlify Image CDN.
+A local `netlify build` with `@netlify/plugin-nextjs` 5.16.2 completes cleanly.
+
+1. **Add new site → Import an existing project →** pick this repo and branch (`claude/site-crawlability-check-ytaz72`, or `main` once merged).
+2. Leave the build settings as detected (build `npm run build`, publish `.next`, Node 22 via `netlify.toml`).
+3. Deploy. The review URL will look like `https://<name>.netlify.app`.
+
+**The review site is hidden from search engines automatically.** While the site runs on a `*.netlify.app` address,
+every page sends `noindex, nofollow` (meta tag and `X-Robots-Tag` header) and `robots.txt` blocks all crawlers,
+so Google never indexes the review copy. Canonicals, the sitemap and structured data use the Netlify URL
+(from Netlify's `URL` / `DEPLOY_PRIME_URL`), so links work while reviewing.
+
+**Going live:** add the client's domain in Netlify, set `NEXT_PUBLIC_SITE_URL=https://www.theirdomain.com`, and
+redeploy. Indexing turns on automatically for the real domain. (To keep any deploy private, set `SITE_NOINDEX=true`.)
+
+**Estimate form during review:** without `RESEND_API_KEY`, `LEAD_TO_EMAIL` and `LEAD_FROM_EMAIL`, the form validates
+input and then shows a "call us" message, so no inquiry is lost silently. Add those variables in
+**Site configuration → Environment variables** to make it deliver email.
+
+## Deployment (Vercel)
 
 1. Import the repository into Vercel (framework preset: Next.js). No build settings need changing.
 2. Set the environment variables below for **Production**.
@@ -60,6 +82,7 @@ Any Node host that runs `next start` also works (Netlify, Render, a VPS). The es
 | `LEAD_FROM_EMAIL` | **Yes**, for the form | Sender on a domain verified in Resend, e.g. `Website <estimates@yourdomain.com>`. |
 | `NEXT_PUBLIC_GA_ID` | Optional | GA4 measurement ID. When unset, no analytics script loads. The privacy policy adjusts automatically. |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | Optional | Google Search Console HTML-tag token. |
+| `SITE_NOINDEX` | Optional | `true` forces noindex on any deploy. `*.netlify.app`, `*.vercel.app` and localhost are noindexed automatically. |
 
 Until the three form variables are set, the form validates input but returns a clear "temporarily
 unavailable, please call" message. It never shows a fake success.

@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { MobileCallBar } from "@/components/MobileCallBar";
-import { business } from "@/content/business";
+import { business, indexable } from "@/content/business";
 import { businessSchema, websiteSchema } from "@/lib/seo";
 import "./globals.css";
 
@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   description:
     "Family-owned concrete contractor in New Haven, MI. Driveways, patios, walkways, retaining walls and pool decks across Macomb County. BBB A+ accredited.",
   applicationName: business.name,
+  ...(indexable ? {} : { robots: { index: false, follow: false } }),
   formatDetection: { telephone: false },
   openGraph: {
     siteName: business.name,
