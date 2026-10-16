@@ -9,7 +9,8 @@ import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
 import { ServiceCard } from "@/components/ServiceCard";
 import { business } from "@/content/business";
-import { cities, cityPath } from "@/content/cities";
+import { cities } from "@/content/cities";
+import { cityServicePath } from "@/content/localServices";
 import { projectById, projects, projectsFor } from "@/content/projects";
 import { serviceBySlug, services } from "@/content/services";
 import { pageMetadata, serviceSchema } from "@/lib/seo";
@@ -177,7 +178,7 @@ export default async function ServicePage({ params }: Props) {
           <ul className="chips chips--dark" role="list">
             {cities.map((c) => (
               <li key={c.slug}>
-                <Link href={cityPath(c.slug)}>{c.name}</Link>
+                <Link href={cityServicePath(c.slug, service.slug)}>{c.name}</Link>
               </li>
             ))}
           </ul>

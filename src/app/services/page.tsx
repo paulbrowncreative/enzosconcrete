@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Residential Concrete Services in New Haven, MI",
   description:
-    "Concrete driveways, patios, walkways, retaining walls, driveway expansions and pool decks for homeowners in New Haven and Macomb County, MI.",
+    "Concrete driveways, patios, walkways, retaining walls, driveway expansions, pool decks, sealing and pole barn floors in New Haven and Macomb County, MI.",
   path: "/services",
 });
 
@@ -19,7 +19,7 @@ export default function ServicesPage() {
     <>
       <PageHero crumbs={[{ name: "Services", path: "/services" }]} eyebrow="Services" title="Residential concrete services in New Haven, MI">
         <p>
-          Six services, one standard. Whether it’s a full driveway replacement or a curved garden path, every job gets
+          Eight services, one standard. Whether it’s a full driveway replacement, a pole barn floor or a curved garden path, every job gets
           careful preparation, clean forming and a finish we’re proud to photograph.
         </p>
       </PageHero>

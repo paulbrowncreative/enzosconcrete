@@ -27,6 +27,7 @@ Requires Node 20.9+.
 | `src/content/services.ts` | All service-page copy, meta titles and descriptions, FAQs and related services |
 | `src/content/projects.ts` | Project photos, titles, alt text and service mapping |
 | `src/content/cities.ts` | Local service-area pages (`/service-areas/[slug]`): local context, permit pointers, FAQs, nearby links, sources |
+| `src/content/localServices.ts` | City × service landing pages (`/service-areas/[city]/[service]`): local keywords, ledes, trait-based notes, permit filtering |
 | `src/content/areas.ts` | Service-area hub copy |
 | `src/app/` | Routes (one folder per page), `sitemap.ts`, `robots.ts`, favicons |
 | `src/app/api/estimate/route.ts` | Estimate-form endpoint (validation, spam checks, email delivery) |

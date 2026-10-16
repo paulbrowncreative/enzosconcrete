@@ -853,14 +853,15 @@ main:focus {
 }
 
 @media (min-width: 1024px) {
+  /* 12-column grid: two large cards per row, three regular cards per row. */
   .service-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .service-card {
+    grid-column: span 4;
   }
   .service-card--large {
-    grid-column: span 2;
-  }
-  .service-grid--three {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column: span 6;
   }
 }
 
@@ -2667,4 +2668,8 @@ main:focus {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.other-services-title {
+  margin-top: var(--space-7);
 }

@@ -8,12 +8,12 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Our Work: Concrete Project Gallery",
   description:
-    "Photos of real concrete projects by Enzo’s Concrete LLC: driveways, exposed-aggregate and stamped patios, walkways and steps, pool decks, cleaning and sealing, pole barn floors and more.",
+    "Photos of real concrete projects by Enzo’s Concrete LLC: driveways, stamped and exposed-aggregate patios, walkways, steps, pool decks, sealing and pole barn floors.",
   path: "/our-work",
 });
 
 export default function OurWorkPage() {
-  const order = [...services.map((s) => s.slug), "sealing" as const, "slabs" as const];
+  const order = services.map((s) => s.slug);
   // Round-robin across categories so the "All" view opens with variety, not 15 driveways in a row.
   const queues = order.map((c) => projects.filter((p) => p.service === c));
   const mixed = [];

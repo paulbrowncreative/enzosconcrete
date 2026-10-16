@@ -4,7 +4,9 @@ export type ServiceSlug =
   | "concrete-walkways"
   | "retaining-walls"
   | "driveway-expansions"
-  | "pool-decks";
+  | "pool-decks"
+  | "concrete-sealing"
+  | "concrete-slabs";
 
 export type Service = {
   slug: ServiceSlug;
@@ -33,7 +35,7 @@ export const services: Service[] = [
     name: "Concrete Driveways",
     label: "Driveways",
     summary: "New and replacement driveways poured to handle daily traffic and Michigan winters.",
-    metaTitle: "Concrete Driveway Contractor in New Haven, MI",
+    metaTitle: "Concrete Driveway Contractor in Macomb County, MI",
     metaDescription:
       "New and replacement concrete driveways in New Haven, MI and across Macomb County. Family-owned, BBB A+ accredited. Call (586) 231-4217 for an estimate.",
     h1: "Concrete driveways built for daily use and Michigan winters",
@@ -86,7 +88,7 @@ export const services: Service[] = [
     name: "Custom Concrete Patios",
     label: "Patios",
     summary: "Custom-shaped patios, including exposed aggregate, sized for the way you use your yard.",
-    metaTitle: "Custom Concrete Patios in New Haven, MI",
+    metaTitle: "Custom Concrete Patios in Macomb County, MI",
     metaDescription:
       "Custom concrete and exposed-aggregate patios for homes in New Haven and Macomb County, MI. Curved edges, borders and real project photos. Request an estimate.",
     h1: "Custom concrete patios shaped around the way you live outside",
@@ -135,7 +137,7 @@ export const services: Service[] = [
     name: "Concrete Walkways & Pathways",
     label: "Walkways",
     summary: "Front walks, steps, side-yard paths and garden pathways that connect your property.",
-    metaTitle: "Concrete Walkways & Pathways in New Haven, MI",
+    metaTitle: "Concrete Walkways & Steps in Macomb County, MI",
     metaDescription:
       "Concrete and exposed-aggregate walkways, front walks and garden paths in New Haven and Macomb County, MI. See real project photos. Call (586) 231-4217.",
     h1: "Concrete walkways and pathways that connect your property",
@@ -184,7 +186,7 @@ export const services: Service[] = [
     name: "Retaining Walls",
     label: "Retaining Walls",
     summary: "Concrete walls that hold back soil, define garden beds and level out slopes.",
-    metaTitle: "Concrete Retaining Walls in New Haven, MI",
+    metaTitle: "Concrete Retaining Walls in Macomb County, MI",
     metaDescription:
       "Concrete retaining and garden walls for homes in New Haven and Macomb County, MI. Hold back soil, define beds and add structure to your yard. Get an estimate.",
     h1: "Concrete retaining walls that bring structure to your yard",
@@ -229,7 +231,7 @@ export const services: Service[] = [
     name: "Driveway Expansions & Extensions",
     label: "Driveway Expansions",
     summary: "Widen or extend your driveway for an extra car, a boat or easier parking.",
-    metaTitle: "Driveway Expansions & Extensions in New Haven, MI",
+    metaTitle: "Driveway Extensions & Widening in Macomb County, MI",
     metaDescription:
       "Widen or extend your concrete driveway in New Haven and Macomb County, MI. Room for another vehicle, trailer or easier parking. Call (586) 231-4217.",
     h1: "Driveway expansions for the space you actually need",
@@ -278,7 +280,7 @@ export const services: Service[] = [
     name: "Concrete Pool Decks",
     label: "Pool Decks",
     summary: "Slip-conscious concrete surrounds that frame your pool and handle splash and sun.",
-    metaTitle: "Concrete Pool Decks in New Haven, MI",
+    metaTitle: "Concrete Pool Decks in Macomb County, MI",
     metaDescription:
       "Concrete pool decks and pool surrounds for homes in New Haven and Macomb County, MI. Textured, comfortable and built around your pool. Request an estimate.",
     h1: "Concrete pool decks that frame your pool and your summer",
@@ -317,6 +319,108 @@ export const services: Service[] = [
       },
     ],
     related: ["concrete-patios", "concrete-walkways", "retaining-walls"],
+  },
+  {
+    slug: "concrete-sealing",
+    name: "Concrete Cleaning & Sealing",
+    label: "Cleaning & Sealing",
+    summary: "Pressure washing and sealing that protects stamped, exposed-aggregate and broom-finished concrete.",
+    metaTitle: "Concrete Sealing & Cleaning in Macomb County, MI",
+    metaDescription:
+      "Concrete pressure washing and sealing for stamped patios, exposed aggregate and driveways in New Haven and Macomb County, MI. Protect against salt and weather.",
+    h1: "Concrete cleaning and sealing that protects what you’ve invested in",
+    lede: "Michigan winters are hard on concrete: road salt, de-icers, freeze-thaw cycles and months of moisture. A thorough cleaning followed by a quality sealer helps protect the surface and brings back the color of stamped and exposed-aggregate finishes.",
+    leadProject: "fb-sealed-stamped-patio",
+    benefits: [
+      {
+        title: "A barrier against salt and moisture",
+        body: "Sealer helps keep water, de-icing salts and stains from soaking into the surface, the main culprits behind flaking and pitting.",
+      },
+      {
+        title: "Color and texture that pop again",
+        body: "Stamped and colored concrete fades and dulls with weather. Sealing deepens the color and shows off the pattern, as you can see in our sealed stamped patio photos.",
+      },
+      {
+        title: "Clean before it’s sealed",
+        body: "Sealer only works on a clean surface. Dirt, mildew and old residue are pressure washed off first, so the sealer bonds to the concrete, not the grime.",
+      },
+    ],
+    planning: {
+      heading: "When and how often to seal concrete",
+      paragraphs: [
+        "New concrete needs time to cure before it’s sealed. A common guideline is to wait about a month after the pour, but the right timing depends on the mix, the weather and the sealer, so we’ll recommend timing for your slab.",
+        "Sealing is weather-dependent. The surface has to be dry, and temperatures need to stay within the sealer’s working range during application and drying, so most sealing happens in the warmer, drier months.",
+        "How often to reseal depends on the sealer, the sun exposure and how much traffic and salt the surface sees. Driveways that get salted every winter usually need it more often than a shaded patio. Water that no longer beads on the surface is a good sign it’s time.",
+      ],
+    },
+    faqs: [
+      {
+        q: "Should I seal stamped concrete?",
+        a: "Stamped and colored concrete is usually sealed to protect the color and pattern and make it easier to clean. Resealing periodically keeps it looking its best.",
+      },
+      {
+        q: "Can you seal exposed-aggregate concrete?",
+        a: "Yes. Sealing exposed aggregate helps hold the stones in place, enriches their color and makes the surface easier to keep clean. Several of our sealing photos show exposed-aggregate patios.",
+      },
+      {
+        q: "Will sealer make my concrete slippery?",
+        a: "Some sealers can make smooth surfaces slicker when wet. Texture matters, and we’ll talk about options for steps, walkways and pool areas where traction is important.",
+      },
+      {
+        q: "Do you clean concrete without sealing it?",
+        a: "Tell us what you have in mind. Pressure washing is part of preparing a surface for sealing, and we’ll discuss what makes sense for your concrete.",
+      },
+    ],
+    related: ["concrete-patios", "concrete-driveways", "concrete-walkways"],
+  },
+  {
+    slug: "concrete-slabs",
+    name: "Pole Barn Floors & Concrete Slabs",
+    label: "Slabs & Barn Floors",
+    summary: "Pole barn and garage-style floors, shed pads and porch slabs poured flat, solid and ready to use.",
+    metaTitle: "Pole Barn Floors & Slabs in Macomb County, MI",
+    metaDescription:
+      "Concrete pole barn floors, shed pads and porch slabs in New Haven and Macomb County, MI. Flat, durable slabs from a family-owned, BBB A+ contractor.",
+    h1: "Pole barn floors, shed pads and concrete slabs",
+    lede: "Whether it’s a pole barn that needs a real floor, a shed that needs a level pad, or a covered porch that needs a slab, a flat, well-built slab makes the space usable for decades. You can see pole barn floors and shed pads in our project gallery.",
+    leadProject: "fb-pole-barn-floor-finishing",
+    benefits: [
+      {
+        title: "Flat, usable floors",
+        body: "A properly placed and finished slab gives you a level surface for vehicles, equipment, storage or a workshop, instead of gravel or dirt.",
+      },
+      {
+        title: "Planned for what it carries",
+        body: "A shed pad, a workshop floor and a slab that holds a tractor are different jobs. Tell us what the slab will hold, and the base and slab are planned for it.",
+      },
+      {
+        title: "The right finish for the space",
+        body: "Smooth trowel finishes are easy to sweep inside a barn or garage, while broom finishes give outdoor pads and porch slabs better traction.",
+      },
+    ],
+    planning: {
+      heading: "Planning a pole barn floor or slab",
+      paragraphs: [
+        "Start with how the space will be used. Vehicles and heavy equipment, a workshop, or simple storage each call for different slab and base planning, and that’s the biggest factor in the estimate.",
+        "Access matters for larger floors. Ready-mix trucks need a route to the building, so we’ll look at how the site can be reached before the pour is scheduled.",
+        "Slabs for new buildings may be part of a permitted project. Check with your township about permits for the building and slab, especially for new pole barns and accessory structures.",
+      ],
+    },
+    faqs: [
+      {
+        q: "Can you pour a floor in an existing pole barn?",
+        a: "Often, yes, as long as the concrete trucks can reach the building or the concrete can be moved into place. We’ll look at access and the existing grade during the estimate.",
+      },
+      {
+        q: "What finish is best for a barn or garage floor?",
+        a: "Inside, a smooth trowel finish is easy to sweep and clean. Outdoors, or where traction matters, a broom finish is usually the better choice.",
+      },
+      {
+        q: "Do you pour shed pads?",
+        a: "Yes. A concrete pad gives a shed a level, solid base that keeps it off the ground. Our gallery includes several shed pads.",
+      },
+    ],
+    related: ["driveway-expansions", "concrete-driveways", "concrete-sealing"],
   },
 ];
 

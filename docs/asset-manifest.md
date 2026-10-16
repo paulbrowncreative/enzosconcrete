@@ -109,10 +109,8 @@ is recommended**; keep the same filenames and nothing else needs to change.
 - **Dump truck:** 3-32. It shows another business's signage and a USDOT number, and isn't a finished project.
 - **In-progress forms with no finished result:** e.g. 2-53, 3-11, 2-56, 4-36.
 
-### New category: "Slabs & Floors"
-Six photos show pole barn floors, a pole barn porch slab and shed pads. That work isn't one of the six
-service pages, so these photos appear in the gallery under "Slabs & Floors" with no service link.
-**If you want to market this work, confirm it and a dedicated service page can be added.**
+### Category: pole barn floors and slabs
+These six photos now belong to the **Pole Barn Floors & Concrete Slabs** service page (`/services/concrete-slabs`), added at the owner's request on 2026-10-16.
 
 ## Facebook project photos, batch 2 (15 migrated)
 
@@ -143,7 +141,5 @@ super-resolution, ≤1200px).
 BEFORE/AFTER" graphic (6-46). That graphic has overlaid text and may be a stock marketing image; if it shows
 your own job, send the original and it can be added.
 
-### New category: "Cleaning & Sealing"
-These photos show pressure washing, and sealing of stamped and exposed-aggregate concrete. They appear in the
-gallery under "Cleaning & Sealing". **If this is a service you offer, confirm it and a dedicated service page
-can be added** ("concrete sealing near me" is a common local search).
+### Category: cleaning and sealing
+These photos now belong to the **Concrete Cleaning & Sealing** service page (`/services/concrete-sealing`), added at the owner's request on 2026-10-16.

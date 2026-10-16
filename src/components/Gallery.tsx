@@ -15,10 +15,13 @@ export function Gallery({
   projects,
   headingLevel = 3,
   sizes = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
+  eagerCount = 0,
 }: {
   projects: Project[];
   headingLevel?: 2 | 3;
   sizes?: string;
+  /** Load the first N photos immediately (use when the gallery starts above the fold). */
+  eagerCount?: number;
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [active, setActive] = useState<number | null>(null);
@@ -67,6 +70,8 @@ export function Gallery({
                     alt={p.alt}
                     sizes={sizes}
                     placeholder="blur"
+                    loading={i < eagerCount ? "eager" : "lazy"}
+                    fetchPriority={i === 0 && eagerCount > 0 ? "high" : undefined}
                     className="gallery__img"
                   />
                   <span className="gallery__zoom" aria-hidden="true">

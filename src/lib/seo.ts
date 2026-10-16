@@ -54,7 +54,7 @@ export function businessSchema() {
     logo: absoluteUrl("/logo.png"),
     image: absoluteUrl("/og-image.jpg"),
     description:
-      "Family-owned residential concrete contractor in New Haven, Michigan: driveways, patios, walkways, retaining walls, driveway expansions and pool decks.",
+      "Family-owned residential concrete contractor in New Haven, Michigan: driveways, patios, walkways and steps, retaining walls, driveway expansions, pool decks, concrete sealing and pole barn floors.",
     address: {
       "@type": "PostalAddress",
       addressLocality: business.address.locality,
@@ -67,7 +67,7 @@ export function businessSchema() {
       ...cities.map((c) => ({ "@type": c.kind === "city" ? "City" : "AdministrativeArea", name: `${c.name}, Michigan` })),
     ],
     sameAs: [business.bbb.profileUrl],
-    knowsAbout: ["Concrete driveways", "Concrete patios", "Exposed aggregate concrete", "Concrete walkways", "Retaining walls", "Pool decks"],
+    knowsAbout: ["Concrete driveways", "Concrete patios", "Exposed aggregate concrete", "Concrete walkways", "Retaining walls", "Pool decks", "Concrete sealing", "Stamped concrete", "Pole barn floors"],
     ...(business.hours
       ? {
           openingHoursSpecification: business.hours.map((h) => ({
@@ -140,6 +140,24 @@ export function cityServiceSchema(city: City) {
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: s.name, url: absoluteUrl(`/services/${s.slug}`) },
       })),
+    },
+  };
+}
+
+export function localServiceSchema(city: City, service: Service, name: string, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": absoluteUrl(`/service-areas/${city.slug}/${service.slug}#service`),
+    name,
+    serviceType: service.name,
+    description,
+    url: absoluteUrl(`/service-areas/${city.slug}/${service.slug}`),
+    provider: { "@id": orgId },
+    areaServed: {
+      "@type": city.kind === "city" ? "City" : "AdministrativeArea",
+      name: `${city.name}, Michigan`,
+      containedInPlace: { "@type": "AdministrativeArea", name: `${city.county} County, Michigan` },
     },
   };
 }

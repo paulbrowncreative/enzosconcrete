@@ -9,7 +9,7 @@ import { services, servicePath } from "@/content/services";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Service Areas: Concrete Contractor in Macomb County, MI",
+  title: "Areas We Serve in Macomb County, MI",
   description:
     "Enzo’s Concrete LLC serves New Haven, Chesterfield, New Baltimore, Macomb Township, Shelby, Sterling Heights and more across Macomb, Oakland and Wayne counties.",
   path: "/service-areas",

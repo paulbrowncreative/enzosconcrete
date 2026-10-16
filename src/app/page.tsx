@@ -14,7 +14,7 @@ export const metadata = pageMetadata({
   title: `New Haven & Macomb County Concrete Contractor | ${business.shortName}`,
   absoluteTitle: true,
   description:
-    "Family-owned concrete contractor in New Haven, MI. Driveways, patios, walkways, retaining walls and pool decks across Macomb County. BBB A+ accredited. Call (586) 231-4217.",
+    "Family-owned concrete contractor in New Haven, MI: driveways, patios, walkways, sealing and more across Macomb County. BBB A+ accredited. Call (586) 231-4217.",
   path: "/",
 });
 

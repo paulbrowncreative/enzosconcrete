@@ -27,7 +27,7 @@ export function WorkGallery({ projects, order }: { projects: Project[]; order: P
       <p className="visually-hidden" aria-live="polite">
         Showing {shown.length} {active === "all" ? "projects" : categoryLabel(active).toLowerCase() + " projects"}
       </p>
-      <Gallery key={active} projects={shown} />
+      <Gallery key={active} projects={shown} eagerCount={3} />
     </>
   );
 }

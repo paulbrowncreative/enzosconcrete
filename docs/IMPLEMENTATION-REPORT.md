@@ -70,10 +70,10 @@ tool (volume or difficulty data) was available, so none is claimed. Validate wit
 **Location pages (added in a second pass):** 13 local landing pages at `/service-areas/[slug]`: New Haven, Lenox Township, New Baltimore, Chesterfield Township, Richmond, Ray Township, Armada, Macomb Township, Washington Township, Harrison Township, Clinton Township, Shelby Township and Sterling Heights. These are the Macomb County communities closest to the New Haven base. To avoid doorway pages, each one is built from researched, cited local facts and has its own:
 - **Title, meta description, H1 and lede**, aligned to "concrete contractor in {city}" intent and to that community's most likely projects
 - **Local context**: geography, growth and housing history, water and drainage factors (Wikipedia, citing the 2020 Census). Sources are recorded per city in `src/content/cities.ts`
-- **Services ranked by local relevance**, with city-specific reasoning, plus links to all six service pages
+- **Services ranked by local relevance**, with city-specific reasoning, plus links to every service page
 - **Permit and planning guidance:** Macomb Township's published concrete requirements (driveway widths, setbacks, base and rebar, inspections) and the Macomb County Department of Roads approach-permit process are quoted from official sources. Where a city's rules couldn't be verified, the page tells homeowners to check with that municipality rather than inventing requirements
 - **City-specific FAQs**, a project gallery ordered to match local priorities, links to 4 nearby communities, and a CTA that pre-fills the city on the estimate form
-- **`Service` JSON-LD** with `areaServed` set to that city (inside Macomb County) and an offer catalog of the six services. The business schema's `areaServed` also lists every city
+- **`Service` JSON-LD** with `areaServed` set to that city (inside Macomb County) and an offer catalog of every service. The business schema's `areaServed` also lists every city
 
 What the pages deliberately do **not** do: claim past projects, reviews or customers in any city (none are verified), or publish permit fees or rules that weren't confirmed. **Oakland and Wayne counties** get county-level coverage only. Together they contain dozens of municipalities, many of them farther from New Haven, and pages for them would be thin until there are real local projects to show.
 
@@ -138,8 +138,38 @@ Not measured yet: real-user Core Web Vitals (they need production traffic in CrU
 | City `Service` schema parses, `areaServed` correct | ✅ |
 | Lighthouse (mobile, simulated): Macomb Township page / hub | 84 / 96 performance; **100 accessibility, best practices and SEO** on both |
 
+### Expansion pass (2026-10-16): new services, city × service pages, deployment QA
+
+**Added**
+- Two service pages, confirmed by the owner and backed by Facebook project photos: **Concrete Cleaning & Sealing** (`/services/concrete-sealing`) and **Pole Barn Floors & Concrete Slabs** (`/services/concrete-slabs`). There are now 8 services.
+- **104 city × service landing pages** at `/service-areas/{city}/{service}`: every one of the 13 communities × 8 services, each targeting a high-intent local search, e.g. "Concrete Driveway Contractor in Shelby Township, MI" or "Concrete Sealing & Power Washing in New Baltimore, MI". Content is assembled in `src/content/localServices.ts` from:
+  - the service's local keyword and lede
+  - notes chosen by each city's documented traits (lakeside, rural, established, subdivision, riverside, snowier, wet ground, hometown)
+  - that city's researched context and permit guidance (Macomb Township's published rules are filtered to the ones relevant to each service, and the county road approach permit appears only on driveway pages)
+  - city-specific FAQs, a rotating hero photo and gallery, links to the same service in nearby communities, and links to every other service in that city
+- `Service` JSON-LD on each local page with `areaServed` set to the city (inside Macomb County).
+- Keyword split to avoid cannibalization: main service pages target **Macomb County**, the New Haven local pages target **New Haven**, and the homepage targets **New Haven & Macomb County**.
+
+**Duplicate-content control:** pages for the same service across cities were measured with 5-word shingle overlap, with city names normalized out. After the shared service lede and benefits were swapped for city-specific context, mean overlap is **35–50%** (max 49–63%). The remaining overlap is mostly navigation, CTAs and photo captions. These pages will still rank best once real local projects, photos and reviews are added per city. They are local landing pages, not a substitute for local proof.
+
+**Deployment QA (all run against a production build)**
+| Check | Result |
+|---|---|
+| Production build + TypeScript | ✅ 0 errors, 0 warnings; 132 URLs in sitemap, all statically generated |
+| SEO crawl of all 132 URLs | ✅ HTTP 200, unique title and meta description on every page (titles ≤70 chars, descriptions 70–165), self-referencing canonical, one H1, OG image, valid JSON-LD, no `noindex`, no images without alt, no references to the old B12 site |
+| Internal links | ✅ 132 distinct internal link targets, **0 broken**, **0 orphan pages**; every page has ≥11 inbound internal links |
+| Browser QA, 132 pages × 390px and 1440px (266 loads) | ✅ **0 axe violations** (WCAG 2.0–2.2 A/AA + best practice), 0 horizontal overflow, 0 broken images, 0 console errors (except the intentional 404 test) |
+| Functional | ✅ Mobile menu (8 services), Escape/close; city+service CTA pre-fills the form; form validation, error summary and focus; email-preference rule; honest 503 when email isn't configured; gallery filter (75 photos, 8 cleaning & sealing) |
+| API hardening | ✅ malformed JSON → 400, invalid fields → 422, honeypot → silent 200, GET → 405, oversized body → 413 |
+| Routing | ✅ legacy B12 URLs → 308 to new pages; unknown pages, cities and services → 404 |
+| Security headers | ✅ HSTS, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy |
+| Production domain build (`NEXT_PUBLIC_SITE_URL` set) | ✅ sitemap, robots, canonicals, Open Graph and JSON-LD all use the production domain; 0 `localhost` references |
+| `npm audit --omit=dev` | ✅ 0 vulnerabilities |
+| Lighthouse mobile (simulated) | Home 89 · Shelby patios page 89 · Sealing service 96 · Our Work 89 · Contact 95. **Accessibility, Best Practices and SEO 100 on all.** CLS 0 |
+
 ## 7. Owner checklist (needed before or at launch)
 
+0. **Review the local pages:** each of the 13 communities now has 8 service pages saying Enzo’s serves that town for that service. If there are towns or services (e.g. sealing in a far-off town) you don’t want to advertise, say so and they can be removed.
 1. **Domain:** which domain will the site live on? Set `NEXT_PUBLIC_SITE_URL` and point DNS at the deployment.
 2. **Form delivery:** create a Resend account, verify the sending domain, then set `RESEND_API_KEY`, `LEAD_TO_EMAIL` and `LEAD_FROM_EMAIL`. Send one real test request.
 3. **Confirm or correct these facts:** years in business (15+ vs. BBB's 1974), business hours, whether estimates are free (the site says "Request an Estimate", not "free"), whether you take texts (the form offers "Text message" as a contact preference), and "Foundations" / "Decorative concrete" as services.

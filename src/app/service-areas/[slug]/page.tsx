@@ -9,8 +9,9 @@ import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
 import { business } from "@/content/business";
 import { cities, cityBySlug, cityPath } from "@/content/cities";
+import { cityServicePath } from "@/content/localServices";
 import { projectById, projects } from "@/content/projects";
-import { serviceBySlug, servicePath, services } from "@/content/services";
+import { serviceBySlug, services } from "@/content/services";
 import { cityServiceSchema, pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -33,7 +34,6 @@ export default async function CityPage({ params }: Props) {
 
   const lead = projectById(city.leadProject);
   const focusSlugs: string[] = city.focus.map((f) => f.service);
-  const otherServices = services.filter((s) => !focusSlugs.includes(s.slug));
   // Photos from the services that matter most here, then the rest, so each page leads differently.
   const gallery = [
     ...projects.filter((p) => focusSlugs.includes(p.service) && p.id !== lead.id),
@@ -134,27 +134,30 @@ export default async function CityPage({ params }: Props) {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3>
-                    <Link className="plain-link" href={servicePath(s.slug)}>
+                    <Link className="plain-link" href={cityServicePath(city.slug, s.slug)}>
                       {s.name} in {city.name}
                     </Link>
                   </h3>
                   <p>{f.body}</p>
-                  <Link className="text-link" href={servicePath(s.slug)}>
-                    About {s.label.toLowerCase()} <Icon name="arrow" size={16} />
+                  <Link className="text-link" href={cityServicePath(city.slug, s.slug)}>
+                    {s.label} in {city.name} <Icon name="arrow" size={16} />
                   </Link>
                 </li>
               );
             })}
           </ul>
-          <p className="also-available">
-            Also available in {city.name}:{" "}
-            {otherServices.map((s, i) => (
-              <span key={s.slug}>
-                <Link href={servicePath(s.slug)}>{s.name.toLowerCase()}</Link>
-                {i < otherServices.length - 2 ? ", " : i === otherServices.length - 2 ? " and " : "."}
-              </span>
-            ))}
-          </p>
+          <div className="also-available">
+            <h3 className="area__heading">All concrete services in {city.name}</h3>
+            <ul className="chips chips--dark" role="list">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link href={cityServicePath(city.slug, s.slug)}>
+                    {s.name} in {city.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
