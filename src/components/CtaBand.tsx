@@ -31,6 +31,9 @@ export function CtaBand({
             <Icon name="phone" size={18} />
             Call {business.phone.display}
           </a>
+          <p className="cta-band__text">
+            Prefer to text? <a href={business.phone.sms} data-track-location={location}>Send us a message</a>
+          </p>
         </div>
       </div>
     </section>

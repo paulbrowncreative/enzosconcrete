@@ -218,7 +218,7 @@ production build passes, and all 132 pages pass the axe/overflow/console checks.
 
 ### Client should confirm (copy is live on the site)
 5. **Every community × service page should be advertised** (13 towns × 8 services). Remove any you don't want.
-6. **Facts:** years in business (15+ vs. BBB's 1974 start date), business hours (not published until confirmed), whether customers can text the number (the form offers "Text message"), and "New Haven" vs. "Lenox" as the listed locality (BBB says Lenox).
+6. **Facts:** years in business (15+ vs. BBB's 1974 start date), business hours (not published until confirmed), and "New Haven" vs. "Lenox" as the listed locality (BBB says Lenox).
 7. **Copy commitments written in their voice:** looking at the existing driveway with the customer before work, scheduling pours around the forecast, every photo being their own work, and sealing/slab descriptions. Edit any that don't match how they work.
 8. **License and insurance:** confirmed by the owner (licensed and insured) and now shown site-wide. Optional: send the license number/type to display it (set it in `src/content/business.ts`).
 

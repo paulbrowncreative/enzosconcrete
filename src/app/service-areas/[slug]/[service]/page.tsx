@@ -95,7 +95,7 @@ export default async function CityServicePage({ params }: Props) {
   const faqs = [
     {
       q: `Do you ${copy.verb} ${copy.noun} in ${city.name}?`,
-      a: `Yes. Enzo’s Concrete LLC is a licensed, insured and family-owned contractor serving homeowners throughout ${city.name} and the rest of ${city.county} County. Send your project details or call ${business.phone.display} to set up a free estimate.`,
+      a: `Yes. Enzo’s Concrete LLC is a licensed, insured and family-owned contractor serving homeowners throughout ${city.name} and the rest of ${city.county} County. Send your project details, or call or text ${business.phone.display}, to set up a free estimate.`,
     },
     service.slug === "concrete-sealing"
       ? {
@@ -262,7 +262,7 @@ export default async function CityServicePage({ params }: Props) {
               {service.name} in {city.name}: FAQ
             </h2>
             <p>
-              Something else on your mind? Call <a href={business.phone.href}>{business.phone.display}</a>.
+              Something else on your mind? Call or text <a href={business.phone.href}>{business.phone.display}</a>.
             </p>
           </div>
           <dl className="faq__list">
@@ -312,7 +312,7 @@ export default async function CityServicePage({ params }: Props) {
 
       <CtaBand
         title={`Ready to Talk About Your ${city.name} Project?`}
-        body={`Tell us about the ${service.label.toLowerCase()} work you have in mind. We’ll follow up to talk through options, timing and your estimate.`}
+        body={`Tell us about the project you have in mind in ${city.name}. We’ll follow up to talk through options, timing and your free estimate.`}
         estimateHref={estimateHref}
         location={`local_final_${city.slug}_${service.slug}`}
       />

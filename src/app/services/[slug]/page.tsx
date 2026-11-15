@@ -122,6 +122,9 @@ export default async function ServicePage({ params }: Props) {
             <a className="quote-card__phone" href={business.phone.href}>
               <Icon name="phone" size={18} /> Or call {business.phone.display}
             </a>
+            <a className="quote-card__phone quote-card__phone--tight" href={business.phone.sms} data-track-location={`service_aside_${service.slug}`}>
+              <Icon name="message" size={18} /> Or text {business.phone.display}
+            </a>
             <p className="quote-card__bbb">
               <Icon name="check" size={18} /> Licensed &amp; Insured
             </p>
@@ -203,7 +206,7 @@ export default async function ServicePage({ params }: Props) {
 
       <CtaBand
         title="Ready to Talk About Your Project?"
-        body={`Tell us what you have in mind and where the project is. We’ll follow up to talk through ${service.label.toLowerCase()} options, timing and your estimate.`}
+        body={`Tell us what you have in mind and where the project is. We’ll follow up to talk through options, timing and your free estimate.`}
         estimateHref={estimateHref}
         location={`service_final_${service.slug}`}
       />

@@ -33,7 +33,13 @@ export function Footer() {
           <ul className="site-footer__contact">
             <li>
               <Icon name="phone" size={16} />
-              <a href={business.phone.href}>{business.phone.display}</a>
+              <a href={business.phone.href}>Call {business.phone.display}</a>
+            </li>
+            <li>
+              <Icon name="message" size={16} />
+              <a href={business.phone.sms}>
+                Text {business.phone.display}
+              </a>
             </li>
             <li>
               <Icon name="mail" size={16} />

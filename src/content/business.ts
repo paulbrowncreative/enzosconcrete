@@ -33,6 +33,8 @@ export const business = {
     display: "(586) 231-4217",
     href: "tel:+15862314217",
     e164: "+15862314217",
+    /** Owner-confirmed: customers can text this number. */
+    sms: "sms:+15862314217",
   },
   email: "Enzosconcretellc@gmail.com",
   address: {

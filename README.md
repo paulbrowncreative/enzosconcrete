@@ -105,6 +105,7 @@ When `NEXT_PUBLIC_GA_ID` (or a GTM `dataLayer`) is present, these events fire:
 |---|---|
 | `generate_lead` | Estimate form delivered successfully (server confirmed) |
 | `phone_click` | Any `tel:` link |
+| `text_click` | Any `sms:` (text message) link |
 | `email_click` | Any `mailto:` link |
 | `cta_estimate` | Any "Request a Free Estimate" button (`link_location` says which one) |
 

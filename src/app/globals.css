@@ -1855,6 +1855,22 @@ main:focus {
   color: var(--text-on-dark-muted);
 }
 
+.quote-card__phone--tight {
+  margin-top: var(--space-2);
+}
+
+.cta-band__text {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--text-on-dark-muted);
+}
+
+.cta-band__text a {
+  color: #fff;
+  font-weight: 700;
+}
+
 .quote-card__bbb--tight {
   margin-top: var(--space-2);
   padding-top: 0;
@@ -2320,7 +2336,7 @@ main:focus {
   color: var(--text-muted);
 }
 
-.contact__big-link:nth-of-type(2) {
+.contact__big-link--email {
   font-size: var(--fs-base);
 }
 

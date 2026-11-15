@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Request a Free Concrete Estimate",
   description:
-    "Request a free estimate from Enzo’s Concrete LLC in New Haven, MI. Call (586) 231-4217, email us, or send your project details online.",
+    "Request a free estimate from Enzo’s Concrete LLC in New Haven, MI. Call or text (586) 231-4217, email us, or send your project details online.",
   path: "/contact",
 });
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
 
           <div className="contact__aside" role="region" aria-labelledby="contact-direct">
             <h2 id="contact-direct" className="contact__heading">
-              Prefer to Talk?
+              Prefer to Call or Text?
             </h2>
             <a className="contact__big-link" href={business.phone.href} data-track-location="contact_aside">
               <Icon name="phone" size={22} />
@@ -35,7 +35,14 @@ export default function ContactPage() {
                 {business.phone.display}
               </span>
             </a>
-            <a className="contact__big-link" href={`mailto:${business.email}`}>
+            <a className="contact__big-link" href={business.phone.sms} data-track-location="contact_aside">
+              <Icon name="message" size={22} />
+              <span>
+                <small>Text</small>
+                {business.phone.display}
+              </span>
+            </a>
+            <a className="contact__big-link contact__big-link--email" href={`mailto:${business.email}`}>
               <Icon name="mail" size={22} />
               <span>
                 <small>Email</small>

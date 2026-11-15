@@ -220,7 +220,7 @@ export default async function CityPage({ params }: Props) {
               {city.name} Concrete Questions
             </h2>
             <p>
-              Something else on your mind? Call <a href={business.phone.href}>{business.phone.display}</a>.
+              Something else on your mind? Call or text <a href={business.phone.href}>{business.phone.display}</a>.
             </p>
           </div>
           <dl className="faq__list">
@@ -260,7 +260,7 @@ export default async function CityPage({ params }: Props) {
 
       <CtaBand
         title={`Planning a Concrete Project in ${city.name}?`}
-        body={`Tell us what you have in mind and where in ${city.name} the project is. We’ll follow up to talk through options, timing and your estimate.`}
+        body={`Tell us what you have in mind and where in ${city.name} the project is. We’ll follow up to talk through options, timing and your free estimate.`}
         estimateHref={estimateHref}
         location={`city_final_${city.slug}`}
       />

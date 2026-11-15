@@ -7,7 +7,7 @@ import { track } from "@/lib/track";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 /**
- * Loads GA4 only when NEXT_PUBLIC_GA_ID is set, and reports phone, email and
+ * Loads GA4 only when NEXT_PUBLIC_GA_ID is set, and reports phone, text, email and
  * estimate-CTA clicks site-wide through one delegated listener.
  */
 export function Analytics() {
@@ -18,6 +18,7 @@ export function Analytics() {
       const href = el.getAttribute("href") || "";
       const location = el.getAttribute("data-track-location") || undefined;
       if (href.startsWith("tel:")) track("phone_click", { link_location: location ?? window.location.pathname });
+      else if (href.startsWith("sms:")) track("text_click", { link_location: location ?? window.location.pathname });
       else if (href.startsWith("mailto:")) track("email_click", { link_location: location ?? window.location.pathname });
       else if (el.dataset.track) track(el.dataset.track, { link_location: location, page_path: window.location.pathname });
     };
