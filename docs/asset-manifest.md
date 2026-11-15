@@ -157,3 +157,20 @@ white halo. Output: `src/assets/brand/logo.png` (636×463, transparent). Derived
 **Update (2026-11-15, later):** the logo was rebuilt at 4× (2544×1854) with Real-ESRGAN x4plus super-resolution,
 re-cut at full resolution and color-corrected to `#047DF6`. The website’s logo, favicon, Apple touch icon, schema
 logo and Open Graph image are generated from it, and a full sharing kit is in `brand-kit/` (see `brand-kit/README.md`).
+
+## Photo upscale audit (2026-11-15)
+
+Every image on all 132 pages was measured at desktop retina (1440px wide, 2×) and phone (390px wide, 3×),
+comparing the pixels each placement needs with the real detail in its source.
+
+| Images | Real detail | Worst placement | Stretch before | Action |
+|---|---|---|---|---|
+| Hero photos on Cleaning & Sealing and Pole Barn Floors & Slabs (service + 26 local pages) | ~300px (Facebook grid) | full-height hero, ~1,800px needed | **4.3–6.0×** | Re-upscaled with Real-ESRGAN x4plus to 1600px |
+| All other Facebook photos (gallery) | ~300px | full-width gallery on phones, ~1,070px | 3.5× | Re-upscaled with Real-ESRGAN x4plus to 1600px |
+| `concrete-pool-deck.jpg` | 900px (largest on the old site) | Pool Decks hero, ~1,210px | 1.34× | Upscaled 2× with Real-ESRGAN x4plus to 1800×3198 |
+| Other 7 original website photos | 1500–2000px | heroes | ≤0.96× | No change needed |
+
+The earlier Facebook enlargements used FSRCNN, a fast but weaker model. Real-ESRGAN x4plus restores much
+sharper edges, joints and texture. AI upscaling reconstructs plausible detail rather than recovering the
+original, so **full-resolution originals from the phone or Facebook download remain the best upgrade**:
+replace the files in `src/assets/projects/fb/` using the same filenames.
