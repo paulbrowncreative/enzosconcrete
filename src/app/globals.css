@@ -2684,8 +2684,9 @@ main:focus {
 }
 
 /* ---------- Blog ---------- */
+/* Follows a .section--tight block (e.g. blog topic chips) with a clear but smaller gap than a full section. */
 .section--flush-top {
-  padding-top: var(--space-6);
+  padding-top: clamp(2.5rem, 1.75rem + 2.5vw, 4rem);
 }
 
 .planning__guide {
