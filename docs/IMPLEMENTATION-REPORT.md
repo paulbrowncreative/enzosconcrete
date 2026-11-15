@@ -212,7 +212,7 @@ production build passes, and all 132 pages pass the axe/overflow/console checks.
 
 ### Must do before the site goes live
 1. **Domain:** add the client's domain in Netlify (HTTPS is automatic), set `NEXT_PUBLIC_SITE_URL=https://www.theirdomain.com`, and redeploy. This turns indexing on and makes the canonicals, sitemap and structured data use the real domain.
-2. **Estimate form email:** create a Resend account **with Enzosconcretellc@gmail.com**, create an API key, set `RESEND_API_KEY` in Netlify and redeploy. `/api/estimate` should then report `"configured":true`. Then **send one real test request**. Domain verification and `LEAD_FROM_EMAIL` are optional and recommended after launch (see README). Until the key is set, the form shows "please call" instead of delivering.
+2. **Estimate form email:** ✅ Done and verified on the Netlify deploy (2026-11-15): a live submission was delivered to Enzosconcretellc@gmail.com through Resend. Recommended after launch: verify the domain in Resend and set `LEAD_FROM_EMAIL` (see README).
 3. **Point the old address at the new site,** so the B12 redirects reach visitors and Google, and retire the B12 site.
 4. **Google Search Console:** verify the domain (or set `NEXT_PUBLIC_GSC_VERIFICATION`) and submit `/sitemap.xml`.
 
