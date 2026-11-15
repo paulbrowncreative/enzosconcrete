@@ -1026,6 +1026,10 @@ main:focus {
 }
 
 .gallery__tag {
+  /* Taller hit area for touch without changing the visual layout. */
+  display: inline-block;
+  padding-block: 0.35rem;
+  margin-block: -0.35rem;
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2681,7 +2685,7 @@ main:focus {
 
 /* ---------- Blog ---------- */
 .section--flush-top {
-  padding-top: 0;
+  padding-top: var(--space-6);
 }
 
 .planning__guide {
@@ -2887,6 +2891,9 @@ main:focus {
   display: block;
   width: 100%;
   height: auto;
+  /* Keep tall portrait photos from filling more than a screen. */
+  max-height: min(75vh, 40rem);
+  object-fit: cover;
 }
 
 .post-figure figcaption {

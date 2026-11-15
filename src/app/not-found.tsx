@@ -3,7 +3,8 @@ import { Icon } from "@/components/Icon";
 import { business } from "@/content/business";
 import { services, servicePath } from "@/content/services";
 
-export const metadata = { title: "Page not found", robots: { index: false } };
+// Next.js adds a noindex robots tag to 404 responses automatically.
+export const metadata = { title: "Page not found" };
 
 export default function NotFound() {
   return (
