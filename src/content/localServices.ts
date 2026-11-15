@@ -115,7 +115,7 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     lede: (c, area) =>
       `Protect your concrete in ${c.name} from salt and weather. ${area}. We pressure wash and seal driveways, stamped patios and exposed aggregate to help guard the surface and bring back its color.`,
     meta: (c) =>
-      `Concrete power washing and sealing in ${c.name}, MI for driveways, stamped patios and exposed aggregate. Family-owned, BBB A+ contractor in New Haven.`,
+      `Concrete power washing and sealing in ${c.name}, MI for driveways, stamped patios and exposed aggregate. Family-owned, BBB A+ contractor.`,
   },
   "concrete-slabs": {
     keyword: "Pole Barn Floors & Concrete Slabs",

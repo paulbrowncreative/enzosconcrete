@@ -18,11 +18,11 @@ const sans = Archivo({
 
 const serif = Source_Serif_4({
   subsets: ["latin"],
-  style: ["italic"],
+  style: ["normal", "italic"],
   weight: ["400", "600"],
   variable: "--font-serif",
   display: "swap",
-  // Only used for small accents (logo lockup), so it shouldn't compete with the main font.
+  // Used for small accents and blog article text. Not preloaded: files download only on pages that use them.
   preload: false,
 });
 

@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { ServiceCard } from "@/components/ServiceCard";
 import { business } from "@/content/business";
 import { cities } from "@/content/cities";
+import { postForService, postPath } from "@/content/blog";
 import { cityServicePath } from "@/content/localServices";
 import { projectById, projects, projectsFor } from "@/content/projects";
 import { serviceBySlug, services } from "@/content/services";
@@ -43,6 +44,7 @@ export default async function ServicePage({ params }: Props) {
   const gallery = [...own, ...projects.filter((p) => p.service !== service.slug)].slice(0, Math.max(3, Math.min(own.length, 9)));
   const related = service.related.map((slug) => serviceBySlug(slug)!);
   const estimateHref = `/contact?service=${service.slug}`;
+  const guide = postForService(service.slug);
 
   return (
     <>
@@ -105,6 +107,13 @@ export default async function ServicePage({ params }: Props) {
             {service.planning.paragraphs.map((p) => (
               <p key={p.slice(0, 24)}>{p}</p>
             ))}
+            {guide && (
+              <p className="planning__guide">
+                <Link className="text-link" href={postPath(guide.slug)}>
+                  Read the full guide: {guide.title} <Icon name="arrow" size={16} />
+                </Link>
+              </p>
+            )}
             {service.slug === "concrete-driveways" && (
               <p>
                 <Link className="text-link" href="/services/driveway-expansions">

@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Our Work: Concrete Project Gallery",
   description:
-    "Photos of real concrete projects by Enzo’s Concrete LLC: driveways, stamped and exposed-aggregate patios, walkways, steps, pool decks, sealing and pole barn floors.",
+    "Real project photos from Enzo’s Concrete LLC: driveways, stamped and exposed-aggregate patios, walkways, steps, pool decks, sealing and pole barn floors.",
   path: "/our-work",
 });
 

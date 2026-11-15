@@ -27,6 +27,7 @@ Requires Node 20.9+.
 | `src/content/services.ts` | All service-page copy, meta titles and descriptions, FAQs and related services |
 | `src/content/projects.ts` | Project photos, titles, alt text and service mapping |
 | `src/content/cities.ts` | Local service-area pages (`/service-areas/[slug]`): local context, permit pointers, FAQs, nearby links, sources |
+| `src/content/blog/` | Blog posts (`posts/*.ts`, one file per post), the post list and helpers (`index.ts`) |
 | `src/content/localServices.ts` | City × service landing pages (`/service-areas/[city]/[service]`): local keywords, ledes, trait-based notes, permit filtering |
 | `src/app/` | Routes (one folder per page), `sitemap.ts`, `robots.ts`, favicons |
 | `src/app/api/estimate/route.ts` | Estimate-form endpoint (validation, spam checks, email delivery) |
@@ -45,6 +46,7 @@ Requires Node 20.9+.
 - **Add a project photo:** drop a JPEG (≤2000px long edge) in `src/assets/projects/`, import it in `src/content/projects.ts` and add an entry. It appears in the gallery, and on its service page when it's mapped to that service.
 - **Add verified reviews:** add them to `business.reviews`. The homepage reviews section renders automatically. Only add real reviews, and link each one to its source.
 - **Add or improve a city page:** add an entry to `src/content/cities.ts`. The page, sitemap entry, hub card, footer link, service-page links and schema are generated automatically. Only use facts you can cite, and never copy another city's paragraphs. Adding real local projects, photos or reviews is the best upgrade a city page can get.
+- **Add a blog post:** copy a file in `src/content/blog/posts/`, change the slug, service, title, meta and content, then add it to the `posts` list in `src/content/blog/index.ts`. The post page, blog index, sitemap, RSS feed (`/blog/rss.xml`), structured data and the "Read the full guide" links on its service pages are generated automatically. Inline text supports `[link text](/path)` and `**bold**`. Use project ids from `projects.ts` for images. Keep `metaTitle` under about 50 characters (the site name is appended) and `metaDescription` between 140 and 158 characters. Only publish facts you can stand behind: no invented prices, statistics or project stories.
 - **Publish business hours:** set `business.hours` (for example `[{ days: "Monday-Friday", opens: "08:00", closes: "17:00" }]`). They appear in the footer and in the structured data.
 
 ## Deploying to Netlify (client review)

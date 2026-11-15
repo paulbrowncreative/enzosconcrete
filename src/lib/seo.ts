@@ -19,9 +19,18 @@ type PageMeta = {
   /** Absolute title (skips the site-name template). */
   absoluteTitle?: boolean;
   noindex?: boolean;
+  /** Marks the page as an article (blog post) and uses its own share image. */
+  article?: {
+    publishedTime: string;
+    modifiedTime?: string;
+    section?: string;
+    tags?: string[];
+    image: { url: string; width: number; height: number; alt: string };
+  };
 };
 
-export function pageMetadata({ title, description, path, absoluteTitle, noindex }: PageMeta): Metadata {
+export function pageMetadata({ title, description, path, absoluteTitle, noindex, article }: PageMeta): Metadata {
+  const image = article?.image ?? ogImage;
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
@@ -32,10 +41,19 @@ export function pageMetadata({ title, description, path, absoluteTitle, noindex 
       url: path,
       siteName: business.name,
       locale: "en_US",
-      type: "website",
-      images: [ogImage],
+      images: [image],
+      ...(article
+        ? {
+            type: "article" as const,
+            publishedTime: article.publishedTime,
+            modifiedTime: article.modifiedTime ?? article.publishedTime,
+            section: article.section,
+            tags: article.tags,
+            authors: [business.name],
+          }
+        : { type: "website" as const }),
     },
-    twitter: { card: "summary_large_image", title, description, images: [ogImage.url] },
+    twitter: { card: "summary_large_image", title, description, images: [image.url] },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }
@@ -159,5 +177,60 @@ export function localServiceSchema(city: City, service: Service, name: string, d
       name: `${city.name}, Michigan`,
       containedInPlace: { "@type": "AdministrativeArea", name: `${city.county} County, Michigan` },
     },
+  };
+}
+
+type PostForSchema = {
+  title: string;
+  description: string;
+  path: string;
+  published: string;
+  updated?: string;
+  image: { url: string; width: number; height: number };
+  keywords: string[];
+  wordCount: number;
+  section: string;
+  servicePath: string;
+};
+
+export function blogPostingSchema(post: PostForSchema) {
+  const url = absoluteUrl(post.path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: post.title,
+    description: post.description,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    image: { "@type": "ImageObject", url: absoluteUrl(post.image.url), width: post.image.width, height: post.image.height },
+    datePublished: post.published,
+    dateModified: post.updated ?? post.published,
+    author: { "@id": orgId },
+    publisher: { "@id": orgId },
+    isPartOf: { "@id": absoluteUrl("/blog#blog") },
+    articleSection: post.section,
+    keywords: post.keywords.join(", "),
+    wordCount: post.wordCount,
+    inLanguage: "en-US",
+    about: { "@type": "Service", name: post.section, url: absoluteUrl(post.servicePath), provider: { "@id": orgId } },
+  };
+}
+
+export function blogSchema(items: { title: string; path: string; published: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": absoluteUrl("/blog#blog"),
+    name: `${business.shortName} Blog`,
+    url: absoluteUrl("/blog"),
+    publisher: { "@id": orgId },
+    inLanguage: "en-US",
+    blogPost: items.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      url: absoluteUrl(p.path),
+      datePublished: p.published,
+    })),
   };
 }

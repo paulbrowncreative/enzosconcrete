@@ -7,6 +7,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { Gallery } from "@/components/Gallery";
 import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
+import { postForService, postPath } from "@/content/blog";
 import { business } from "@/content/business";
 import { cities, cityBySlug, cityPath, type City } from "@/content/cities";
 import {
@@ -88,6 +89,7 @@ export default async function CityServicePage({ params }: Props) {
         ? city.permits.paragraphs
         : city.permits.paragraphs.slice(0, 1);
   const serviceFaq = service.faqs[cityIndex % service.faqs.length];
+  const guide = postForService(service.slug);
   const nearby = city.nearby.map((s) => cityBySlug(s)!).filter(Boolean);
   const others = services.filter((s) => s.slug !== service.slug);
   const estimateHref = `/contact?service=${service.slug}&city=${encodeURIComponent(city.name)}`;
@@ -230,6 +232,13 @@ export default async function CityServicePage({ params }: Props) {
                   </p>
                 )}
               </>
+            )}
+            {guide && (
+              <p className="planning__guide">
+                <Link className="text-link" href={postPath(guide.slug)}>
+                  Planning guide: {guide.title} <Icon name="arrow" size={16} />
+                </Link>
+              </p>
             )}
           </div>
         </div>
