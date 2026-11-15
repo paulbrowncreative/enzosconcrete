@@ -74,7 +74,7 @@ export default async function CityPage({ params }: Props) {
                 <Icon name="shield" size={18} /> BBB Accredited · {business.bbb.rating}
               </li>
               <li>
-                <Icon name="home" size={18} /> Family Owned
+                <Icon name="check" size={18} /> Licensed &amp; Insured
               </li>
             </ul>
           </div>

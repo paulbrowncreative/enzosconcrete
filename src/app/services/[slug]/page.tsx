@@ -122,7 +122,10 @@ export default async function ServicePage({ params }: Props) {
             <a className="quote-card__phone" href={business.phone.href}>
               <Icon name="phone" size={18} /> Or call {business.phone.display}
             </a>
-            <a className="quote-card__bbb" href={business.bbb.profileUrl} target="_blank" rel="noopener">
+            <p className="quote-card__bbb">
+              <Icon name="check" size={18} /> Licensed &amp; Insured
+            </p>
+            <a className="quote-card__bbb quote-card__bbb--tight" href={business.bbb.profileUrl} target="_blank" rel="noopener">
               <Icon name="shield" size={18} /> BBB Accredited · {business.bbb.rating} rating
               <span className="visually-hidden"> (opens in a new tab)</span>
             </a>

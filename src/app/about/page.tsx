@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About Us | Family-Owned Concrete Contractor",
   description:
-    "Enzo’s Concrete LLC is a family-owned residential concrete contractor in New Haven, MI with 15+ years of experience and a BBB A+ accreditation.",
+    "Enzo’s Concrete LLC is a family-owned residential concrete contractor in New Haven, MI with 15+ years of experience. Licensed, insured and BBB A+ accredited.",
   path: "/about",
 });
 
@@ -63,7 +63,7 @@ export default function AboutPage() {
               broom-finished <Link href={servicePath("concrete-driveways")}>driveways</Link>.
             </p>
             <p>
-              We’re accredited by the Better Business Bureau and hold an {business.bbb.rating} rating from BBB of
+              We’re licensed and insured, accredited by the Better Business Bureau, and hold an {business.bbb.rating} rating from BBB of
               Michigan. If you’d like to check us out before you call, start with our{" "}
               <a href={business.bbb.profileUrl} target="_blank" rel="noopener">
                 BBB profile<span className="visually-hidden"> (opens in a new tab)</span>
@@ -123,6 +123,10 @@ export default function AboutPage() {
             <div>
               <dt>Ownership</dt>
               <dd>Family owned and operated</dd>
+            </div>
+            <div>
+              <dt>Licensing</dt>
+              <dd>Licensed and insured</dd>
             </div>
             <div>
               <dt>BBB</dt>

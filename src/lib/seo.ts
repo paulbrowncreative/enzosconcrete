@@ -54,7 +54,7 @@ export function businessSchema() {
     logo: absoluteUrl("/logo.png"),
     image: absoluteUrl("/og-image.jpg"),
     description:
-      "Family-owned residential concrete contractor in New Haven, Michigan: driveways, patios, walkways and steps, retaining walls, driveway expansions, pool decks, concrete sealing and pole barn floors.",
+      "Licensed, insured and family-owned residential concrete contractor in New Haven, Michigan: driveways, patios, walkways and steps, retaining walls, driveway expansions, pool decks, concrete sealing and pole barn floors.",
     address: {
       "@type": "PostalAddress",
       addressLocality: business.address.locality,

@@ -95,7 +95,7 @@ export default async function CityServicePage({ params }: Props) {
   const faqs = [
     {
       q: `Do you ${copy.verb} ${copy.noun} in ${city.name}?`,
-      a: `Yes. Enzo’s Concrete LLC is a family-owned contractor serving homeowners throughout ${city.name} and the rest of ${city.county} County. Send your project details or call ${business.phone.display} to set up an estimate.`,
+      a: `Yes. Enzo’s Concrete LLC is a licensed, insured and family-owned contractor serving homeowners throughout ${city.name} and the rest of ${city.county} County. Send your project details or call ${business.phone.display} to set up an estimate.`,
     },
     service.slug === "concrete-sealing"
       ? {
@@ -144,7 +144,7 @@ export default async function CityServicePage({ params }: Props) {
                 <Icon name="shield" size={18} /> BBB Accredited · {business.bbb.rating}
               </li>
               <li>
-                <Icon name="home" size={18} /> Family Owned
+                <Icon name="check" size={18} /> Licensed &amp; Insured
               </li>
             </ul>
           </div>

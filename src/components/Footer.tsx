@@ -15,7 +15,7 @@ export function Footer() {
         <div className="site-footer__brand">
           <Image src={logo} alt="Enzo’s Concrete LLC" sizes="200px" />
           <p>
-            Family-owned residential concrete contractor based in New Haven, Michigan, with {business.yearsExperience} years
+            Licensed, insured and family-owned residential concrete contractor based in New Haven, Michigan, with {business.yearsExperience} years
             of experience.
           </p>
           <a className="bbb-link" href={business.bbb.profileUrl} rel="noopener" target="_blank">

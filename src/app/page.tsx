@@ -14,7 +14,7 @@ export const metadata = pageMetadata({
   title: `New Haven & Macomb County Concrete Contractor | ${business.shortName}`,
   absoluteTitle: true,
   description:
-    "Family-owned concrete contractor in New Haven, MI: driveways, patios, walkways, sealing and more across Macomb County. BBB A+ accredited. Call (586) 231-4217.",
+    "Family-owned concrete contractor in New Haven, MI: driveways, patios, walkways and sealing in Macomb County. Licensed, insured, BBB A+. Call (586) 231-4217.",
   path: "/",
 });
 
@@ -33,8 +33,8 @@ const reasons = [
     body: "More than fifteen years of residential concrete work. We know how good concrete gets prepared, poured and finished to last through Michigan winters.",
   },
   {
-    title: `BBB Accredited, ${business.bbb.rating} Rated`,
-    body: "Enzo’s Concrete LLC is a BBB Accredited Business with an A+ rating from BBB of Michigan. You can check our profile before you call.",
+    title: `Licensed, Insured and BBB Accredited`,
+    body: `Enzo’s Concrete LLC is licensed and insured, and is a BBB Accredited Business with an ${business.bbb.rating} rating from BBB of Michigan. You can check our profile before you call.`,
     link: { href: business.bbb.profileUrl, label: "View our BBB profile", external: true },
   },
   {
@@ -94,6 +94,9 @@ export default function HomePage() {
                 <Icon name="shield" size={18} /> BBB Accredited · {business.bbb.rating}
               </li>
               <li>
+                <Icon name="check" size={18} /> Licensed &amp; Insured
+              </li>
+              <li>
                 <Icon name="home" size={18} /> Family Owned
               </li>
               <li>
@@ -140,8 +143,8 @@ export default function HomePage() {
             <span>Residential concrete specialists</span>
           </li>
           <li>
-            <strong>Real Project Photos</strong>
-            <span>Every photo shown is our own work</span>
+            <strong>Licensed &amp; Insured</strong>
+            <span>Protection for you and your property</span>
           </li>
         </ul>
       </section>

@@ -44,6 +44,8 @@ export const business = {
   },
   yearsExperience: "15+",
   familyOwned: true,
+  /** Owner-confirmed. Add the license number/type here if the client wants it displayed. */
+  licensedAndInsured: true,
   bbb: {
     accredited: true,
     accreditedSince: "2026-02-12",

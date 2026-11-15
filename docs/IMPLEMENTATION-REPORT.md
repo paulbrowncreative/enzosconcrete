@@ -220,7 +220,7 @@ production build passes, and all 132 pages pass the axe/overflow/console checks.
 5. **Every community × service page should be advertised** (13 towns × 8 services). Remove any you don't want.
 6. **Facts:** years in business (15+ vs. BBB's 1974 start date), business hours (not published until confirmed), whether estimates are free, whether customers can text the number (the form offers "Text message"), and "New Haven" vs. "Lenox" as the listed locality (BBB says Lenox).
 7. **Copy commitments written in their voice:** looking at the existing driveway with the customer before work, scheduling pours around the forecast, every photo being their own work, and sealing/slab descriptions. Edit any that don't match how they work.
-8. **License and insurance:** if they hold a Michigan residential builder or M&A license and liability insurance, add them; they're strong trust signals.
+8. **License and insurance:** confirmed by the owner (licensed and insured) and now shown site-wide. Optional: send the license number/type to display it (set it in `src/content/business.ts`).
 
 ### Recommended soon after launch
 9. **Google Analytics 4:** set `NEXT_PUBLIC_GA_ID`, then mark `generate_lead` and `phone_click` as key events. Events are already wired.
