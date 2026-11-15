@@ -1,8 +1,8 @@
 /* =========================================================================
    Enzo’s Concrete — design system
-   Palette: charcoal + warm concrete neutrals + safety-orange accent (the cones
-   in the job photos). Type: Archivo (variable width) + Source Serif 4 italic,
-   echoing the logo’s wide sans "ENZO’S" and serif "CONCRETE LLC".
+   Palette: charcoal + warm concrete neutrals + the logo's blue. #047DF6 is sampled from
+   the logo's ring and swoosh; shades of it are used wherever text must meet WCAG AA.
+   Type: Archivo (variable width) + Source Serif 4 italic.
    ========================================================================= */
 
 :root {
@@ -20,10 +20,12 @@
   --text-muted: #555049;
   --text-on-dark: #f4f1ec;
   --text-on-dark-muted: #bdb7ad;
-  --accent: #e8590c;
-  --accent-hover: #ff6d1f;
-  --accent-text: #a63a0b; /* orange text on light backgrounds (AA) */
-  --focus: #ff7a29;
+  --brand: #047df6; /* exact logo blue: borders, rules, icons, focus rings */
+  --accent: #0a6fd8; /* button/fill blue: white text 4.9:1 */
+  --accent-hover: #0866c8;
+  --accent-text: #065fbd; /* blue text on light backgrounds (≥4.6:1) */
+  --accent-light: #4aa3ff; /* blue text and icons on dark backgrounds (≥6.4:1) */
+  --focus: var(--brand);
   --danger: #b42318;
   --danger-bg: #fdf0ee;
   --success: #1f6f43;
@@ -60,7 +62,7 @@
   --shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 8px 24px -12px rgb(0 0 0 / 0.25);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --dur: 180ms;
-  --header-h: 4.25rem;
+  --header-h: 4.75rem;
 }
 
 /* ---------- Base ---------- */
@@ -167,7 +169,7 @@ main:focus {
   top: -100px;
   z-index: 100;
   background: var(--accent);
-  color: var(--ink);
+  color: #fff;
   padding: var(--space-3) var(--space-4);
   font-weight: 700;
   border-radius: var(--radius);
@@ -213,7 +215,7 @@ main:focus {
 }
 
 .eyebrow--light {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .section-title {
@@ -257,7 +259,7 @@ main:focus {
 }
 
 .section--dark .text-link {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 /* ---------- Buttons ---------- */
@@ -307,7 +309,7 @@ main:focus {
 
 .btn--primary {
   --btn-bg: var(--accent);
-  --btn-fg: var(--ink);
+  --btn-fg: #fff;
 }
 
 .btn--primary:hover {
@@ -364,38 +366,19 @@ main:focus {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
-  color: #fff;
-  text-decoration: none;
   flex: none;
+  border-radius: var(--radius);
 }
 
-.brand__mark {
-  width: 2.6rem;
-  height: auto;
+.brand__logo {
+  width: auto;
+  height: 3.9rem;
 }
 
-.brand__word {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.brand__name {
-  font-size: 1.15rem;
-  font-weight: 500;
-  font-stretch: 125%;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.brand__sub {
-  margin-top: 0.2rem;
-  font-family: var(--ff-serif);
-  font-style: italic;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  color: var(--text-on-dark-muted);
+@media (max-width: 520px) {
+  .brand__logo {
+    height: 3.4rem;
+  }
 }
 
 .primary-nav {
@@ -422,7 +405,7 @@ main:focus {
 
 .primary-nav__link:hover,
 .primary-nav__link[aria-current="page"] {
-  border-bottom-color: var(--accent);
+  border-bottom-color: var(--accent-light);
 }
 
 .primary-nav__services,
@@ -448,7 +431,7 @@ main:focus {
 }
 
 .header-phone svg {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .header-phone__sr {
@@ -523,7 +506,7 @@ main:focus {
   }
 
   .primary-nav__link[aria-current="page"] {
-    color: var(--accent);
+    color: var(--accent-light);
     border-bottom-color: var(--line-dark);
   }
 
@@ -589,7 +572,7 @@ main:focus {
 }
 
 .mobile-bar__btn--quote {
-  color: var(--ink);
+  color: #fff;
   background: var(--accent);
 }
 
@@ -684,7 +667,7 @@ main:focus {
 }
 
 .hero__proof svg {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .hero__media {
@@ -707,7 +690,7 @@ main:focus {
   font-weight: 600;
   color: #fff;
   background: rgb(21 21 21 / 0.82);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--brand);
 }
 
 .photo-tag span {
@@ -715,7 +698,7 @@ main:focus {
   font-stretch: 120%;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 @media (min-width: 1024px) {
@@ -1052,7 +1035,7 @@ main:focus {
 }
 
 .section--dark .gallery__tag {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .gallery__tag:hover {
@@ -1122,7 +1105,7 @@ main:focus {
 }
 
 .lightbox__caption a {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .lightbox__count {
@@ -1254,7 +1237,7 @@ main:focus {
   height: 2.5rem;
   margin-bottom: var(--space-4);
   font-weight: 800;
-  color: var(--ink);
+  color: #fff;
   background: var(--accent);
   border-radius: 50%;
 }
@@ -1283,7 +1266,7 @@ main:focus {
 .reviews li {
   padding: var(--space-6);
   background: #fff;
-  border-top: 3px solid var(--accent);
+  border-top: 3px solid var(--brand);
 }
 
 .reviews blockquote {
@@ -1374,7 +1357,7 @@ main:focus {
   padding-block: clamp(3.5rem, 2.5rem + 4vw, 6rem);
   color: var(--text-on-dark);
   background: var(--ink-2);
-  border-top: 6px solid var(--accent);
+  border-top: 6px solid var(--brand);
 }
 
 .cta-band__inner {
@@ -1436,7 +1419,7 @@ main:focus {
 }
 
 .site-footer__brand img {
-  width: 8.75rem;
+  width: 12.5rem;
   height: auto;
   margin-bottom: var(--space-5);
 }
@@ -1472,7 +1455,7 @@ main:focus {
 .site-footer__contact svg {
   flex: none;
   margin-top: 0.2rem;
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .site-footer__contact a {
@@ -1534,7 +1517,7 @@ main:focus {
 
 .bbb-link svg {
   flex: none;
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .bbb-link > span {
@@ -1840,7 +1823,7 @@ main:focus {
   padding: var(--space-6);
   color: var(--text-on-dark);
   background: var(--ink);
-  border-top: 4px solid var(--accent);
+  border-top: 4px solid var(--brand);
 }
 
 .quote-card h2 {
@@ -1874,7 +1857,7 @@ main:focus {
 
 .quote-card__phone svg,
 .quote-card__bbb svg {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .quote-card a:hover {
@@ -1961,7 +1944,7 @@ main:focus {
 }
 
 .filter-links button[aria-pressed="true"] span {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .filter-links button:hover,
@@ -2064,7 +2047,7 @@ main:focus {
 }
 
 .county:first-child {
-  border-top-color: var(--accent);
+  border-top-color: var(--accent-light);
 }
 
 .county h3 {
@@ -2130,7 +2113,7 @@ main:focus {
   padding: var(--space-6);
   background: #fff;
   border: 1px solid var(--stone-200);
-  border-top: 4px solid var(--accent);
+  border-top: 4px solid var(--brand);
 }
 
 .snapshot__title {
@@ -2234,7 +2217,7 @@ main:focus {
 }
 
 .city-card:hover {
-  border-top-color: var(--accent);
+  border-top-color: var(--accent-light);
 }
 
 .city-card h3 {
@@ -2292,7 +2275,7 @@ main:focus {
   padding: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
   background: #fff;
   border: 1px solid var(--stone-200);
-  border-top: 4px solid var(--accent);
+  border-top: 4px solid var(--brand);
   box-shadow: var(--shadow);
 }
 
@@ -2655,7 +2638,7 @@ main:focus {
 }
 
 .not-found__links a:hover {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 /* ---------- Motion preferences ---------- */

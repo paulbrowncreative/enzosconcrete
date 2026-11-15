@@ -94,10 +94,18 @@ Sources: Houzz, Yext, BuildZoom, HomeGuide and HomeAdvisor listings found via se
 
 ## 4. Design system
 
-- **Palette:** charcoal `#151515`, warm concrete neutrals (`#f7f5f1`→`#cfc8bc`) and a safety-orange accent `#e8590c`, taken from the cones in the company’s own job photos. Orange text on light backgrounds uses `#a63a0b` (≥4.85:1).
+- **Palette (updated 2026-11-15 to match the new logo):** charcoal `#151515` and warm concrete neutrals (`#f7f5f1`→`#cfc8bc`), with the logo's blue as the accent. **`#047DF6`** was sampled from the logo's ring and swoosh (median of about 20,500 flat-fill pixels, rgb 4/125/246). White text on that exact blue only reaches 3.99:1, below WCAG AA, so text-bearing elements use shades of the same hue:
+
+  | Token | Hex | Used for | Contrast |
+  |---|---|---|---|
+  | `--brand` | `#047DF6` | Exact logo blue: borders, rules, icons, focus rings | 4.58:1 on charcoal |
+  | `--accent` | `#0A6FD8` | Buttons and fills with white text | 4.91:1 (white) |
+  | `--accent-hover` | `#0866C8` | Button hover | 5.61:1 (white) |
+  | `--accent-text` | `#065FBD` | Blue text on light backgrounds | ≥4.64:1 |
+  | `--accent-light` | `#4AA3FF` | Blue text and icons on dark backgrounds | ≥6.40:1 |
 - **Type:** Archivo (variable width; expanded headlines echo the logo’s wide "ENZO’S") plus Source Serif 4 italic for the "Concrete LLC" lockup, echoing the logo’s serif.
 - **Motifs:** a faint scored-slab grid in dark headers, numbered spec-sheet sections, heavy rule lines and "OUR WORK" photo tags.
-- **Logo:** the existing mark, converted to transparent light and dark versions plus a horizontal header lockup. The brand identity is preserved.
+- **Logo (updated 2026-11-15):** the new badge logo supplied by the owner ("Enzo’s Concrete LLC" over a concrete-texture circle with a blue ring and trowel). It was cut from its white background with an edge-aware transparency pass, so it sits cleanly on the dark header and footer. It is also used for the favicon, Apple touch icon, schema logo (`public/logo.png`) and Open Graph image. The previous trowel-and-diamond logo assets were removed.
 
 ## 5. Build summary
 
@@ -137,6 +145,13 @@ Not measured yet: real-user Core Web Vitals (they need production traffic in CrU
 | City prefill: city page CTA → `/contact?city=New Baltimore` fills the city field | ✅ |
 | City `Service` schema parses, `areaServed` correct | ✅ |
 | Lighthouse (mobile, simulated): Macomb Township page / hub | 84 / 96 performance; **100 accessibility, best practices and SEO** on both |
+
+### Security patch (2026-11-15)
+Next.js was upgraded **16.4.0 → 16.4.6** (patch release, same minor). 16.0.0–16.4.0 are affected by
+critical advisories, including unauthenticated remote code execution (GHSA-2464-fhr4-w9xw,
+GHSA-673q-mjm6-r5xr) and a denial of service (GHSA-p3m5-59mp-jv5r). Next.js 16.4.0 now refuses to
+build because of them. After the patch, `npm audit --omit=dev` reports 0 vulnerabilities, the
+production build passes, and all 132 pages pass the axe/overflow/console checks.
 
 ### Expansion pass (2026-10-16): new services, city × service pages, deployment QA
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/brand/logo-light.png";
+import logo from "@/assets/brand/logo.png";
 import { business } from "@/content/business";
 import { cities, cityPath } from "@/content/cities";
 import { services, servicePath } from "@/content/services";
@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container site-footer__grid">
         <div className="site-footer__brand">
-          <Image src={logo} alt="Enzo’s Concrete LLC" width={140} height={138} />
+          <Image src={logo} alt="Enzo’s Concrete LLC" sizes="200px" />
           <p>
             Family-owned residential concrete contractor based in New Haven, Michigan, with {business.yearsExperience} years
             of experience.

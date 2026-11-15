@@ -26,7 +26,7 @@ Alt text for each photo is in `src/content/projects.ts`. It describes only what'
 
 | Original | Disposition |
 |---|---|
-| `16788dd2-…-png-regular_image.png` (logo, white on black, 1024²) | ✅ Migrated. Converted to transparent `src/assets/brand/logo-light.png` / `logo-dark.png`, mark-only `mark-light.png`, `public/logo.png` (schema), `src/app/icon.png` + `apple-icon.png` (favicons), and used in `public/og-image.jpg`. |
+| `16788dd2-…-png-regular_image.png` (logo, white on black, 1024²) | ⤴ **Superseded 2026-11-15** by the owner's new badge logo (see below). The old transparent conversions were removed. |
 | `59a4d443-…-png-regular_image.png` ("Get a Quote from BBB Accredited Business" badge) | ⚠️ Not reused as an image. BBB seals should come from BBB's official dynamic seal code (accredited business portal). Replaced with a text link to the verified BBB profile. |
 | `0b9d0d5e-…-jpg-regular_image.jpeg` ("Top Rated Contractor" trophy graphic) | ❌ Intentionally not migrated. It's a generic stock/AI graphic that implies an award we couldn't verify. |
 | `d62e38eb-…-jpg-hero_image.jpeg` (plain wall texture, privacy page header) | ❌ Not migrated. Decorative stock texture, not a project. |
@@ -143,3 +143,13 @@ your own job, send the original and it can be added.
 
 ### Category: cleaning and sealing
 These photos now belong to the **Concrete Cleaning & Sealing** service page (`/services/concrete-sealing`), added at the owner's request on 2026-10-16.
+
+## Logo (2026-11-15)
+
+Source: screenshot of the new badge logo supplied by the owner (720×1604, logo on a white band). The
+badge was cropped and its white background removed by flood-filling from the image edges (the black
+outline stops the fill, so the white lettering is kept), with edge pixels converted to alpha to avoid a
+white halo. Output: `src/assets/brand/logo.png` (636×463, transparent). Derived files: `src/app/icon.png`
+(512², on charcoal), `src/app/apple-icon.png` (180²), `public/logo.png` (schema, 512 wide) and
+`public/og-image.jpg`. Brand blue `#047DF6` was sampled from the logo (see the implementation report).
+**A vector (SVG) or larger PNG original from the designer would give a sharper logo on high-DPI screens.**
