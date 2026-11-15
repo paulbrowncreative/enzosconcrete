@@ -153,3 +153,7 @@ white halo. Output: `src/assets/brand/logo.png` (636×463, transparent). Derived
 (512², on charcoal), `src/app/apple-icon.png` (180²), `public/logo.png` (schema, 512 wide) and
 `public/og-image.jpg`. Brand blue `#047DF6` was sampled from the logo (see the implementation report).
 **A vector (SVG) or larger PNG original from the designer would give a sharper logo on high-DPI screens.**
+
+**Update (2026-11-15, later):** the logo was rebuilt at 4× (2544×1854) with Real-ESRGAN x4plus super-resolution,
+re-cut at full resolution and color-corrected to `#047DF6`. The website’s logo, favicon, Apple touch icon, schema
+logo and Open Graph image are generated from it, and a full sharing kit is in `brand-kit/` (see `brand-kit/README.md`).
