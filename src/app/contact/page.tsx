@@ -14,7 +14,7 @@ export const metadata = pageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <PageHero crumbs={[{ name: "Contact", path: "/contact" }]} eyebrow="Contact" title="Request a concrete estimate">
+      <PageHero crumbs={[{ name: "Contact", path: "/contact" }]} eyebrow="Contact" title="Request a Concrete Estimate">
         <p>Tell us about your project. It takes about two minutes, and we’ll follow up to talk through the details.</p>
       </PageHero>
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
 
           <div className="contact__aside" role="region" aria-labelledby="contact-direct">
             <h2 id="contact-direct" className="contact__heading">
-              Prefer to talk?
+              Prefer to Talk?
             </h2>
             <a className="contact__big-link" href={business.phone.href} data-track-location="contact_aside">
               <Icon name="phone" size={22} />
@@ -52,7 +52,7 @@ export default function ContactPage() {
             </p>
 
             <div className="contact__next">
-              <h2 className="contact__heading">What happens next</h2>
+              <h2 className="contact__heading">What Happens Next</h2>
               <ol>
                 <li>We review your project details.</li>
                 <li>We contact you the way you prefer to talk it through.</li>

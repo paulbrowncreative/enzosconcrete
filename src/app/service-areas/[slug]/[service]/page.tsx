@@ -12,7 +12,7 @@ import { cities, cityBySlug, cityPath, type City } from "@/content/cities";
 import {
   cityServicePath,
   cityTraits,
-  distancePhrase,
+  distance,
   localCopy,
   macombRulesFor,
   touchesRoad,
@@ -91,7 +91,7 @@ export default async function CityServicePage({ params }: Props) {
   const nearby = city.nearby.map((s) => cityBySlug(s)!).filter(Boolean);
   const others = services.filter((s) => s.slug !== service.slug);
   const estimateHref = `/contact?service=${service.slug}&city=${encodeURIComponent(city.name)}`;
-  const where = city.miles === 0 ? "right here in New Haven" : `about ${city.slug === "richmond" ? 7 : city.miles} miles from ${city.name}`;
+  const where = distance(city).based;
 
   const faqs = [
     {
@@ -128,7 +128,7 @@ export default async function CityServicePage({ params }: Props) {
               {service.name} · {city.name}, MI
             </p>
             <h1 className="service-hero__title">{h1}</h1>
-            <p className="service-hero__lede">{copy.lede(city, distancePhrase(city))}</p>
+            <p className="service-hero__lede">{copy.lede(city, distance(city).sentence)}</p>
             <div className="hero__actions">
               <Link className="btn btn--primary btn--lg" href={estimateHref} data-track="cta_estimate" data-track-location={`local_hero_${city.slug}_${service.slug}`}>
                 Request an Estimate <Icon name="arrow" size={18} />
@@ -139,13 +139,13 @@ export default async function CityServicePage({ params }: Props) {
             </div>
             <ul className="hero__proof" role="list">
               <li>
-                <Icon name="pin" size={18} /> {city.miles === 0 ? "Based in New Haven" : `About ${city.slug === "richmond" ? 7 : city.miles} mi from our base`}
+                <Icon name="pin" size={18} /> {distance(city).badge}
               </li>
               <li>
                 <Icon name="shield" size={18} /> BBB Accredited · {business.bbb.rating}
               </li>
               <li>
-                <Icon name="home" size={18} /> Family owned
+                <Icon name="home" size={18} /> Family Owned
               </li>
             </ul>
           </div>
@@ -163,7 +163,7 @@ export default async function CityServicePage({ params }: Props) {
           <div className="prose">
             <p className="eyebrow">Local know-how</p>
             <h2 id="local-title" className="section-title section-title--sm">
-              {service.name} in {city.name}: what to plan for
+              {service.name} in {city.name}: What to Plan For
             </h2>
             {focus && <p>{focus.body}</p>}
             {notes.map((n) => (
@@ -178,7 +178,7 @@ export default async function CityServicePage({ params }: Props) {
           </div>
           <div className="snapshot" role="region" aria-labelledby="snapshot-title">
             <h2 id="snapshot-title" className="snapshot__title">
-              {city.name} at a glance
+              {city.name} at a Glance
             </h2>
             <dl>
               {city.snapshot.map((s) => (
@@ -189,7 +189,7 @@ export default async function CityServicePage({ params }: Props) {
               ))}
             </dl>
             <Link className="btn btn--primary btn--block" href={estimateHref} data-track="cta_estimate" data-track-location={`local_snapshot_${city.slug}_${service.slug}`}>
-              Get your {city.name} estimate
+              Get Your {city.name} Estimate
             </Link>
           </div>
         </div>
@@ -201,7 +201,7 @@ export default async function CityServicePage({ params }: Props) {
           <div className="prose">
             <p className="eyebrow">Before you start</p>
             <h2 id="permits-title" className="section-title section-title--sm">
-              {service.slug === "concrete-sealing" ? `Timing a sealing project in ${city.name}` : `Permits and planning in ${city.name}`}
+              {service.slug === "concrete-sealing" ? `Timing a Sealing Project in ${city.name}` : `Permits and Planning in ${city.name}`}
             </h2>
             {service.slug === "concrete-sealing" ? (
               <p>{service.planning.paragraphs[1]}</p>
@@ -243,7 +243,7 @@ export default async function CityServicePage({ params }: Props) {
               <div>
                 <p className="eyebrow">Project photos</p>
                 <h2 id="work-title" className="section-title section-title--sm">
-                  {service.name}: recent projects
+                  {service.name}: Recent Projects
                 </h2>
               </div>
               <Link className="text-link" href="/our-work">
@@ -280,7 +280,7 @@ export default async function CityServicePage({ params }: Props) {
       <section className="section" aria-labelledby="links-title">
         <div className="container">
           <h2 id="links-title" className="section-title section-title--sm">
-            {service.name} near {city.name}
+            {service.name} Near {city.name}
           </h2>
           <ul className="link-grid" role="list">
             {nearby.map((c) => (
@@ -289,13 +289,13 @@ export default async function CityServicePage({ params }: Props) {
                   <strong>
                     {service.label} in {c.name}
                   </strong>
-                  <span>{c.miles === 0 ? "Our home base" : `About ${c.slug === "richmond" ? 7 : c.miles} miles from New Haven`}</span>
+                  <span>{distance(c).line}</span>
                   <Icon name="arrow" size={18} />
                 </Link>
               </li>
             ))}
           </ul>
-          <h2 className="area__heading other-services-title">More concrete services in {city.name}</h2>
+          <h2 className="area__heading other-services-title">More Concrete Services in {city.name}</h2>
           <ul className="chips chips--dark" role="list">
             {others.map((s) => (
               <li key={s.slug}>
@@ -312,7 +312,7 @@ export default async function CityServicePage({ params }: Props) {
       </section>
 
       <CtaBand
-        title={`Ready to talk about your ${city.name} project?`}
+        title={`Ready to Talk About Your ${city.name} Project?`}
         body={`Tell us about the ${service.label.toLowerCase()} work you have in mind. We’ll follow up to talk through options, timing and your estimate.`}
         estimateHref={estimateHref}
         location={`local_final_${city.slug}_${service.slug}`}

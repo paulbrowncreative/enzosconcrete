@@ -32,7 +32,7 @@ export type Project = {
 const websiteProjects: Project[] = [
   {
     id: "curved-patio",
-    title: "Curved exposed-aggregate patio",
+    title: "Curved Exposed-Aggregate Patio",
     service: "concrete-patios",
     finish: "Exposed aggregate with dark aggregate border",
     image: patio,
@@ -40,7 +40,7 @@ const websiteProjects: Project[] = [
   },
   {
     id: "driveway-washdown",
-    title: "New concrete driveway",
+    title: "New Concrete Driveway",
     service: "concrete-driveways",
     finish: "Broom finish with control joints",
     image: driveway,
@@ -49,7 +49,7 @@ const websiteProjects: Project[] = [
   },
   {
     id: "curved-walkway",
-    title: "Curved garden walkway",
+    title: "Curved Garden Walkway",
     service: "concrete-walkways",
     finish: "Exposed aggregate",
     image: curvedWalk,
@@ -57,7 +57,7 @@ const websiteProjects: Project[] = [
   },
   {
     id: "garden-wall",
-    title: "Exposed-aggregate garden wall",
+    title: "Exposed-Aggregate Garden Wall",
     service: "retaining-walls",
     finish: "Exposed aggregate",
     image: gardenWall,
@@ -65,7 +65,7 @@ const websiteProjects: Project[] = [
   },
   {
     id: "driveway-expansion",
-    title: "Driveway widening",
+    title: "Driveway Widening",
     service: "driveway-expansions",
     finish: "Broom finish",
     image: expansion,
@@ -73,7 +73,7 @@ const websiteProjects: Project[] = [
   },
   {
     id: "side-walkway",
-    title: "Side-yard walkway with step",
+    title: "Side-Yard Walkway With Step",
     service: "concrete-walkways",
     finish: "Exposed aggregate",
     image: sideWalk,
@@ -81,7 +81,7 @@ const websiteProjects: Project[] = [
   },
   {
     id: "pool-deck",
-    title: "Pool deck surround",
+    title: "Pool Deck Surround",
     service: "pool-decks",
     finish: "Textured light-gray finish",
     image: poolDeck,
@@ -89,7 +89,7 @@ const websiteProjects: Project[] = [
   },
   {
     id: "front-walk",
-    title: "Front walk with contrasting border",
+    title: "Front Walk With Contrasting Border",
     service: "concrete-walkways",
     finish: "Exposed aggregate with dark border",
     image: frontWalk,

@@ -82,7 +82,7 @@ export function EstimateForm() {
         <span className="form-success__icon" aria-hidden="true">
           <Icon name="check" size={28} />
         </span>
-        <h2>Thanks, your request is on its way.</h2>
+        <h2>Thanks! Your Request Is on Its Way</h2>
         <p>
           We’ve received your project details and will be in touch soon. If your project is time-sensitive, call us at{" "}
           <a href={business.phone.href}>{business.phone.display}</a>.
@@ -103,7 +103,7 @@ export function EstimateForm() {
       {status === "error" && (errorList.length > 0 || serverMessage) && (
         <div className="form-alert" ref={summaryRef} tabIndex={-1} role="alert">
           <h2 className="form-alert__title">
-            {errorList.length ? "Please fix the following:" : "Your request wasn’t sent"}
+            {errorList.length ? "Please Fix the Following" : "Your Request Wasn’t Sent"}
           </h2>
           {errorList.length > 0 && (
             <ul>

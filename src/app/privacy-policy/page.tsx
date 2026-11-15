@@ -15,7 +15,7 @@ const analyticsEnabled = Boolean(process.env.NEXT_PUBLIC_GA_ID);
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <PageHero crumbs={[{ name: "Privacy Policy", path: "/privacy-policy" }]} title="Privacy policy">
+      <PageHero crumbs={[{ name: "Privacy Policy", path: "/privacy-policy" }]} title="Privacy Policy">
         <p>Last updated {updated}</p>
       </PageHero>
       <section className="section">
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
             this website, why we collect it and how we handle it.
           </p>
 
-          <h2>Information you give us</h2>
+          <h2>Information You Give Us</h2>
           <p>When you send an estimate request, we collect the details you enter:</p>
           <ul>
             <li>Your name and phone number</li>
@@ -37,21 +37,21 @@ export default function PrivacyPolicyPage() {
             If you call or email us directly, we receive your phone number or email address and whatever you tell us.
           </p>
 
-          <h2>How we use it</h2>
+          <h2>How We Use It</h2>
           <p>
             We use this information only to respond to your inquiry, prepare estimates, schedule and carry out work you
             request, and keep records of our communication with you. We do not sell or rent your personal information,
             and we do not use it for unrelated marketing.
           </p>
 
-          <h2>How it’s handled</h2>
+          <h2>How It’s Handled</h2>
           <p>
             Estimate requests are transmitted securely (HTTPS) and delivered to our business email through an email
             delivery provider that processes the message on our behalf. We keep inquiry records only as long as needed
             to respond, provide our services and meet our business and legal obligations.
           </p>
 
-          <h2>Cookies and analytics</h2>
+          <h2>Cookies and Analytics</h2>
           {analyticsEnabled ? (
             <p>
               We use Google Analytics to understand how visitors use this website, such as which pages are viewed and
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
             request) for security and reliability.
           </p>
 
-          <h2>Your choices</h2>
+          <h2>Your Choices</h2>
           <p>
             You can ask us what information we hold about you, ask us to correct it, or ask us to delete it, unless we
             need to keep it for an active project or a legal reason.
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
           <h2>Children</h2>
           <p>This website is intended for adults and is not directed to children under 13.</p>
 
-          <h2>Contact us</h2>
+          <h2>Contact Us</h2>
           <p>
             Questions about this policy or your information? Call <a href={business.phone.href}>{business.phone.display}</a>,
             email <a href={`mailto:${business.email}`}>{business.email}</a>, or use our{" "}

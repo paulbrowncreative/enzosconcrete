@@ -9,7 +9,7 @@ import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
 import { business } from "@/content/business";
 import { cities, cityBySlug, cityPath } from "@/content/cities";
-import { cityServicePath } from "@/content/localServices";
+import { cityServicePath, distance } from "@/content/localServices";
 import { projectById, projects } from "@/content/projects";
 import { serviceBySlug, services } from "@/content/services";
 import { cityServiceSchema, pageMetadata } from "@/lib/seo";
@@ -68,13 +68,13 @@ export default async function CityPage({ params }: Props) {
             </div>
             <ul className="hero__proof" role="list">
               <li>
-                <Icon name="pin" size={18} /> {city.miles === 0 ? "Based in New Haven" : `About ${city.miles} mi from our base`}
+                <Icon name="pin" size={18} /> {distance(city).badge}
               </li>
               <li>
                 <Icon name="shield" size={18} /> BBB Accredited · {business.bbb.rating}
               </li>
               <li>
-                <Icon name="home" size={18} /> Family owned
+                <Icon name="home" size={18} /> Family Owned
               </li>
             </ul>
           </div>
@@ -100,7 +100,7 @@ export default async function CityPage({ params }: Props) {
           </div>
           <div className="snapshot" role="region" aria-labelledby="snapshot-title">
             <h2 id="snapshot-title" className="snapshot__title">
-              {city.name} at a glance
+              {city.name} at a Glance
             </h2>
             <dl>
               {city.snapshot.map((s) => (
@@ -111,7 +111,7 @@ export default async function CityPage({ params }: Props) {
               ))}
             </dl>
             <Link className="btn btn--primary btn--block" href={estimateHref} data-track="cta_estimate" data-track-location={`city_snapshot_${city.slug}`}>
-              Get a {city.name} estimate
+              Get a {city.name} Estimate
             </Link>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default async function CityPage({ params }: Props) {
           <div className="section-head">
             <p className="eyebrow">Popular in {city.name}</p>
             <h2 id="focus-title" className="section-title section-title--sm">
-              Concrete services for {city.name} homes
+              Concrete Services for {city.name} Homes
             </h2>
           </div>
           <ul className="benefits" role="list">
@@ -147,7 +147,7 @@ export default async function CityPage({ params }: Props) {
             })}
           </ul>
           <div className="also-available">
-            <h3 className="area__heading">All concrete services in {city.name}</h3>
+            <h3 className="area__heading">All Concrete Services in {city.name}</h3>
             <ul className="chips chips--dark" role="list">
               {services.map((s) => (
                 <li key={s.slug}>
@@ -201,7 +201,7 @@ export default async function CityPage({ params }: Props) {
             <div>
               <p className="eyebrow">Project photos</p>
               <h2 id="work-title" className="section-title section-title--sm">
-                The kind of work we bring to {city.name}
+                The Kind of Work We Bring to {city.name}
               </h2>
             </div>
             <Link className="text-link" href="/our-work">
@@ -217,7 +217,7 @@ export default async function CityPage({ params }: Props) {
           <div>
             <p className="eyebrow">FAQ</p>
             <h2 id="faq-title" className="section-title section-title--sm">
-              {city.name} concrete questions
+              {city.name} Concrete Questions
             </h2>
             <p>
               Something else on your mind? Call <a href={business.phone.href}>{business.phone.display}</a>.
@@ -237,14 +237,14 @@ export default async function CityPage({ params }: Props) {
       <section className="section section--stone" aria-labelledby="nearby-title">
         <div className="container">
           <h2 id="nearby-title" className="section-title section-title--sm">
-            Nearby communities we serve
+            Nearby Communities We Serve
           </h2>
           <ul className="link-grid" role="list">
             {nearby.map((c) => (
               <li key={c.slug}>
                 <Link href={cityPath(c.slug)}>
                   <strong>Concrete contractor in {c.name}</strong>
-                  <span>{c.miles === 0 ? "Our home base" : `About ${c.miles} miles from New Haven`}</span>
+                  <span>{distance(c).line}</span>
                   <Icon name="arrow" size={18} />
                 </Link>
               </li>
@@ -259,7 +259,7 @@ export default async function CityPage({ params }: Props) {
       </section>
 
       <CtaBand
-        title={`Planning a concrete project in ${city.name}?`}
+        title={`Planning a Concrete Project in ${city.name}?`}
         body={`Tell us what you have in mind and where in ${city.name} the project is. We’ll follow up to talk through options, timing and your estimate.`}
         estimateHref={estimateHref}
         location={`city_final_${city.slug}`}

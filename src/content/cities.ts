@@ -58,7 +58,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Driveways & Patios in New Haven, MI",
     metaDescription:
       "Enzo’s Concrete LLC is based in New Haven, MI. Driveways, patios, walkways, retaining walls and pool decks from a family-owned, BBB A+ local contractor.",
-    h1: "Your concrete contractor in New Haven, Michigan",
+    h1: "Your Concrete Contractor in New Haven, Michigan",
     lede: "New Haven is home. Our family-owned business is based right here in the village, so when you call about a driveway, patio or walkway, you’re talking to a neighbor, not a crew driving in from across Metro Detroit.",
     leadProject: "curved-patio",
     snapshot: [
@@ -68,7 +68,7 @@ export const cities: City[] = [
       { label: "Distance", value: "Our home base" },
     ],
     context: {
-      heading: "Concrete work in New Haven",
+      heading: "Concrete Work in New Haven",
       paragraphs: [
         "New Haven has grown quickly. The village counted 1,695 housing units in 2010 and 2,111 in 2020, so newer homes now sit alongside a village center that dates back to an 1869 incorporation and an 1865 railroad depot that still stands as the village museum.",
         "That mix shapes the work. Newer homes often want their first real patio or a wider driveway; older homes nearer the village center tend to need tired driveways, front walks and steps replaced. We do both, and being local means site visits and follow-ups are a short drive away.",
@@ -81,7 +81,7 @@ export const cities: City[] = [
       { service: "driveway-expansions", body: "Extra width for a second car, a trailer or easier parking on growing households’ driveways." },
     ],
     permits: {
-      heading: "Permits and planning in New Haven",
+      heading: "Permits and Planning in New Haven",
       paragraphs: [
         "New Haven is an incorporated village inside Lenox Township, and the two are separate local governments. Before work begins, confirm with the village whether your project needs a permit; we can help you figure out what to ask.",
         "M-19 runs through the east side of the village. Work at a driveway approach on a road owned by the county or state may need a separate right-of-way permit from that road agency.",
@@ -98,7 +98,7 @@ export const cities: City[] = [
       },
       {
         q: "What concrete projects do you do in New Haven?",
-        a: "Driveways and driveway expansions, custom patios, walkways and steps, retaining and garden walls, and pool decks. You can see examples on our Our Work page.",
+        a: "Driveways and driveway expansions, custom patios, walkways and steps, retaining and garden walls, pool decks, concrete sealing, and pole barn floors and slabs. You can see examples in our project gallery.",
       },
     ],
     nearby: ["lenox-township", "chesterfield-township", "new-baltimore", "richmond"],
@@ -114,7 +114,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Lenox Township, MI",
     metaDescription:
       "Concrete driveways, patios and walkways for rural and residential properties in Lenox Township, MI, from a family-owned contractor based in New Haven.",
-    h1: "Concrete driveways, patios and walkways in Lenox Township",
+    h1: "Concrete Driveways, Patios and Walkways in Lenox Township",
     lede: "Lenox Township wraps around our New Haven base, so we know its mix of farmland, wetlands and growing neighborhoods well. Whether you’re on a rural lot off 26 Mile Road or in a newer subdivision, we pour concrete that suits the property.",
     leadProject: "driveway-washdown",
     snapshot: [
@@ -124,7 +124,7 @@ export const cities: City[] = [
       { label: "Distance", value: "Surrounds our New Haven base" },
     ],
     context: {
-      heading: "Concrete work in Lenox Township",
+      heading: "Concrete Work in Lenox Township",
       paragraphs: [
         "Lenox Township covers nearly 39 square miles of mostly flat land made up of farmland, wetlands and pockets of woodland, with development growing along corridors like 26 Mile Road and Gratiot Avenue. Its population rose from 10,470 in 2010 to 12,119 in 2020.",
         "Flat, wet ground is the main thing to plan around. On level lots, water has nowhere obvious to go, so a driveway or patio needs a deliberate slope and a well-prepared base, or it ends up holding puddles and heaving in winter.",
@@ -137,7 +137,7 @@ export const cities: City[] = [
       { service: "concrete-walkways", body: "Walkways connecting driveway, porch and yard, so you’re not crossing soggy lawn in spring." },
     ],
     permits: {
-      heading: "Permits and planning in Lenox Township",
+      heading: "Permits and Planning in Lenox Township",
       paragraphs: [
         "Check with Lenox Township about permit requirements for your project before work starts. If your address is inside the Village of New Haven or the City of Richmond, those municipalities handle their own rules instead.",
         countyRoadsNote,
@@ -171,7 +171,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in New Baltimore, MI",
     metaDescription:
       "Concrete patios, driveways and walkways for New Baltimore, MI homes near Anchor Bay. Family-owned, BBB A+ contractor based 5 miles away in New Haven.",
-    h1: "Concrete patios, driveways and walkways in New Baltimore",
+    h1: "Concrete Patios, Driveways and Walkways in New Baltimore",
     lede: "New Baltimore homes are built for life on Anchor Bay: summer evenings outside, boats in the driveway, sandy feet on the walk. We pour patios, driveways and walkways that handle all of it, from a family-owned base about five miles away in New Haven.",
     leadProject: "pool-deck",
     snapshot: [
@@ -181,7 +181,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 5 miles from New Haven" },
     ],
     context: {
-      heading: "Concrete work in New Baltimore",
+      heading: "Concrete Work in New Baltimore",
       paragraphs: [
         "New Baltimore sits on the northern shore of Anchor Bay, the northernmost part of Lake St. Clair. Nearly a third of the city’s area is water, and its waterfront park, beach and downtown along M-29 are a big part of why people live here.",
         "Lake living changes what matters in concrete. Patios and pool decks get heavy summer use. Driveways often need room for a boat or trailer. And properties close to the water can sit on wetter ground, which makes grading, base preparation and drainage especially important.",
@@ -194,7 +194,7 @@ export const cities: City[] = [
       { service: "pool-decks", body: "Pool surrounds with textured finishes for wet feet and drainage that moves water away." },
     ],
     permits: {
-      heading: "Permits and planning in New Baltimore",
+      heading: "Permits and Planning in New Baltimore",
       paragraphs: [
         "Check with the City of New Baltimore about permit requirements for driveways, sidewalks and approaches before work begins. Requirements vary by municipality, and we can help you with what to ask.",
         "M-29 (Main Street) is a state highway, so work at an approach on a state or county road may need a separate right-of-way permit from that road agency.",
@@ -227,7 +227,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Chesterfield Township, MI",
     metaDescription:
       "Driveway replacement, widening and custom patios for Chesterfield Township, MI subdivisions. Family-owned, BBB A+ concrete contractor next door in New Haven.",
-    h1: "Concrete driveways and patios in Chesterfield Township",
+    h1: "Concrete Driveways and Patios in Chesterfield Township",
     lede: "Chesterfield Township borders New Haven, so it’s one of the closest communities we serve. From subdivision driveways to backyard patios near Anchor Bay, we help Chesterfield homeowners replace, widen and upgrade their concrete.",
     leadProject: "driveway-expansion",
     snapshot: [
@@ -237,7 +237,7 @@ export const cities: City[] = [
       { label: "Distance", value: "Borders New Haven, about 4 miles" },
     ],
     context: {
-      heading: "Concrete work in Chesterfield Township",
+      heading: "Concrete Work in Chesterfield Township",
       paragraphs: [
         "With 45,376 residents in 2020, up from 37,405 in 2000, Chesterfield is one of the larger communities in northern Macomb County. Suburban subdivisions and shopping developments now make up much of the township, which also includes communities like Chesterfield, Milton, Lottivue and Anchor Bay Harbor.",
         "In subdivision neighborhoods the most common projects are practical: replacing a driveway that has cracked or settled, widening it for another vehicle, and adding a backyard patio. Getting the finished grade right against the garage, walks and neighbors’ lots matters on tighter suburban parcels.",
@@ -250,7 +250,7 @@ export const cities: City[] = [
       { service: "concrete-patios", body: "Backyard patios with curves, borders and exposed-aggregate finishes." },
     ],
     permits: {
-      heading: "Permits and planning in Chesterfield Township",
+      heading: "Permits and Planning in Chesterfield Township",
       paragraphs: [
         "Check with Chesterfield Township about permit requirements for driveways, patios and sidewalks before work starts. If you live in a subdivision with an HOA, it’s also worth checking for any rules on driveway width or finish.",
         countyRoadsNote,
@@ -284,7 +284,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Richmond, MI",
     metaDescription:
       "Concrete driveways, front walks and patios for Richmond, MI homes. Family-owned, BBB A+ contractor based 7 miles south on M-19 in New Haven.",
-    h1: "Concrete driveways, walks and patios in Richmond, MI",
+    h1: "Concrete Driveways, Walks and Patios in Richmond, MI",
     lede: "Richmond is a straight shot up M-19 from our New Haven base, about seven miles north. We help Richmond homeowners replace worn driveways, rebuild front walks and add patios that fit the city’s established, small-town neighborhoods.",
     leadProject: "front-walk",
     snapshot: [
@@ -294,7 +294,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 7 miles up M-19" },
     ],
     context: {
-      heading: "Concrete work in Richmond",
+      heading: "Concrete Work in Richmond",
       paragraphs: [
         "Richmond grew from Beebe’s Corners, settled in 1835, into a village in 1879 and a city in 1966. Its Main Street is M-19, and it’s the starting point of the 23.5-mile Macomb Orchard Trail. Most of the city is in Macomb County, with a small portion in St. Clair County.",
         "Established neighborhoods mean established concrete: driveways, front walks and porch steps that have been through decades of Michigan winters. Replacing heaved or cracked sections removes trip hazards and does a lot for curb appeal on a walkable small-town street.",
@@ -307,7 +307,7 @@ export const cities: City[] = [
       { service: "concrete-patios", body: "Backyard patios that make the most of in-town lot sizes." },
     ],
     permits: {
-      heading: "Permits and planning in Richmond",
+      heading: "Permits and Planning in Richmond",
       paragraphs: [
         "Check with the City of Richmond about permit requirements for driveways, sidewalks and approaches before work begins.",
         "M-19 (Main Street) is a state highway, so work at a driveway approach on a state or county road may need a separate right-of-way permit from that road agency. If your property is in the St. Clair County portion of the city, county-level agencies there may differ from Macomb’s.",
@@ -340,7 +340,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Ray Township, MI",
     metaDescription:
       "Concrete driveways, parking pads and walkways for rural properties in Ray Township, MI. Family-owned, BBB A+ contractor based in nearby New Haven.",
-    h1: "Concrete for rural properties in Ray Township",
+    h1: "Concrete for Rural Properties in Ray Township",
     lede: "Ray Township is country living in north-central Macomb County, home to Wolcott Mill Metropark and small crossroads communities like Davis, Meade, Ray Center and Wolcott Mills. We pour driveways, parking pads and walkways built for rural properties.",
     leadProject: "driveway-washdown",
     snapshot: [
@@ -350,7 +350,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 7 miles from New Haven" },
     ],
     context: {
-      heading: "Concrete work in Ray Township",
+      heading: "Concrete Work in Ray Township",
       paragraphs: [
         "With about 3,800 residents across 36.6 square miles, Ray Township is a lightly populated, spread-out community. The 2,625-acre Wolcott Mill Metropark lies entirely within the township, and the whole township drains to the Clinton River watershed.",
         "Rural properties bring their own concrete questions. Driveways run longer and carry heavier vehicles, so slab thickness, base and edges need planning. Many owners consider moving from gravel to concrete for less maintenance and a cleaner approach to the house.",
@@ -363,7 +363,7 @@ export const cities: City[] = [
       { service: "concrete-walkways", body: "Paths between the house, garage and outbuildings that stay usable in mud season." },
     ],
     permits: {
-      heading: "Permits and planning in Ray Township",
+      heading: "Permits and Planning in Ray Township",
       paragraphs: ["Check with Ray Township about permit requirements for your project before work starts.", countyRoadsNote],
       source: countyRoads,
     },
@@ -394,7 +394,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Armada, MI",
     metaDescription:
       "Concrete driveways, walkways and patios for homes in and around the Village of Armada, MI. Family-owned, BBB A+ contractor based in New Haven.",
-    h1: "Concrete driveways, walks and patios in Armada",
+    h1: "Concrete Driveways, Walks and Patios in Armada",
     lede: "Armada, home of the Armada Fair since 1872, is small-town Macomb County at its best. We pour driveways, front walks and patios for homes in the village and on the surrounding country properties, from our family-owned base in New Haven.",
     leadProject: "side-walkway",
     snapshot: [
@@ -404,7 +404,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 9 miles from New Haven" },
     ],
     context: {
-      heading: "Concrete work in Armada",
+      heading: "Concrete Work in Armada",
       paragraphs: [
         "The village dates to 1833 and was voted Reader’s Digest’s “Nicest Place in Michigan” in 2019. It’s a compact village surrounded by the rural countryside of Armada Township, with the East Branch of Coon Creek running through its center.",
         "In the village, projects tend to be front walks, steps and driveways on established lots, where a clean, level walk makes a real difference on a walkable street. On country properties outside the village, longer driveways and parking areas are more common.",
@@ -417,7 +417,7 @@ export const cities: City[] = [
       { service: "concrete-patios", body: "Backyard patios, including exposed-aggregate finishes with contrasting borders." },
     ],
     permits: {
-      heading: "Permits and planning in Armada",
+      heading: "Permits and Planning in Armada",
       paragraphs: [
         "The Village of Armada and Armada Township are separate local governments. Check with whichever one covers your address about permit requirements before work begins.",
         countyRoadsNote,
@@ -451,7 +451,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Macomb Township, MI",
     metaDescription:
       "Driveway replacement, widening and patios in Macomb Township, MI, built to the township’s concrete standards. Family-owned, BBB A+ contractor in New Haven.",
-    h1: "Concrete driveways and patios in Macomb Township",
+    h1: "Concrete Driveways and Patios in Macomb Township",
     lede: "Macomb Township is the most populous civil township in Michigan, and much of it was built in a single growth wave. We help homeowners replace, widen and upgrade subdivision driveways and patios, planned around the township’s published concrete requirements.",
     leadProject: "curved-patio",
     snapshot: [
@@ -461,7 +461,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 9 miles from New Haven" },
     ],
     context: {
-      heading: "Concrete work in Macomb Township",
+      heading: "Concrete Work in Macomb Township",
       paragraphs: [
         "Macomb Township grew from 50,478 residents in 2000 to 91,663 in 2020, including a 48% jump between 2000 and 2008. A large share of its homes were built in that boom, which means many original driveways, walks and patios have now been through two decades of Michigan winters.",
         "That makes driveway replacement and widening, and adding or enlarging a backyard patio, the most common projects here. The township has specific rules on driveway width and patio setbacks (below), so the design has to fit them.",
@@ -473,7 +473,7 @@ export const cities: City[] = [
       { service: "concrete-patios", body: "Backyard patios placed to meet the township’s side- and rear-lot setbacks." },
     ],
     permits: {
-      heading: "Macomb Township concrete permit requirements",
+      heading: "Macomb Township Concrete Permit Requirements",
       paragraphs: [
         "Macomb Township publishes specific requirements for flatwork concrete with no footings: driveways, driveway extensions, sidewalks and patios. A permit application with a plot plan is required. Highlights from the Building Department’s requirements sheet (rev. 12/5/2022):",
       ],
@@ -521,7 +521,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Washington Township, MI",
     metaDescription:
       "Concrete driveways, patios and walkways in Washington Township, MI, built for colder, snowier winters. Family-owned, BBB A+ contractor based in New Haven.",
-    h1: "Concrete driveways, patios and walkways in Washington Township",
+    h1: "Concrete Driveways, Patios and Walkways in Washington Township",
     lede: "In northwestern Macomb County, Washington Township has a mix of established neighborhoods, newer homes and larger country lots. We pour driveways, patios and walkways built for the township’s slightly harsher winters.",
     leadProject: "curved-walkway",
     snapshot: [
@@ -531,7 +531,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 12 miles from New Haven" },
     ],
     context: {
-      heading: "Concrete work in Washington Township",
+      heading: "Concrete Work in Washington Township",
       paragraphs: [
         "Washington Township borders Oakland County, and its population grew from 25,139 in 2010 to 28,165 in 2020. It includes the communities of Washington, Mount Vernon and Clifton Mills, plus part of the Village of Romeo, with M-53 running just east of Washington.",
         "The township’s weather is generally a few degrees cooler than Detroit’s, with more snow. For concrete, that means more freeze-thaw cycles, more plowing and shoveling, and more de-icing salt, all of which punish a poorly prepared or poorly finished slab.",
@@ -544,7 +544,7 @@ export const cities: City[] = [
       { service: "concrete-walkways", body: "Walkways with textured finishes for better footing in snowy months." },
     ],
     permits: {
-      heading: "Permits and planning in Washington Township",
+      heading: "Permits and Planning in Washington Township",
       paragraphs: [
         "Check with Washington Township about permit requirements for driveways, patios and sidewalks before work starts. If your address is in the Village of Romeo, the village may have its own requirements.",
         countyRoadsNote,
@@ -574,7 +574,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Harrison Township, MI",
     metaDescription:
       "Concrete patios, pool decks and driveways for lakeside homes in Harrison Township, MI on Lake St. Clair. Family-owned, BBB A+ contractor based in New Haven.",
-    h1: "Concrete patios, pool decks and driveways in Harrison Township",
+    h1: "Concrete Patios, Pool Decks and Driveways in Harrison Township",
     lede: "Harrison Township’s Lake St. Clair shoreline makes outdoor living a priority. We pour patios, pool decks and driveways for lakeside homes, with the extra attention to drainage that properties near the water need.",
     leadProject: "pool-deck",
     snapshot: [
@@ -584,7 +584,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 10 miles from New Haven" },
     ],
     context: {
-      heading: "Concrete work in Harrison Township",
+      heading: "Concrete Work in Harrison Township",
       paragraphs: [
         "Harrison Township stretches along the northwestern shore of Lake St. Clair. Water makes up about 9.5 of its 23.8 square miles, the Clinton River empties into the lake within the township, and Lake St. Clair Metropark sits on its shoreline. Selfridge Air National Guard Base occupies much of the township’s north.",
         "Low, lakeside ground is the defining factor for concrete here. Properties near the water can have wetter soils and less room for runoff, so grading, base preparation and slope away from the house deserve extra care.",
@@ -597,7 +597,7 @@ export const cities: City[] = [
       { service: "driveway-expansions", body: "Parking pads and wider driveways for boats and trailers." },
     ],
     permits: {
-      heading: "Permits and planning in Harrison Township",
+      heading: "Permits and Planning in Harrison Township",
       paragraphs: [
         "Check with Harrison Township about permit requirements for your project before work begins. Lakefront and floodplain properties can come with additional rules, so ask about those too.",
         countyRoadsNote,
@@ -627,7 +627,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Clinton Township, MI",
     metaDescription:
       "Driveway replacement, walkways and patios across Clinton Township, MI, Michigan’s most populous township. Family-owned, BBB A+ contractor based in New Haven.",
-    h1: "Concrete driveway replacement and patios in Clinton Township",
+    h1: "Concrete Driveway Replacement and Patios in Clinton Township",
     lede: "With more than 100,000 residents, Clinton Township is Michigan’s most populous township, and its neighborhoods range from decades-old streets to newer developments. We replace driveways, rebuild walkways and add patios across the township.",
     leadProject: "driveway-washdown",
     snapshot: [
@@ -637,7 +637,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 12 miles from New Haven" },
     ],
     context: {
-      heading: "Concrete work in Clinton Township",
+      heading: "Concrete Work in Clinton Township",
       paragraphs: [
         "Clinton Township takes its name from the Clinton River, which forms from three branches within the township before flowing east to Lake St. Clair. It wraps around Mount Clemens, the county seat, on three sides, and its 2020 population of 100,513 makes it the eighth-largest community in Michigan.",
         "A community this size has every kind of concrete need. In established neighborhoods the most common projects are replacing cracked, heaved or sunken driveways and walks. Newer homes more often want widening or a first backyard patio.",
@@ -650,7 +650,7 @@ export const cities: City[] = [
       { service: "concrete-patios", body: "Backyard patios with custom shapes and exposed-aggregate finishes." },
     ],
     permits: {
-      heading: "Permits and planning in Clinton Township",
+      heading: "Permits and Planning in Clinton Township",
       paragraphs: [
         "Check with Clinton Township about permit requirements for driveways, sidewalks and patios before work begins. Some addresses have a Mount Clemens mailing address but sit in the township, so confirm which municipality you’re actually in.",
         countyRoadsNote,
@@ -680,7 +680,7 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Shelby Township, MI",
     metaDescription:
       "Custom exposed-aggregate patios, pool decks and driveways in Shelby Township, MI. Family-owned, BBB A+ concrete contractor based in New Haven.",
-    h1: "Custom concrete patios, pool decks and driveways in Shelby Township",
+    h1: "Custom Concrete Patios, Pool Decks and Driveways in Shelby Township",
     lede: "Shelby Township homeowners invest in their outdoor spaces, and it shows. We pour custom patios, pool decks and driveways with finishing details like exposed aggregate, contrasting borders and smooth curves.",
     leadProject: "curved-patio",
     snapshot: [
@@ -690,7 +690,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 13 miles from New Haven" },
     ],
     context: {
-      heading: "Concrete work in Shelby Township",
+      heading: "Concrete Work in Shelby Township",
       paragraphs: [
         "Shelby Township is one of the fastest-growing communities in Metro Detroit, growing from 73,804 residents in 2010 to 79,408 in 2020. It borders Rochester Hills to the west and Utica and Sterling Heights to the south, and it’s home to the 600-acre Riverbend Park and part of Stony Creek Metropark.",
         "Many projects here are about upgrading outdoor living: a larger patio with a custom shape, a pool deck, or a front walk that matches the quality of the house. Finishing details matter, and exposed aggregate with a contrasting border is one of our specialties.",
@@ -703,7 +703,7 @@ export const cities: City[] = [
       { service: "retaining-walls", body: "Garden and retaining walls that define beds and level out slopes, finished to match your patio." },
     ],
     permits: {
-      heading: "Permits and planning in Shelby Township",
+      heading: "Permits and Planning in Shelby Township",
       paragraphs: [
         "Check with the Shelby Township Building Department about permit requirements for your project before work starts. The township’s published outline for single-family construction lists an approach permit from the county road agency among outside approvals that may apply.",
         countyRoadsNote,
@@ -737,8 +737,8 @@ export const cities: City[] = [
     metaTitle: "Concrete Contractor in Sterling Heights, MI",
     metaDescription:
       "Driveway replacement, walkways and patios for Sterling Heights, MI homes. Family-owned, BBB A+ concrete contractor based in New Haven. Request an estimate.",
-    h1: "Concrete driveway replacement, walkways and patios in Sterling Heights",
-    lede: "Sterling Heights is Michigan’s fourth-largest city, and many of its homes were built for the region’s auto workers decades ago. That means a lot of original driveways and walks ready for replacement. We help homeowners replace them and add patios.",
+    h1: "Concrete Driveway Replacement, Walkways and Patios in Sterling Heights",
+    lede: "Sterling Heights is Michigan’s fourth-largest city, and many of its homes were built for the region’s autoworkers decades ago. That means a lot of original driveways and walks ready for replacement. We help homeowners replace them and add patios.",
     leadProject: "driveway-expansion",
     snapshot: [
       { label: "Municipality", value: "City of Sterling Heights" },
@@ -747,7 +747,7 @@ export const cities: City[] = [
       { label: "Distance", value: "About 16 miles from New Haven" },
     ],
     context: {
-      heading: "Concrete work in Sterling Heights",
+      heading: "Concrete Work in Sterling Heights",
       paragraphs: [
         "Sterling Heights was farmland, once known for rhubarb, before suburban homes were built for workers in Detroit’s auto industry. Sterling Township incorporated as a city in 1968, and by 2020 it had 134,346 residents, making it the fourth-most populous city in Michigan.",
         "Decades-old neighborhoods mean decades-old concrete. Driveways, approaches and front walks that have been through many Michigan winters develop cracks, heaving and sunken sections. Replacing them improves safety, drainage and curb appeal.",
@@ -760,7 +760,7 @@ export const cities: City[] = [
       { service: "driveway-expansions", body: "Widening for growing households with more vehicles than the original driveway was built for." },
     ],
     permits: {
-      heading: "Permits and planning in Sterling Heights",
+      heading: "Permits and Planning in Sterling Heights",
       paragraphs: [
         "Check with the City of Sterling Heights about permit requirements before work begins, especially for work at the driveway approach, sidewalk or curb, which is in the public right-of-way. Requirements for widening can differ from a same-footprint replacement.",
         "Major roads such as M-53 (Van Dyke) and M-59 (Hall Road) are state highways, and approach work on state or county roads may need a permit from that road agency.",

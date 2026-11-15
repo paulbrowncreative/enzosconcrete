@@ -64,7 +64,7 @@ export function WorkGallery({ projects, order }: { projects: Project[]; order: P
               setLimit((n) => n + PAGE);
             }}
           >
-            Show more photos <span className="gallery-more__count">({remaining} more)</span>
+            Show More Photos <span className="gallery-more__count">({remaining} more)</span>
           </button>
         </div>
       )}

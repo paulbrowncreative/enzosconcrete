@@ -3,7 +3,7 @@ import { business } from "@/content/business";
 import { Icon } from "./Icon";
 
 export function CtaBand({
-  title = "Ready to start your concrete project?",
+  title = "Ready to Start Your Concrete Project?",
   body = "Tell us what you’re planning: a new driveway, a patio, a walkway or something else. We’ll follow up to talk through the details and set up your estimate.",
   estimateHref = "/contact",
   location = "cta_band",

@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { homeBase } from "@/content/areas";
 import { business } from "@/content/business";
 import { cities, cityPath } from "@/content/cities";
+import { distance } from "@/content/localServices";
 import { services, servicePath } from "@/content/services";
 import { pageMetadata } from "@/lib/seo";
 
@@ -19,7 +20,7 @@ export default function ServiceAreasPage() {
   const sorted = [...cities].sort((a, b) => a.miles - b.miles);
   return (
     <>
-      <PageHero crumbs={[{ name: "Service Areas", path: "/service-areas" }]} eyebrow="Service area" title="Concrete contractor serving New Haven and Macomb County">
+      <PageHero crumbs={[{ name: "Service Areas", path: "/service-areas" }]} eyebrow="Service area" title="Concrete Contractor Serving New Haven and Macomb County">
         <p>
           {homeBase.note} From here we take on residential concrete projects across{" "}
           {business.serviceCounties.join(", ").replace(/, ([^,]*)$/, " and $1")}.
@@ -32,7 +33,7 @@ export default function ServiceAreasPage() {
             <div>
               <p className="eyebrow">Local pages</p>
               <h2 id="communities-title" className="section-title section-title--sm">
-                Communities we serve, closest first
+                Communities We Serve, Closest First
               </h2>
             </div>
             <p className="section-intro">
@@ -44,11 +45,11 @@ export default function ServiceAreasPage() {
               <li key={c.slug}>
                 <article className="city-card">
                   <p className="city-card__meta">
-                    {c.miles === 0 ? "Home base" : `About ${c.miles} mi away`} · {c.county} County
+                    {distance(c).short} · {c.county} County
                   </p>
                   <h3>
                     <Link className="stretched-link" href={cityPath(c.slug)}>
-                      Concrete contractor in {c.name}
+                      Concrete Contractor in {c.name}
                     </Link>
                   </h3>
                   <p>{c.focus.map((f) => services.find((s) => s.slug === f.service)!.label).join(" · ")}</p>
@@ -62,7 +63,7 @@ export default function ServiceAreasPage() {
       <section className="section section--stone" aria-labelledby="counties-title">
         <div className="container">
           <h2 id="counties-title" className="section-title section-title--sm">
-            Counties we serve
+            Counties We Serve
           </h2>
           <ul className="county-grid" role="list">
             <li className="county">
@@ -96,7 +97,7 @@ export default function ServiceAreasPage() {
       <section className="section" aria-labelledby="area-services-title">
         <div className="container">
           <h2 id="area-services-title" className="section-title section-title--sm">
-            Services available across our area
+            Services Available Across Our Area
           </h2>
           <ul className="link-grid" role="list">
             {services.map((s) => (

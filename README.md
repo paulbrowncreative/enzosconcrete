@@ -35,6 +35,13 @@ Requires Node 20.9+.
 | `src/lib/` | SEO metadata and JSON-LD builders, form validation shared by client and server, analytics helper |
 | `src/app/globals.css` | Design system: tokens at the top, then components |
 
+### Copy style
+- **Headings, subheads, card titles, photo titles and buttons use AP-style title case.** Capitalize every word, including both parts of hyphenated words ("Exposed-Aggregate"). Lowercase articles, conjunctions and prepositions of three letters or fewer (a, an, the, and, but, or, for, as, at, by, in, of, on, to, via) unless they are the first or last word or follow a colon. Keep abbreviations as written (MI, BBB, LLC, FAQ). Headings don't end with a period; questions keep their question mark.
+- **FAQ questions, body copy and inline text links use sentence case.**
+- Hyphenate compound modifiers before a noun ("exposed-aggregate patio", "family-owned business"), but not after it ("family owned").
+- Use curly apostrophes and quotes (’ “ ”) in visible text.
+- Distance wording for service-area pages lives in `distance()` in `src/content/localServices.ts`.
+
 ### Common edits
 - **Add a project photo:** drop a JPEG (≤2000px long edge) in `src/assets/projects/`, import it in `src/content/projects.ts` and add an entry. It appears in the gallery, and on its service page when it's mapped to that service.
 - **Add verified reviews:** add them to `business.reviews`. The homepage reviews section renders automatically. Only add real reviews, and link each one to its source.

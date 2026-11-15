@@ -20,7 +20,7 @@ export default function OurWorkPage() {
   for (let i = 0; queues.some((q) => i < q.length); i++) for (const q of queues) if (q[i]) mixed.push(q[i]);
   return (
     <>
-      <PageHero crumbs={[{ name: "Our Work", path: "/our-work" }]} eyebrow="Project gallery" title="Our work, photographed on the job">
+      <PageHero crumbs={[{ name: "Our Work", path: "/our-work" }]} eyebrow="Project gallery" title="Our Work, Photographed on the Job">
         <p>
           Every photo here is a project by Enzo’s Concrete LLC. Filter by type, select any photo to see it larger,
           or jump to the service it belongs to.
@@ -30,13 +30,13 @@ export default function OurWorkPage() {
       <section className="section" aria-labelledby="gallery-title">
         <div className="container">
           <h2 id="gallery-title" className="visually-hidden">
-            Project photos
+            Project Photos
           </h2>
           <WorkGallery projects={mixed} order={order} />
         </div>
       </section>
 
-      <CtaBand title="Like what you see?" body="Tell us about your project and we’ll follow up to talk through options and your estimate." location="work_final" />
+      <CtaBand title="Like What You See?" body="Tell us about your project, and we’ll follow up to talk through options and your estimate." location="work_final" />
     </>
   );
 }

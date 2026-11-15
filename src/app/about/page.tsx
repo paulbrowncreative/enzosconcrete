@@ -17,15 +17,15 @@ export const metadata = pageMetadata({
 
 const values = [
   {
-    title: "Preparation first",
+    title: "Preparation First",
     body: "What’s under the concrete decides how long it lasts. Grade, base and drainage are planned before the forms go up.",
   },
   {
-    title: "Straight answers",
+    title: "Straight Answers",
     body: "If an expansion makes more sense than a replacement, or the other way round, we’ll tell you, and explain why.",
   },
   {
-    title: "Finish that holds up to a close look",
+    title: "Finish That Holds Up to a Close Look",
     body: "Crisp edges, smooth curves, contrasting borders and clean joints are the details that separate good concrete from great.",
   },
 ];
@@ -35,10 +35,10 @@ export default function AboutPage() {
   const patio = projectById("curved-patio");
   return (
     <>
-      <PageHero crumbs={[{ name: "About", path: "/about" }]} eyebrow="About us" title="A family-owned concrete company in New Haven, Michigan">
+      <PageHero crumbs={[{ name: "About", path: "/about" }]} eyebrow="About us" title="A Family-Owned Concrete Company in New Haven, Michigan">
         <p>
           Enzo’s Concrete LLC has been pouring residential concrete for more than fifteen years. We focus on the
-          projects that make a home work better and look better: driveways, patios, walkways, walls, pool decks, sealing
+          projects that make a home more useful and better looking: driveways, patios, walkways, walls, pool decks, sealing
           and pole barn floors.
         </p>
       </PageHero>
@@ -48,7 +48,7 @@ export default function AboutPage() {
           <div className="prose">
             <p className="eyebrow">Who we are</p>
             <h2 id="story-title" className="section-title section-title--sm">
-              Residential concrete is all we do
+              Residential Concrete Is All We Do
             </h2>
             <p>
               We’re a family business based in New Haven, in northern Macomb County. Our focus is homes, so our attention goes to what matters to homeowners: how the finished concrete looks from
@@ -83,7 +83,7 @@ export default function AboutPage() {
           <div className="section-head">
             <p className="eyebrow">How we work</p>
             <h2 id="values-title" className="section-title section-title--sm">
-              What you can expect from us
+              What You Can Expect From Us
             </h2>
           </div>
           <ul className="benefits" role="list">
@@ -103,7 +103,7 @@ export default function AboutPage() {
       <section className="section" aria-labelledby="facts-title">
         <div className="container facts">
           <h2 id="facts-title" className="section-title section-title--sm">
-            At a glance
+            At a Glance
           </h2>
           <dl className="facts__list">
             <div>

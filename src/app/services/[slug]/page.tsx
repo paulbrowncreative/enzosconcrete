@@ -79,7 +79,7 @@ export default async function ServicePage({ params }: Props) {
       <section className="section" aria-labelledby="benefits-title">
         <div className="container">
           <h2 id="benefits-title" className="section-title section-title--sm">
-            What you get with {service.name.toLowerCase()} from Enzo’s
+            What You Get With {service.name} From Enzo’s
           </h2>
           <ul className="benefits" role="list">
             {service.benefits.map((b, i) => (
@@ -114,8 +114,8 @@ export default async function ServicePage({ params }: Props) {
             )}
           </div>
           <div className="quote-card" role="region" aria-labelledby="quote-card-title">
-            <h2 id="quote-card-title">Get an estimate for your project</h2>
-            <p>Send a few details and we’ll follow up to talk through your project.</p>
+            <h2 id="quote-card-title">Get an Estimate for Your Project</h2>
+            <p>Send a few details, and we’ll follow up to talk through your project.</p>
             <Link className="btn btn--primary btn--block" href={estimateHref} data-track="cta_estimate" data-track-location={`service_aside_${service.slug}`}>
               Request an Estimate
             </Link>
@@ -136,7 +136,7 @@ export default async function ServicePage({ params }: Props) {
             <div>
               <p className="eyebrow">Project photos</p>
               <h2 id="work-title" className="section-title section-title--sm">
-                From our project gallery
+                From Our Project Gallery
               </h2>
             </div>
             <Link className="text-link" href="/our-work">
@@ -152,7 +152,7 @@ export default async function ServicePage({ params }: Props) {
           <div>
             <p className="eyebrow">FAQ</p>
             <h2 id="faq-title" className="section-title section-title--sm">
-              {service.name}: common questions
+              {service.name}: Common Questions
             </h2>
             <p>
               Have a question that isn’t answered here? Call{" "}
@@ -173,7 +173,7 @@ export default async function ServicePage({ params }: Props) {
       <section className="section section--tight" aria-labelledby="areas-title">
         <div className="container">
           <h2 id="areas-title" className="area__heading">
-            {service.name} near you
+            {service.name} Near You
           </h2>
           <ul className="chips chips--dark" role="list">
             {cities.map((c) => (
@@ -188,7 +188,7 @@ export default async function ServicePage({ params }: Props) {
       <section className="section" aria-labelledby="related-title">
         <div className="container">
           <h2 id="related-title" className="section-title section-title--sm">
-            Related services
+            Related Services
           </h2>
           <div className="service-grid service-grid--three">
             {related.map((s) => (
@@ -199,7 +199,7 @@ export default async function ServicePage({ params }: Props) {
       </section>
 
       <CtaBand
-        title="Ready to talk about your project?"
+        title="Ready to Talk About Your Project?"
         body={`Tell us what you have in mind and where the project is. We’ll follow up to talk through ${service.label.toLowerCase()} options, timing and your estimate.`}
         estimateHref={estimateHref}
         location={`service_final_${service.slug}`}

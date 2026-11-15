@@ -25,20 +25,20 @@ const featured = ["curved-walkway", "driveway-washdown", "fb-stamped-patio-fire-
 
 const reasons = [
   {
-    title: "Family owned and local",
+    title: "Family Owned and Local",
     body: "We’re a family business based in New Haven. Our reputation is built on the driveways, patios and walkways our neighbors look at every day.",
   },
   {
-    title: `${business.yearsExperience} years of concrete experience`,
+    title: `${business.yearsExperience} Years of Concrete Experience`,
     body: "More than fifteen years of residential concrete work. We know how good concrete gets prepared, poured and finished to last through Michigan winters.",
   },
   {
-    title: `BBB accredited, ${business.bbb.rating} rated`,
+    title: `BBB Accredited, ${business.bbb.rating} Rated`,
     body: "Enzo’s Concrete LLC is a BBB Accredited Business with an A+ rating from BBB of Michigan. You can check our profile before you call.",
     link: { href: business.bbb.profileUrl, label: "View our BBB profile", external: true },
   },
   {
-    title: "Finishing details you can see",
+    title: "Finishing Details You Can See",
     body: "Contrasting aggregate borders, smooth curves, matching steps and clean joints. Every photo on this site shows our own work, so look closely.",
     link: { href: "/our-work", label: "See the project gallery" },
   },
@@ -46,19 +46,19 @@ const reasons = [
 
 const steps = [
   {
-    title: "Tell us about your project",
+    title: "Tell Us About Your Project",
     body: "Call, or send the estimate form with what you’re planning and where. Photos and rough measurements help, but aren’t required.",
   },
   {
-    title: "Talk through the details",
+    title: "Talk Through the Details",
     body: "We’ll go over size, finish, removal of existing concrete, access and timing, and look at the site.",
   },
   {
-    title: "Review your estimate",
+    title: "Review Your Estimate",
     body: "You get an estimate based on your actual project, with the scope explained, so you can compare with confidence.",
   },
   {
-    title: "Schedule the work",
+    title: "Schedule the Work",
     body: "Once you’re ready, we set a date that works with the weather and your plans.",
   },
 ];
@@ -72,7 +72,7 @@ export default function HomePage() {
           <div className="hero__copy">
             <h1 className="hero__title">
               <span className="eyebrow eyebrow--light">Residential concrete contractor · New Haven, MI</span>
-              Concrete craftsmanship built to&nbsp;last.
+              Concrete Craftsmanship Built to&nbsp;Last
             </h1>
             <p className="hero__lede">
               Driveways, patios, walkways, walls, pool decks, sealing and pole barn floors for homeowners in New Haven
@@ -94,10 +94,10 @@ export default function HomePage() {
                 <Icon name="shield" size={18} /> BBB Accredited · {business.bbb.rating}
               </li>
               <li>
-                <Icon name="home" size={18} /> Family owned
+                <Icon name="home" size={18} /> Family Owned
               </li>
               <li>
-                <Icon name="check" size={18} /> {business.yearsExperience} years experience
+                <Icon name="check" size={18} /> {business.yearsExperience} Years Experience
               </li>
             </ul>
           </div>
@@ -132,15 +132,15 @@ export default function HomePage() {
             </span>
           </li>
           <li>
-            <strong>Family owned & operated</strong>
+            <strong>Family Owned & Operated</strong>
             <span>Based in New Haven, MI</span>
           </li>
           <li>
-            <strong>{business.yearsExperience} years experience</strong>
+            <strong>{business.yearsExperience} Years Experience</strong>
             <span>Residential concrete specialists</span>
           </li>
           <li>
-            <strong>Real project photos</strong>
+            <strong>Real Project Photos</strong>
             <span>Every photo shown is our own work</span>
           </li>
         </ul>
@@ -153,7 +153,7 @@ export default function HomePage() {
             <div>
               <p className="eyebrow">What we pour</p>
               <h2 id="services-title" className="section-title">
-                Residential concrete, done properly from base to finish
+                Residential Concrete, Done Properly From Base to Finish
               </h2>
             </div>
             <p className="section-intro">
@@ -176,7 +176,7 @@ export default function HomePage() {
             <div>
               <p className="eyebrow eyebrow--light">Our work</p>
               <h2 id="work-title" className="section-title">
-                The best proof is in the finish
+                The Best Proof Is in the Finish
               </h2>
             </div>
             <p className="section-intro">
@@ -187,7 +187,7 @@ export default function HomePage() {
           <Gallery projects={featured} />
           <div className="section-foot">
             <Link className="btn btn--ghost-light" href="/our-work">
-              View all {projects.length} projects <Icon name="arrow" size={18} />
+              View All {projects.length} Projects <Icon name="arrow" size={18} />
             </Link>
           </div>
         </div>
@@ -199,7 +199,7 @@ export default function HomePage() {
           <div className="why__intro">
             <p className="eyebrow">Why Enzo’s</p>
             <h2 id="why-title" className="section-title">
-              Hiring a concrete contractor shouldn’t feel like a gamble
+              Hiring a Concrete Contractor Shouldn’t Feel Like a Gamble
             </h2>
             <p>
               Concrete is permanent. Once it’s poured, the quality of the preparation and finishing is locked in for
@@ -247,7 +247,7 @@ export default function HomePage() {
           <div className="section-head">
             <p className="eyebrow">How it works</p>
             <h2 id="process-title" className="section-title">
-              From first call to finished concrete
+              From First Call to Finished Concrete
             </h2>
           </div>
           <ol className="process" role="list">
@@ -272,7 +272,7 @@ export default function HomePage() {
             <div className="section-head">
               <p className="eyebrow">Reviews</p>
               <h2 id="reviews-title" className="section-title">
-                What homeowners say
+                What Homeowners Say
               </h2>
             </div>
             <ul className="reviews" role="list">
@@ -297,7 +297,7 @@ export default function HomePage() {
           <div>
             <p className="eyebrow">Service area</p>
             <h2 id="area-title" className="section-title">
-              Based in New Haven, serving Macomb, Oakland and Wayne counties
+              Based in New Haven, Serving Macomb, Oakland and Wayne Counties
             </h2>
             <p>
               Our home base is New Haven in northern Macomb County. We take on residential projects throughout{" "}
@@ -308,7 +308,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="area__panel">
-            <h3 className="area__heading">Communities we serve</h3>
+            <h3 className="area__heading">Communities We Serve</h3>
             <ul className="chips" role="list">
               {cities.map((c) => (
                 <li key={c.slug}>

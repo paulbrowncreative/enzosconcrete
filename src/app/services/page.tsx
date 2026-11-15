@@ -17,7 +17,7 @@ export const metadata = pageMetadata({
 export default function ServicesPage() {
   return (
     <>
-      <PageHero crumbs={[{ name: "Services", path: "/services" }]} eyebrow="Services" title="Residential concrete services in New Haven, MI">
+      <PageHero crumbs={[{ name: "Services", path: "/services" }]} eyebrow="Services" title="Residential Concrete Services in New Haven, MI">
         <p>
           Eight services, one standard. Whether it’s a full driveway replacement, a pole barn floor or a curved garden path, every job gets
           careful preparation, clean forming and a finish we’re proud to photograph.
@@ -51,7 +51,7 @@ export default function ServicesPage() {
                   </ul>
                   <div className="service-row__actions">
                     <Link className="btn btn--dark" href={servicePath(s.slug)}>
-                      {s.label}: details & FAQs <Icon name="arrow" size={18} />
+                      {s.label}: Details & FAQs <Icon name="arrow" size={18} />
                     </Link>
                     <Link className="text-link" href={`/contact?service=${s.slug}`} data-track="cta_estimate" data-track-location={`services_${s.slug}`}>
                       Request an estimate

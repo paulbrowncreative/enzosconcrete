@@ -50,12 +50,33 @@ type LocalCopy = {
   meta: (city: City) => string;
 };
 
-export const distancePhrase = (city: City) =>
-  city.miles === 0
+/** New Haven is the home base and sits inside Lenox Township, so those two get their own wording. */
+const isBase = (c: City) => c.miles === 0;
+const surroundsBase = (c: City) => c.slug === "lenox-township";
+
+/** Every distance phrase on the site, in one place, so wording and plurals stay consistent. */
+export const distance = (c: City) => ({
+  /** Hero badge (title case). */
+  badge: isBase(c) ? "Based in New Haven" : surroundsBase(c) ? "Surrounds Our New Haven Base" : `About ${c.miles} Miles Away`,
+  /** Secondary line in link lists. */
+  line: isBase(c) ? "Our home base" : surroundsBase(c) ? "Surrounds our New Haven base" : `About ${c.miles} miles from New Haven`,
+  /** Short label on the service-area cards (shown in capitals). */
+  short: isBase(c) ? "Home base" : surroundsBase(c) ? "Surrounds New Haven" : `About ${c.miles} mi away`,
+  /** Sentence used in page introductions. */
+  sentence: isBase(c)
     ? "We’re based right here in New Haven"
-    : city.slug === "richmond"
-      ? "We’re based in New Haven, about 7 miles south on M-19"
-      : `We’re based in New Haven, about ${city.miles} miles away`;
+    : surroundsBase(c)
+      ? "We’re based in New Haven, which sits inside Lenox Township"
+      : c.slug === "richmond"
+        ? "We’re based in New Haven, about 7 miles south on M-19"
+        : `We’re based in New Haven, about ${c.miles} miles away`,
+  /** Completes "a family-owned contractor based …". */
+  based: isBase(c)
+    ? "right here in New Haven"
+    : surroundsBase(c)
+      ? `in New Haven, which sits inside ${c.name}`
+      : `about ${c.miles} miles from ${c.name}`,
+});
 
 export const localCopy: Record<ServiceSlug, LocalCopy> = {
   "concrete-driveways": {
