@@ -65,9 +65,31 @@ so Google never indexes the review copy. Canonicals, the sitemap and structured 
 **Going live:** add the client's domain in Netlify, set `NEXT_PUBLIC_SITE_URL=https://www.theirdomain.com`, and
 redeploy. Indexing turns on automatically for the real domain. (To keep any deploy private, set `SITE_NOINDEX=true`.)
 
-**Estimate form during review:** without `RESEND_API_KEY`, `LEAD_TO_EMAIL` and `LEAD_FROM_EMAIL`, the form validates
-input and then shows a "call us" message, so no inquiry is lost silently. Add those variables in
-**Site configuration → Environment variables** to make it deliver email.
+### Estimate form email (Resend)
+
+Each request is emailed to **Enzosconcretellc@gmail.com**. The visitor sees a confirmation and gets no
+automatic reply. Hitting **Reply** in Gmail answers the customer directly, and the email has tap-to-call
+and tap-to-text links.
+
+1. Sign up at [resend.com](https://resend.com) **using Enzosconcretellc@gmail.com** (the free plan allows 100 emails/day).
+2. In Resend, go to **API Keys → Create API key** with **Sending access** permission, and copy the key (it starts with `re_`).
+3. In Netlify, go to **Site configuration → Environment variables → Add a variable**: `RESEND_API_KEY` = the key.
+   Scope it to Functions/Runtime and mark it secret.
+4. **Deploys → Trigger deploy → Deploy site** (variables apply on the next deploy).
+5. Check `https://<site>/api/estimate`. It should show `{"configured":true,...}`.
+6. Submit a real test request on `/contact`. It should arrive in the Gmail inbox within a minute. If it's in Spam,
+   mark it **Not spam**. Optionally, add a Gmail filter on the subject "New estimate request" with "Never send it to Spam".
+
+That's all launch needs. Until the domain is verified, emails come from Resend's shared test sender
+(`onboarding@resend.dev`), which can only deliver to the Resend account's own email. That's why step 1 matters.
+
+**After the domain is live (recommended):** in Resend, add and verify the domain (**Domains → Add domain**, then add
+the DNS records it shows). Then set `LEAD_FROM_EMAIL=Enzo's Concrete Website <estimates@theirdomain.com>` and redeploy.
+This improves deliverability and lets you add more recipients through `LEAD_TO_EMAIL`.
+
+**If something fails:** the visitor is asked to call, so no lead is silently lost. Netlify's
+**Logs → Functions** shows `[estimate] Lead delivered` or the exact Resend error. Resend's **Emails** page shows every
+send and its delivery status.
 
 ## Deployment (Vercel)
 
@@ -83,14 +105,14 @@ Any Node host that runs `next start` also works (Netlify, Render, a VPS). The es
 | Variable | Required | Purpose |
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | **Yes** (production) | Canonical origin, e.g. `https://www.yourdomain.com`. |
-| `RESEND_API_KEY` | **Yes**, for the form | API key from [resend.com](https://resend.com). Server-only. |
-| `LEAD_TO_EMAIL` | **Yes**, for the form | Where estimate requests go (comma-separate multiple addresses). |
-| `LEAD_FROM_EMAIL` | **Yes**, for the form | Sender on a domain verified in Resend, e.g. `Website <estimates@yourdomain.com>`. |
+| `RESEND_API_KEY` | **Yes**, for the form | API key from [resend.com](https://resend.com). Server-only. The only setting the form requires. |
+| `LEAD_TO_EMAIL` | Optional | Where estimate requests go (comma-separate multiple addresses). Defaults to the email shown on the site. |
+| `LEAD_FROM_EMAIL` | Optional | Sender on a domain verified in Resend. Defaults to Resend's test sender (delivers only to the Resend account's email). |
 | `NEXT_PUBLIC_GA_ID` | Optional | GA4 measurement ID. When unset, no analytics script loads. The privacy policy adjusts automatically. |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | Optional | Google Search Console HTML-tag token. |
 | `SITE_NOINDEX` | Optional | `true` forces noindex on any deploy. `*.netlify.app`, `*.vercel.app` and localhost are noindexed automatically. |
 
-Until the three form variables are set, the form validates input but returns a clear "temporarily
+Until `RESEND_API_KEY` is set, the form validates input but returns a clear "temporarily
 unavailable, please call" message. It never shows a fake success.
 
 ### Old-URL redirects

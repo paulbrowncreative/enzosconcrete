@@ -16,6 +16,8 @@ export function EstimateForm() {
   const summaryRef = useRef<HTMLDivElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
   const startedAt = useRef(Date.now());
+  // Same details resubmitted (e.g. after a network error) reuse one ID, so the lead is never emailed twice.
+  const submission = useRef({ id: "", payload: "" });
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
   const [serverMessage, setServerMessage] = useState("");
@@ -52,12 +54,26 @@ export function EstimateForm() {
       return;
     }
 
+    const payload = JSON.stringify(input);
+    if (submission.current.payload !== payload) {
+      submission.current = {
+        id: globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+        payload,
+      };
+    }
+
     setStatus("submitting");
     try {
       const res = await fetch("/api/estimate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...input, company: data.company ?? "", startedAt: startedAt.current }),
+        body: JSON.stringify({
+          ...input,
+          company: data.company ?? "",
+          startedAt: startedAt.current,
+          submissionId: submission.current.id,
+          page: window.location.pathname,
+        }),
       });
       const body = (await res.json().catch(() => ({}))) as { errors?: FieldErrors; message?: string };
       if (res.ok) {
