@@ -20,7 +20,7 @@ export default function NotFound() {
             Back to Home
           </Link>
           <Link className="btn btn--ghost-light" href="/contact">
-            Request an Estimate
+            Request a Free Estimate
           </Link>
         </div>
         <ul className="not-found__links" role="list">

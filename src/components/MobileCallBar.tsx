@@ -11,7 +11,7 @@ export function MobileCallBar() {
         Call Now
       </a>
       <Link className="mobile-bar__btn mobile-bar__btn--quote" href="/contact" data-track="cta_estimate" data-track-location="mobile_bar">
-        Get an Estimate
+        Get a Free Estimate
       </Link>
     </nav>
   );

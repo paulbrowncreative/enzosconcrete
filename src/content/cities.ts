@@ -704,7 +704,7 @@ export const cities: City[] = [
     population: 134346,
     metaTitle: "Concrete Contractor in Sterling Heights, MI",
     metaDescription:
-      "Driveway replacement, walkways and patios for Sterling Heights, MI homes. Family-owned, BBB A+ concrete contractor based in New Haven. Request an estimate.",
+      "Driveway replacement, walkways and patios for Sterling Heights, MI homes. Family-owned, BBB A+ concrete contractor based in New Haven. Request a free estimate.",
     h1: "Concrete Driveway Replacement, Walkways and Patios in Sterling Heights",
     lede: "Sterling Heights is Michigan’s fourth-largest city, and many of its homes were built for the region’s autoworkers decades ago. That means a lot of original driveways and walks ready for replacement. We help homeowners replace them and add patios.",
     leadProject: "driveway-expansion",

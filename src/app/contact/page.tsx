@@ -5,16 +5,16 @@ import { business } from "@/content/business";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Request a Concrete Estimate",
+  title: "Request a Free Concrete Estimate",
   description:
-    "Request an estimate from Enzo’s Concrete LLC in New Haven, MI. Call (586) 231-4217, email us, or send your project details online.",
+    "Request a free estimate from Enzo’s Concrete LLC in New Haven, MI. Call (586) 231-4217, email us, or send your project details online.",
   path: "/contact",
 });
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero crumbs={[{ name: "Contact", path: "/contact" }]} eyebrow="Contact" title="Request a Concrete Estimate">
+      <PageHero crumbs={[{ name: "Contact", path: "/contact" }]} eyebrow="Contact" title="Request a Free Concrete Estimate">
         <p>Tell us about your project. It takes about two minutes, and we’ll follow up to talk through the details.</p>
       </PageHero>
 
@@ -56,7 +56,7 @@ export default function ContactPage() {
               <ol>
                 <li>We review your project details.</li>
                 <li>We contact you the way you prefer to talk it through.</li>
-                <li>You receive an estimate based on your actual project.</li>
+                <li>You receive a free estimate based on your actual project.</li>
               </ol>
             </div>
 

@@ -61,7 +61,7 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     lede: (c, area) =>
       `Need a new or replacement concrete driveway in ${c.name}? ${area}. We tear out worn, cracked driveways and pour new concrete built for daily traffic, snow shovels and Michigan freeze-thaw cycles.`,
     meta: (c) =>
-      `Concrete driveway replacement and installation in ${c.name}, MI. Family-owned, BBB A+ contractor based in New Haven. Call (586) 231-4217 for an estimate.`,
+      `Concrete driveway replacement and installation in ${c.name}, MI. Family-owned, licensed and insured. Call (586) 231-4217 for a free estimate.`,
   },
   "concrete-patios": {
     keyword: "Concrete Patio Contractor",
@@ -70,7 +70,7 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     lede: (c, area) =>
       `Planning a patio in ${c.name}? ${area}. We pour custom concrete patios, from clean broom finishes to exposed aggregate and stamped concrete, shaped around how you use your yard.`,
     meta: (c) =>
-      `Custom concrete patios in ${c.name}, MI: exposed aggregate, stamped and broom finish. Family-owned, BBB A+ contractor in New Haven. Request an estimate.`,
+      `Custom concrete patios in ${c.name}, MI: exposed aggregate, stamped and broom finish. Family-owned, BBB A+ contractor. Request a free estimate.`,
   },
   "concrete-walkways": {
     keyword: "Concrete Walkways & Steps",

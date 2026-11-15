@@ -37,7 +37,7 @@ export const services: Service[] = [
     summary: "New and replacement driveways poured to handle daily traffic and Michigan winters.",
     metaTitle: "Concrete Driveway Contractor in Macomb County, MI",
     metaDescription:
-      "New and replacement concrete driveways in New Haven, MI and across Macomb County. Family-owned, BBB A+ accredited. Call (586) 231-4217 for an estimate.",
+      "New and replacement concrete driveways in New Haven, MI and across Macomb County. Family-owned, BBB A+ accredited. Call (586) 231-4217 for a free estimate.",
     h1: "Concrete Driveways Built for Daily Use and Michigan Winters",
     lede: "Your driveway takes more abuse than any other surface on your property: vehicles, snow shovels, salt and freeze-thaw cycles. We tear out tired, cracked driveways and pour new concrete that looks sharp from the street and holds up season after season.",
     leadProject: "driveway-washdown",
@@ -90,7 +90,7 @@ export const services: Service[] = [
     summary: "Custom-shaped patios, including exposed aggregate, sized for the way you use your yard.",
     metaTitle: "Custom Concrete Patios in Macomb County, MI",
     metaDescription:
-      "Custom concrete and exposed-aggregate patios for homes in New Haven and Macomb County, MI. Curved edges, borders and real project photos. Request an estimate.",
+      "Custom concrete and exposed-aggregate patios for homes in New Haven and Macomb County, MI, with curved edges and contrasting borders. Request a free estimate.",
     h1: "Custom Concrete Patios Shaped Around the Way You Live Outside",
     lede: "A patio should fit your yard and the way you actually use it. Room for the grill, a table that seats everyone, a curve that follows the garden. We pour custom concrete patios, including the exposed-aggregate finishes you see throughout our work.",
     leadProject: "curved-patio",
@@ -188,7 +188,7 @@ export const services: Service[] = [
     summary: "Concrete walls that hold back soil, define garden beds and level out slopes.",
     metaTitle: "Concrete Retaining Walls in Macomb County, MI",
     metaDescription:
-      "Concrete retaining and garden walls for homes in New Haven and Macomb County, MI. Hold back soil, define beds and add structure to your yard. Get an estimate.",
+      "Concrete retaining and garden walls for homes in New Haven and Macomb County, MI. Hold back soil, define beds and level slopes. Get a free estimate.",
     h1: "Concrete Retaining Walls That Bring Structure to Your Yard",
     lede: "A well-built concrete wall holds soil where it belongs, creates level space for planting and gives a landscape crisp, permanent lines. Our garden wall project shows how an exposed-aggregate wall can frame a planting bed and look good doing it.",
     leadProject: "garden-wall",
@@ -282,7 +282,7 @@ export const services: Service[] = [
     summary: "Slip-conscious concrete surrounds that frame your pool and handle splash and sun.",
     metaTitle: "Concrete Pool Decks in Macomb County, MI",
     metaDescription:
-      "Concrete pool decks and pool surrounds for homes in New Haven and Macomb County, MI. Textured, comfortable and built around your pool. Request an estimate.",
+      "Concrete pool decks and pool surrounds for homes in New Haven and Macomb County, MI. Textured, comfortable and built around your pool. Request a free estimate.",
     h1: "Concrete Pool Decks That Frame Your Pool and Your Summer",
     lede: "The deck around a pool gets wet feet, sun, chairs and constant splashing. A properly finished concrete deck gives you a textured, comfortable surface that frames the pool and connects it to the rest of the yard.",
     leadProject: "pool-deck",

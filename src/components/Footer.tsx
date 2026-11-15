@@ -55,7 +55,7 @@ export function Footer() {
             ))}
           </ul>
           <Link className="btn btn--primary btn--sm" href="/contact" data-track="cta_estimate" data-track-location="footer">
-            Request an Estimate
+            Request a Free Estimate
           </Link>
         </div>
 

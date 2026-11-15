@@ -68,7 +68,7 @@ export function Header() {
             ))}
           </ul>
           <Link className="btn btn--primary btn--block primary-nav__cta" href="/contact" data-track="cta_estimate" data-track-location="mobile_menu">
-            Request an Estimate
+            Request a Free Estimate
           </Link>
         </nav>
 
@@ -79,7 +79,7 @@ export function Header() {
             <span className="visually-hidden header-phone__sr">Call {business.phone.display}</span>
           </a>
           <Link className="btn btn--primary btn--sm header-cta" href="/contact" data-track="cta_estimate" data-track-location="header">
-            Request an Estimate
+            Request a Free Estimate
           </Link>
           <button
             ref={toggleRef}

@@ -54,7 +54,7 @@ export default function ServicesPage() {
                       {s.label}: Details & FAQs <Icon name="arrow" size={18} />
                     </Link>
                     <Link className="text-link" href={`/contact?service=${s.slug}`} data-track="cta_estimate" data-track-location={`services_${s.slug}`}>
-                      Request an estimate
+                      Request a free estimate
                     </Link>
                   </div>
                 </div>

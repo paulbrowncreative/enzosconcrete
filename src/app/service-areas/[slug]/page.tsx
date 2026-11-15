@@ -60,7 +60,7 @@ export default async function CityPage({ params }: Props) {
             <p className="service-hero__lede">{city.lede}</p>
             <div className="hero__actions">
               <Link className="btn btn--primary btn--lg" href={estimateHref} data-track="cta_estimate" data-track-location={`city_hero_${city.slug}`}>
-                Request an Estimate <Icon name="arrow" size={18} />
+                Request a Free Estimate <Icon name="arrow" size={18} />
               </Link>
               <a className="btn btn--ghost-light btn--lg" href={business.phone.href}>
                 <Icon name="phone" size={18} /> {business.phone.display}

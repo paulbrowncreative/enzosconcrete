@@ -60,7 +60,7 @@ export default async function ServicePage({ params }: Props) {
             <p className="service-hero__lede">{service.lede}</p>
             <div className="hero__actions">
               <Link className="btn btn--primary btn--lg" href={estimateHref} data-track="cta_estimate" data-track-location={`service_hero_${service.slug}`}>
-                Request an Estimate <Icon name="arrow" size={18} />
+                Request a Free Estimate <Icon name="arrow" size={18} />
               </Link>
               <a className="btn btn--ghost-light btn--lg" href={business.phone.href}>
                 <Icon name="phone" size={18} /> {business.phone.display}
@@ -114,10 +114,10 @@ export default async function ServicePage({ params }: Props) {
             )}
           </div>
           <div className="quote-card" role="region" aria-labelledby="quote-card-title">
-            <h2 id="quote-card-title">Get an Estimate for Your Project</h2>
+            <h2 id="quote-card-title">Get a Free Estimate for Your Project</h2>
             <p>Send a few details, and we’ll follow up to talk through your project.</p>
             <Link className="btn btn--primary btn--block" href={estimateHref} data-track="cta_estimate" data-track-location={`service_aside_${service.slug}`}>
-              Request an Estimate
+              Request a Free Estimate
             </Link>
             <a className="quote-card__phone" href={business.phone.href}>
               <Icon name="phone" size={18} /> Or call {business.phone.display}

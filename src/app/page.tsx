@@ -14,7 +14,7 @@ export const metadata = pageMetadata({
   title: `New Haven & Macomb County Concrete Contractor | ${business.shortName}`,
   absoluteTitle: true,
   description:
-    "Family-owned concrete contractor in New Haven, MI: driveways, patios, walkways and sealing in Macomb County. Licensed, insured, BBB A+. Call (586) 231-4217.",
+    "Family-owned concrete contractor in New Haven, MI: driveways, patios, walkways and sealing. Licensed, insured, BBB A+. Free estimates: (586) 231-4217.",
   path: "/",
 });
 
@@ -55,7 +55,7 @@ const steps = [
   },
   {
     title: "Review Your Estimate",
-    body: "You get an estimate based on your actual project, with the scope explained, so you can compare with confidence.",
+    body: "You get a free estimate based on your actual project, with the scope explained, so you can compare with confidence.",
   },
   {
     title: "Schedule the Work",
@@ -81,7 +81,7 @@ export default function HomePage() {
             </p>
             <div className="hero__actions">
               <Link className="btn btn--primary btn--lg" href="/contact" data-track="cta_estimate" data-track-location="hero">
-                Request an Estimate
+                Request a Free Estimate
                 <Icon name="arrow" size={18} />
               </Link>
               <a className="btn btn--ghost-light btn--lg" href={business.phone.href} data-track-location="hero">

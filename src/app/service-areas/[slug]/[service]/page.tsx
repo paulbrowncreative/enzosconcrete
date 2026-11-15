@@ -95,7 +95,7 @@ export default async function CityServicePage({ params }: Props) {
   const faqs = [
     {
       q: `Do you ${copy.verb} ${copy.noun} in ${city.name}?`,
-      a: `Yes. Enzo’s Concrete LLC is a licensed, insured and family-owned contractor serving homeowners throughout ${city.name} and the rest of ${city.county} County. Send your project details or call ${business.phone.display} to set up an estimate.`,
+      a: `Yes. Enzo’s Concrete LLC is a licensed, insured and family-owned contractor serving homeowners throughout ${city.name} and the rest of ${city.county} County. Send your project details or call ${business.phone.display} to set up a free estimate.`,
     },
     service.slug === "concrete-sealing"
       ? {
@@ -130,7 +130,7 @@ export default async function CityServicePage({ params }: Props) {
             <p className="service-hero__lede">{copy.lede(city, serviceArea(city))}</p>
             <div className="hero__actions">
               <Link className="btn btn--primary btn--lg" href={estimateHref} data-track="cta_estimate" data-track-location={`local_hero_${city.slug}_${service.slug}`}>
-                Request an Estimate <Icon name="arrow" size={18} />
+                Request a Free Estimate <Icon name="arrow" size={18} />
               </Link>
               <a className="btn btn--ghost-light btn--lg" href={business.phone.href}>
                 <Icon name="phone" size={18} /> {business.phone.display}
