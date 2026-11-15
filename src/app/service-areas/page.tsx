@@ -2,10 +2,8 @@ import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { Icon } from "@/components/Icon";
 import { PageHero } from "@/components/PageHero";
-import { homeBase } from "@/content/areas";
 import { business } from "@/content/business";
 import { cities, cityPath } from "@/content/cities";
-import { distance } from "@/content/localServices";
 import { services, servicePath } from "@/content/services";
 import { pageMetadata } from "@/lib/seo";
 
@@ -17,13 +15,14 @@ export const metadata = pageMetadata({
 });
 
 export default function ServiceAreasPage() {
-  const sorted = [...cities].sort((a, b) => a.miles - b.miles);
+  const sorted = [...cities].sort((a, b) => a.name.localeCompare(b.name));
   return (
     <>
       <PageHero crumbs={[{ name: "Service Areas", path: "/service-areas" }]} eyebrow="Service area" title="Concrete Contractor Serving New Haven and Macomb County">
         <p>
-          {homeBase.note} From here we take on residential concrete projects across{" "}
-          {business.serviceCounties.join(", ").replace(/, ([^,]*)$/, " and $1")}.
+          Enzo’s Concrete serves homeowners across{" "}
+          {business.serviceCounties.join(", ").replace(/, ([^,]*)$/, " and $1")}. Find your community below for local
+          details, permit pointers and the projects most common there.
         </p>
       </PageHero>
 
@@ -33,7 +32,7 @@ export default function ServiceAreasPage() {
             <div>
               <p className="eyebrow">Local pages</p>
               <h2 id="communities-title" className="section-title section-title--sm">
-                Communities We Serve, Closest First
+                Communities We Serve
               </h2>
             </div>
             <p className="section-intro">
@@ -45,7 +44,7 @@ export default function ServiceAreasPage() {
               <li key={c.slug}>
                 <article className="city-card">
                   <p className="city-card__meta">
-                    {distance(c).short} · {c.county} County
+                    {c.county} County
                   </p>
                   <h3>
                     <Link className="stretched-link" href={cityPath(c.slug)}>
@@ -69,8 +68,8 @@ export default function ServiceAreasPage() {
             <li className="county">
               <h3>Macomb County</h3>
               <p>
-                Home turf. New Haven sits in Lenox Township in the north of the county, and every community with its own
-                page above is in Macomb County.
+                Every community with its own local page above is in Macomb County, from New Baltimore and Chesterfield
+                Township on Anchor Bay to Sterling Heights and Shelby Township.
               </p>
             </li>
             <li className="county">

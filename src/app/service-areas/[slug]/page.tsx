@@ -9,7 +9,7 @@ import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
 import { business } from "@/content/business";
 import { cities, cityBySlug, cityPath } from "@/content/cities";
-import { cityServicePath, distance } from "@/content/localServices";
+import { cityServicePath } from "@/content/localServices";
 import { projectById, projects } from "@/content/projects";
 import { serviceBySlug, services } from "@/content/services";
 import { cityServiceSchema, pageMetadata } from "@/lib/seo";
@@ -68,7 +68,7 @@ export default async function CityPage({ params }: Props) {
             </div>
             <ul className="hero__proof" role="list">
               <li>
-                <Icon name="pin" size={18} /> {distance(city).badge}
+                <Icon name="pin" size={18} /> Serving {city.name}, MI
               </li>
               <li>
                 <Icon name="shield" size={18} /> BBB Accredited · {business.bbb.rating}
@@ -237,14 +237,14 @@ export default async function CityPage({ params }: Props) {
       <section className="section section--stone" aria-labelledby="nearby-title">
         <div className="container">
           <h2 id="nearby-title" className="section-title section-title--sm">
-            Nearby Communities We Serve
+            Other Communities We Serve
           </h2>
           <ul className="link-grid" role="list">
             {nearby.map((c) => (
               <li key={c.slug}>
                 <Link href={cityPath(c.slug)}>
                   <strong>Concrete contractor in {c.name}</strong>
-                  <span>{distance(c).line}</span>
+                  <span>{c.county} County</span>
                   <Icon name="arrow" size={18} />
                 </Link>
               </li>

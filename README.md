@@ -28,7 +28,6 @@ Requires Node 20.9+.
 | `src/content/projects.ts` | Project photos, titles, alt text and service mapping |
 | `src/content/cities.ts` | Local service-area pages (`/service-areas/[slug]`): local context, permit pointers, FAQs, nearby links, sources |
 | `src/content/localServices.ts` | City × service landing pages (`/service-areas/[city]/[service]`): local keywords, ledes, trait-based notes, permit filtering |
-| `src/content/areas.ts` | Service-area hub copy |
 | `src/app/` | Routes (one folder per page), `sitemap.ts`, `robots.ts`, favicons |
 | `src/app/api/estimate/route.ts` | Estimate-form endpoint (validation, spam checks, email delivery) |
 | `src/components/` | Header, footer, gallery and lightbox, estimate form, CTA band, etc. |
@@ -40,7 +39,7 @@ Requires Node 20.9+.
 - **FAQ questions, body copy and inline text links use sentence case.**
 - Hyphenate compound modifiers before a noun ("exposed-aggregate patio", "family-owned business"), but not after it ("family owned").
 - Use curly apostrophes and quotes (’ “ ”) in visible text.
-- Distance wording for service-area pages lives in `distance()` in `src/content/localServices.ts`.
+- Local service-area pages describe the area served (“We serve homeowners throughout {city} and the rest of {county} County”, via `serviceArea()` in `src/content/localServices.ts`). They don’t mention mileage or distance from New Haven.
 
 ### Common edits
 - **Add a project photo:** drop a JPEG (≤2000px long edge) in `src/assets/projects/`, import it in `src/content/projects.ts` and add an entry. It appears in the gallery, and on its service page when it's mapped to that service.

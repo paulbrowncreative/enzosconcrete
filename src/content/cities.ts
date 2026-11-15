@@ -1,11 +1,10 @@
 import type { ServiceSlug } from "./services";
 
 /**
- * Local landing pages for the communities around our New Haven base.
+ * Local landing pages for the communities in our service area.
  *
  * Every local fact below comes from a cited public source (see `sources`), and
- * nothing claims a specific past project in a given city. Distances are
- * straight-line from New Haven's center, rounded. When the owner can supply real
+ * nothing claims a specific past project in a given city. When the owner can supply real
  * jobs, photos or reviews for a city, add them here — that is the single biggest
  * upgrade these pages can get.
  */
@@ -18,8 +17,6 @@ export type City = {
   county: string;
   /** 2020 U.S. Census population, as reported in the cited source. */
   population: number;
-  /** Approximate straight-line miles from New Haven. */
-  miles: number;
   metaTitle: string;
   metaDescription: string;
   h1: string;
@@ -54,7 +51,6 @@ export const cities: City[] = [
     kind: "village",
     county: "Macomb",
     population: 6097,
-    miles: 0,
     metaTitle: "Concrete Driveways & Patios in New Haven, MI",
     metaDescription:
       "Enzo’s Concrete LLC is based in New Haven, MI. Driveways, patios, walkways, retaining walls and pool decks from a family-owned, BBB A+ local contractor.",
@@ -65,13 +61,12 @@ export const cities: City[] = [
       { label: "Municipality", value: "Village of New Haven, within Lenox Township" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "6,097" },
-      { label: "Distance", value: "Our home base" },
     ],
     context: {
       heading: "Concrete Work in New Haven",
       paragraphs: [
         "New Haven has grown quickly. The village counted 1,695 housing units in 2010 and 2,111 in 2020, so newer homes now sit alongside a village center that dates back to an 1869 incorporation and an 1865 railroad depot that still stands as the village museum.",
-        "That mix shapes the work. Newer homes often want their first real patio or a wider driveway; older homes nearer the village center tend to need tired driveways, front walks and steps replaced. We do both, and being local means site visits and follow-ups are a short drive away.",
+        "That mix shapes the work. Newer homes often want their first real patio or a wider driveway; older homes nearer the village center tend to need tired driveways, front walks and steps replaced. We do both.",
         "The Salt River runs along the east side of the village toward Lake St. Clair. On low-lying lots, grading and drainage deserve extra attention before any slab is poured.",
       ],
     },
@@ -110,18 +105,16 @@ export const cities: City[] = [
     kind: "township",
     county: "Macomb",
     population: 12119,
-    miles: 1,
     metaTitle: "Concrete Contractor in Lenox Township, MI",
     metaDescription:
       "Concrete driveways, patios and walkways for rural and residential properties in Lenox Township, MI, from a family-owned contractor based in New Haven.",
     h1: "Concrete Driveways, Patios and Walkways in Lenox Township",
-    lede: "Lenox Township wraps around our New Haven base, so we know its mix of farmland, wetlands and growing neighborhoods well. Whether you’re on a rural lot off 26 Mile Road or in a newer subdivision, we pour concrete that suits the property.",
+    lede: "Lenox Township is a mix of farmland, wetlands and growing neighborhoods. Whether you’re on a rural lot off 26 Mile Road or in a newer subdivision, we pour driveways, patios and walkways that suit the property.",
     leadProject: "driveway-washdown",
     snapshot: [
       { label: "Municipality", value: "Lenox Township" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "12,119" },
-      { label: "Distance", value: "Surrounds our New Haven base" },
     ],
     context: {
       heading: "Concrete Work in Lenox Township",
@@ -147,7 +140,7 @@ export const cities: City[] = [
     faqs: [
       {
         q: "Do you work on rural properties in Lenox Township?",
-        a: "Yes. Rural lots are close to home for us, and we’re used to longer driveways, parking pads and the drainage planning that flat, low ground needs.",
+        a: "Yes. We’re used to rural lots, with their longer driveways, parking pads and the drainage planning that flat, low ground needs.",
       },
       {
         q: "My property is flat and gets wet in spring. Can it still have a concrete driveway?",
@@ -167,18 +160,16 @@ export const cities: City[] = [
     kind: "city",
     county: "Macomb",
     population: 12117,
-    miles: 5,
     metaTitle: "Concrete Contractor in New Baltimore, MI",
     metaDescription:
-      "Concrete patios, driveways and walkways for New Baltimore, MI homes near Anchor Bay. Family-owned, BBB A+ contractor based 5 miles away in New Haven.",
+      "Concrete patios, driveways and walkways for New Baltimore, MI homes near Anchor Bay. Family-owned, BBB A+ contractor based in New Haven.",
     h1: "Concrete Patios, Driveways and Walkways in New Baltimore",
-    lede: "New Baltimore homes are built for life on Anchor Bay: summer evenings outside, boats in the driveway, sandy feet on the walk. We pour patios, driveways and walkways that handle all of it, from a family-owned base about five miles away in New Haven.",
+    lede: "New Baltimore homes are built for life on Anchor Bay: summer evenings outside, boats in the driveway, sandy feet on the walk. We pour patios, driveways and walkways that handle all of it.",
     leadProject: "pool-deck",
     snapshot: [
       { label: "Municipality", value: "City of New Baltimore" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "12,117" },
-      { label: "Distance", value: "About 5 miles from New Haven" },
     ],
     context: {
       heading: "Concrete Work in New Baltimore",
@@ -210,8 +201,8 @@ export const cities: City[] = [
         a: "Driveway widening and parking pads are a common project. We’ll look at your lot, how you need to maneuver, and any local limits on width before recommending a size.",
       },
       {
-        q: "How far are you from New Baltimore?",
-        a: "We’re based in New Haven, about five miles away, so New Baltimore is close to home for us.",
+        q: "Do you serve all of New Baltimore?",
+        a: "Yes, from older homes near downtown and the waterfront to newer neighborhoods. Tell us your address when you request an estimate.",
       },
     ],
     nearby: ["chesterfield-township", "new-haven", "harrison-township", "lenox-township"],
@@ -223,18 +214,16 @@ export const cities: City[] = [
     kind: "charter township",
     county: "Macomb",
     population: 45376,
-    miles: 4,
     metaTitle: "Concrete Contractor in Chesterfield Township, MI",
     metaDescription:
-      "Driveway replacement, widening and custom patios for Chesterfield Township, MI subdivisions. Family-owned, BBB A+ concrete contractor next door in New Haven.",
+      "Driveway replacement, widening and custom patios for Chesterfield Township, MI subdivisions. Family-owned, BBB A+ concrete contractor based in New Haven.",
     h1: "Concrete Driveways and Patios in Chesterfield Township",
-    lede: "Chesterfield Township borders New Haven, so it’s one of the closest communities we serve. From subdivision driveways to backyard patios near Anchor Bay, we help Chesterfield homeowners replace, widen and upgrade their concrete.",
+    lede: "Chesterfield Township is one of the larger communities we serve in northern Macomb County. From subdivision driveways to backyard patios near Anchor Bay, we help Chesterfield homeowners replace, widen and upgrade their concrete.",
     leadProject: "driveway-expansion",
     snapshot: [
       { label: "Municipality", value: "Charter Township of Chesterfield" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "45,376" },
-      { label: "Distance", value: "Borders New Haven, about 4 miles" },
     ],
     context: {
       heading: "Concrete Work in Chesterfield Township",
@@ -267,8 +256,8 @@ export const cities: City[] = [
         a: "Many subdivisions have rules about driveway width, materials or patio placement. Check your HOA documents before work starts. We can provide dimensions and finish details for an approval request.",
       },
       {
-        q: "How close are you to Chesterfield?",
-        a: "Very close. Chesterfield Township borders New Haven, where we’re based.",
+        q: "Do you serve all of Chesterfield Township?",
+        a: "Yes, including communities such as Chesterfield, Milton, Lottivue and Anchor Bay Harbor. Tell us your address when you request an estimate.",
       },
     ],
     nearby: ["new-haven", "new-baltimore", "macomb-township", "harrison-township"],
@@ -280,18 +269,16 @@ export const cities: City[] = [
     kind: "city",
     county: "Macomb",
     population: 5878,
-    miles: 7,
     metaTitle: "Concrete Contractor in Richmond, MI",
     metaDescription:
-      "Concrete driveways, front walks and patios for Richmond, MI homes. Family-owned, BBB A+ contractor based 7 miles south on M-19 in New Haven.",
+      "Concrete driveways, front walks and patios for Richmond, MI homes. Family-owned, BBB A+ contractor based in New Haven.",
     h1: "Concrete Driveways, Walks and Patios in Richmond, MI",
-    lede: "Richmond is a straight shot up M-19 from our New Haven base, about seven miles north. We help Richmond homeowners replace worn driveways, rebuild front walks and add patios that fit the city’s established, small-town neighborhoods.",
+    lede: "We help Richmond homeowners replace worn driveways, rebuild front walks and add patios that fit the city’s established, small-town neighborhoods.",
     leadProject: "front-walk",
     snapshot: [
       { label: "Municipality", value: "City of Richmond" },
       { label: "County", value: "Macomb (small part in St. Clair)" },
       { label: "Population (2020)", value: "5,878" },
-      { label: "Distance", value: "About 7 miles up M-19" },
     ],
     context: {
       heading: "Concrete Work in Richmond",
@@ -320,7 +307,7 @@ export const cities: City[] = [
       },
       {
         q: "Do you serve all of Richmond, including the St. Clair County side?",
-        a: "Richmond is about seven miles from our New Haven base. Tell us your address when you request an estimate and we’ll confirm.",
+        a: "We serve homeowners throughout Richmond. Tell us your address when you request an estimate, and we’ll confirm the details for your property.",
       },
       {
         q: "How long before I can use a new driveway?",
@@ -336,10 +323,9 @@ export const cities: City[] = [
     kind: "township",
     county: "Macomb",
     population: 3780,
-    miles: 7,
     metaTitle: "Concrete Contractor in Ray Township, MI",
     metaDescription:
-      "Concrete driveways, parking pads and walkways for rural properties in Ray Township, MI. Family-owned, BBB A+ contractor based in nearby New Haven.",
+      "Concrete driveways, parking pads and walkways for rural properties in Ray Township, MI. Family-owned, BBB A+ contractor based in New Haven.",
     h1: "Concrete for Rural Properties in Ray Township",
     lede: "Ray Township is country living in north-central Macomb County, home to Wolcott Mill Metropark and small crossroads communities like Davis, Meade, Ray Center and Wolcott Mills. We pour driveways, parking pads and walkways built for rural properties.",
     leadProject: "driveway-washdown",
@@ -347,7 +333,6 @@ export const cities: City[] = [
       { label: "Municipality", value: "Ray Township" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "3,780" },
-      { label: "Distance", value: "About 7 miles from New Haven" },
     ],
     context: {
       heading: "Concrete Work in Ray Township",
@@ -377,8 +362,8 @@ export const cities: City[] = [
         a: "Yes, when it’s designed for the load. Tell us what you’ll park and drive on it so the slab and base can be planned accordingly.",
       },
       {
-        q: "Do you travel out to Ray Township?",
-        a: "Yes. Ray Township is about seven miles from our base in New Haven.",
+        q: "Do you serve all of Ray Township?",
+        a: "Yes, including properties around Davis, Meade, Ray Center and Wolcott Mills. Tell us your address when you request an estimate.",
       },
     ],
     nearby: ["lenox-township", "armada", "macomb-township", "washington-township"],
@@ -390,18 +375,16 @@ export const cities: City[] = [
     kind: "village",
     county: "Macomb",
     population: 1684,
-    miles: 9,
     metaTitle: "Concrete Contractor in Armada, MI",
     metaDescription:
       "Concrete driveways, walkways and patios for homes in and around the Village of Armada, MI. Family-owned, BBB A+ contractor based in New Haven.",
     h1: "Concrete Driveways, Walks and Patios in Armada",
-    lede: "Armada, home of the Armada Fair since 1872, is small-town Macomb County at its best. We pour driveways, front walks and patios for homes in the village and on the surrounding country properties, from our family-owned base in New Haven.",
+    lede: "Armada, home of the Armada Fair since 1872, is small-town Macomb County at its best. We pour driveways, front walks and patios for homes in the village and on the surrounding country properties.",
     leadProject: "side-walkway",
     snapshot: [
       { label: "Municipality", value: "Village of Armada, within Armada Township" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "1,684 (village)" },
-      { label: "Distance", value: "About 9 miles from New Haven" },
     ],
     context: {
       heading: "Concrete Work in Armada",
@@ -433,10 +416,6 @@ export const cities: City[] = [
         q: "Can you match the look of an older home?",
         a: "We’ll talk through finish options, from a classic broom finish to exposed aggregate, and pick what suits the house and street.",
       },
-      {
-        q: "How far is Armada from you?",
-        a: "About nine miles from our New Haven base.",
-      },
     ],
     nearby: ["richmond", "ray-township", "washington-township", "lenox-township"],
     sources: [wiki("Armada,_Michigan"), countyRoads],
@@ -447,7 +426,6 @@ export const cities: City[] = [
     kind: "township",
     county: "Macomb",
     population: 91663,
-    miles: 9,
     metaTitle: "Concrete Contractor in Macomb Township, MI",
     metaDescription:
       "Driveway replacement, widening and patios in Macomb Township, MI, built to the township’s concrete standards. Family-owned, BBB A+ contractor in New Haven.",
@@ -458,7 +436,6 @@ export const cities: City[] = [
       { label: "Municipality", value: "Macomb Township" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "91,663" },
-      { label: "Distance", value: "About 9 miles from New Haven" },
     ],
     context: {
       heading: "Concrete Work in Macomb Township",
@@ -517,7 +494,6 @@ export const cities: City[] = [
     kind: "township",
     county: "Macomb",
     population: 28165,
-    miles: 12,
     metaTitle: "Concrete Contractor in Washington Township, MI",
     metaDescription:
       "Concrete driveways, patios and walkways in Washington Township, MI, built for colder, snowier winters. Family-owned, BBB A+ contractor based in New Haven.",
@@ -528,7 +504,6 @@ export const cities: City[] = [
       { label: "Municipality", value: "Washington Township" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "28,165" },
-      { label: "Distance", value: "About 12 miles from New Haven" },
     ],
     context: {
       heading: "Concrete Work in Washington Township",
@@ -570,7 +545,6 @@ export const cities: City[] = [
     kind: "charter township",
     county: "Macomb",
     population: 24314,
-    miles: 10,
     metaTitle: "Concrete Contractor in Harrison Township, MI",
     metaDescription:
       "Concrete patios, pool decks and driveways for lakeside homes in Harrison Township, MI on Lake St. Clair. Family-owned, BBB A+ contractor based in New Haven.",
@@ -581,7 +555,6 @@ export const cities: City[] = [
       { label: "Municipality", value: "Charter Township of Harrison" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "24,314" },
-      { label: "Distance", value: "About 10 miles from New Haven" },
     ],
     context: {
       heading: "Concrete Work in Harrison Township",
@@ -623,7 +596,6 @@ export const cities: City[] = [
     kind: "charter township",
     county: "Macomb",
     population: 100513,
-    miles: 12,
     metaTitle: "Concrete Contractor in Clinton Township, MI",
     metaDescription:
       "Driveway replacement, walkways and patios across Clinton Township, MI, Michigan’s most populous township. Family-owned, BBB A+ contractor based in New Haven.",
@@ -634,7 +606,6 @@ export const cities: City[] = [
       { label: "Municipality", value: "Charter Township of Clinton" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "100,513" },
-      { label: "Distance", value: "About 12 miles from New Haven" },
     ],
     context: {
       heading: "Concrete Work in Clinton Township",
@@ -676,7 +647,6 @@ export const cities: City[] = [
     kind: "charter township",
     county: "Macomb",
     population: 79408,
-    miles: 13,
     metaTitle: "Concrete Contractor in Shelby Township, MI",
     metaDescription:
       "Custom exposed-aggregate patios, pool decks and driveways in Shelby Township, MI. Family-owned, BBB A+ concrete contractor based in New Haven.",
@@ -687,7 +657,6 @@ export const cities: City[] = [
       { label: "Municipality", value: "Charter Township of Shelby" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "79,408" },
-      { label: "Distance", value: "About 13 miles from New Haven" },
     ],
     context: {
       heading: "Concrete Work in Shelby Township",
@@ -716,8 +685,8 @@ export const cities: City[] = [
         a: "Yes. Finishing a garden or retaining wall in the same exposed aggregate as the patio is a great way to make a backyard look designed. See our garden wall project for an example.",
       },
       {
-        q: "How far is Shelby Township from you?",
-        a: "About 13 miles from our New Haven base. Shelby is well within the area we serve.",
+        q: "Do you serve all of Shelby Township?",
+        a: "Yes, including communities such as Shelby, Preston Corners and Yates. Tell us your address when you request an estimate.",
       },
     ],
     nearby: ["washington-township", "macomb-township", "sterling-heights", "clinton-township"],
@@ -733,7 +702,6 @@ export const cities: City[] = [
     kind: "city",
     county: "Macomb",
     population: 134346,
-    miles: 16,
     metaTitle: "Concrete Contractor in Sterling Heights, MI",
     metaDescription:
       "Driveway replacement, walkways and patios for Sterling Heights, MI homes. Family-owned, BBB A+ concrete contractor based in New Haven. Request an estimate.",
@@ -744,7 +712,6 @@ export const cities: City[] = [
       { label: "Municipality", value: "City of Sterling Heights" },
       { label: "County", value: "Macomb" },
       { label: "Population (2020)", value: "134,346" },
-      { label: "Distance", value: "About 16 miles from New Haven" },
     ],
     context: {
       heading: "Concrete Work in Sterling Heights",
@@ -772,8 +739,8 @@ export const cities: City[] = [
         a: "It can. The approach between the sidewalk and the street is usually in the public right-of-way, so it may need a separate permit. We’ll talk through the full scope at your estimate.",
       },
       {
-        q: "Do you work as far south as Sterling Heights?",
-        a: "Yes. Sterling Heights is about 16 miles from our New Haven base and within the Macomb County area we serve.",
+        q: "Do you serve all of Sterling Heights?",
+        a: "Yes. Sterling Heights is part of the Macomb County area we serve. Tell us your address when you request an estimate.",
       },
     ],
     nearby: ["shelby-township", "clinton-township", "macomb-township", "washington-township"],

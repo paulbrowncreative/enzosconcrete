@@ -46,45 +46,20 @@ type LocalCopy = {
   noun: string;
   /** Verb that fits the noun in "Do you ___ {noun} in {city}?" */
   verb: string;
-  lede: (city: City, distance: string) => string;
+  lede: (city: City, area: string) => string;
   meta: (city: City) => string;
 };
 
-/** New Haven is the home base and sits inside Lenox Township, so those two get their own wording. */
-const isBase = (c: City) => c.miles === 0;
-const surroundsBase = (c: City) => c.slug === "lenox-township";
-
-/** Every distance phrase on the site, in one place, so wording and plurals stay consistent. */
-export const distance = (c: City) => ({
-  /** Hero badge (title case). */
-  badge: isBase(c) ? "Based in New Haven" : surroundsBase(c) ? "Surrounds Our New Haven Base" : `About ${c.miles} Miles Away`,
-  /** Secondary line in link lists. */
-  line: isBase(c) ? "Our home base" : surroundsBase(c) ? "Surrounds our New Haven base" : `About ${c.miles} miles from New Haven`,
-  /** Short label on the service-area cards (shown in capitals). */
-  short: isBase(c) ? "Home base" : surroundsBase(c) ? "Surrounds New Haven" : `About ${c.miles} mi away`,
-  /** Sentence used in page introductions. */
-  sentence: isBase(c)
-    ? "We’re based right here in New Haven"
-    : surroundsBase(c)
-      ? "We’re based in New Haven, which sits inside Lenox Township"
-      : c.slug === "richmond"
-        ? "We’re based in New Haven, about 7 miles south on M-19"
-        : `We’re based in New Haven, about ${c.miles} miles away`,
-  /** Completes "a family-owned contractor based …". */
-  based: isBase(c)
-    ? "right here in New Haven"
-    : surroundsBase(c)
-      ? `in New Haven, which sits inside ${c.name}`
-      : `about ${c.miles} miles from ${c.name}`,
-});
+/** Service-area sentence used in local page introductions. */
+export const serviceArea = (c: City) => `We serve homeowners throughout ${c.name} and the rest of ${c.county} County`;
 
 export const localCopy: Record<ServiceSlug, LocalCopy> = {
   "concrete-driveways": {
     keyword: "Concrete Driveway Contractor",
     noun: "a concrete driveway",
     verb: "install",
-    lede: (c, d) =>
-      `Need a new or replacement concrete driveway in ${c.name}? ${d}. We tear out worn, cracked driveways and pour new concrete built for daily traffic, snow shovels and Michigan freeze-thaw cycles.`,
+    lede: (c, area) =>
+      `Need a new or replacement concrete driveway in ${c.name}? ${area}. We tear out worn, cracked driveways and pour new concrete built for daily traffic, snow shovels and Michigan freeze-thaw cycles.`,
     meta: (c) =>
       `Concrete driveway replacement and installation in ${c.name}, MI. Family-owned, BBB A+ contractor based in New Haven. Call (586) 231-4217 for an estimate.`,
   },
@@ -92,8 +67,8 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     keyword: "Concrete Patio Contractor",
     noun: "a concrete patio",
     verb: "install",
-    lede: (c, d) =>
-      `Planning a patio in ${c.name}? ${d}. We pour custom concrete patios, from clean broom finishes to exposed aggregate and stamped concrete, shaped around how you use your yard.`,
+    lede: (c, area) =>
+      `Planning a patio in ${c.name}? ${area}. We pour custom concrete patios, from clean broom finishes to exposed aggregate and stamped concrete, shaped around how you use your yard.`,
     meta: (c) =>
       `Custom concrete patios in ${c.name}, MI: exposed aggregate, stamped and broom finish. Family-owned, BBB A+ contractor in New Haven. Request an estimate.`,
   },
@@ -101,8 +76,8 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     keyword: "Concrete Walkways & Steps",
     noun: "a concrete walkway or steps",
     verb: "install",
-    lede: (c, d) =>
-      `Replacing a cracked front walk or worn steps in ${c.name}? ${d}. We pour walkways, steps and garden paths that are level, safe underfoot and finished to suit the house.`,
+    lede: (c, area) =>
+      `Replacing a cracked front walk or worn steps in ${c.name}? ${area}. We pour walkways, steps and garden paths that are level, safe underfoot and finished to suit the house.`,
     meta: (c) =>
       `Concrete walkways, front steps and garden paths in ${c.name}, MI. Family-owned, BBB A+ contractor based in New Haven. Call (586) 231-4217.`,
   },
@@ -110,8 +85,8 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     keyword: "Concrete Retaining Walls",
     noun: "a concrete retaining wall",
     verb: "build",
-    lede: (c, d) =>
-      `Need to hold back a slope or define a garden bed in ${c.name}? ${d}. We build concrete garden and retaining walls that can be finished to match your patio or walkway.`,
+    lede: (c, area) =>
+      `Need to hold back a slope or define a garden bed in ${c.name}? ${area}. We build concrete garden and retaining walls that can be finished to match your patio or walkway.`,
     meta: (c) =>
       `Concrete retaining and garden walls in ${c.name}, MI, finished to match your patio or walkway. Family-owned, BBB A+ contractor based in New Haven.`,
   },
@@ -119,8 +94,8 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     keyword: "Driveway Extensions & Widening",
     noun: "a driveway extension",
     verb: "build",
-    lede: (c, d) =>
-      `Out of parking space in ${c.name}? ${d}. We widen and extend concrete driveways for an extra vehicle, a trailer or simply easier parking, tied neatly into your existing slab.`,
+    lede: (c, area) =>
+      `Out of parking space in ${c.name}? ${area}. We widen and extend concrete driveways for an extra vehicle, a trailer or simply easier parking, tied neatly into your existing slab.`,
     meta: (c) =>
       `Driveway widening and extensions in ${c.name}, MI. Room for another car, a boat or a trailer. Family-owned, BBB A+ contractor based in New Haven.`,
   },
@@ -128,8 +103,8 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     keyword: "Concrete Pool Decks",
     noun: "a concrete pool deck",
     verb: "install",
-    lede: (c, d) =>
-      `Installing or replacing a pool deck in ${c.name}? ${d}. We pour textured, slip-conscious concrete pool surrounds that shed water and frame the pool.`,
+    lede: (c, area) =>
+      `Installing or replacing a pool deck in ${c.name}? ${area}. We pour textured, slip-conscious concrete pool surrounds that shed water and frame the pool.`,
     meta: (c) =>
       `Concrete pool decks and pool surrounds in ${c.name}, MI with textured, slip-conscious finishes. Family-owned, BBB A+ contractor based in New Haven.`,
   },
@@ -137,8 +112,8 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     keyword: "Concrete Sealing & Power Washing",
     noun: "concrete cleaning and sealing",
     verb: "offer",
-    lede: (c, d) =>
-      `Protect your concrete in ${c.name} from salt and weather. ${d}. We pressure wash and seal driveways, stamped patios and exposed aggregate to help guard the surface and bring back its color.`,
+    lede: (c, area) =>
+      `Protect your concrete in ${c.name} from salt and weather. ${area}. We pressure wash and seal driveways, stamped patios and exposed aggregate to help guard the surface and bring back its color.`,
     meta: (c) =>
       `Concrete power washing and sealing in ${c.name}, MI for driveways, stamped patios and exposed aggregate. Family-owned, BBB A+ contractor in New Haven.`,
   },
@@ -146,8 +121,8 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
     keyword: "Pole Barn Floors & Concrete Slabs",
     noun: "a pole barn floor or slab",
     verb: "pour",
-    lede: (c, d) =>
-      `Need a pole barn floor, shed pad or porch slab in ${c.name}? ${d}. We pour flat, durable slabs planned around what they’ll carry, finished smooth inside and textured outside.`,
+    lede: (c, area) =>
+      `Need a pole barn floor, shed pad or porch slab in ${c.name}? ${area}. We pour flat, durable slabs planned around what they’ll carry, finished smooth inside and textured outside.`,
     meta: (c) =>
       `Pole barn floors, shed pads and concrete slabs in ${c.name}, MI. Flat, durable slabs from a family-owned, BBB A+ contractor based in New Haven.`,
   },
@@ -156,14 +131,14 @@ export const localCopy: Record<ServiceSlug, LocalCopy> = {
 /** Short, general-but-relevant guidance for a service in a community with a given trait. */
 export const traitNotes: Record<Trait, Partial<Record<ServiceSlug, string>>> = {
   hometown: {
-    "concrete-driveways": "Being based in the village means estimate visits, follow-ups and any questions after the pour are a short drive away.",
-    "concrete-patios": "Newer homes in and around the village often need a first real patio, and older homes near the village center often need a tired slab replaced. We do both, close to home.",
+    "concrete-driveways": "As a New Haven family business, we handle estimate visits, follow-ups and any questions after the pour ourselves.",
+    "concrete-patios": "Newer homes in and around the village often need a first real patio, and older homes near the village center often need a tired slab replaced. We do both.",
     "concrete-walkways": "Front walks and steps on the village’s older homes have seen decades of winters, and replacing heaved sections is one of the most practical safety upgrades.",
     "retaining-walls": "Local projects mean we can look at the grade and drainage on your lot quickly, before recommending a wall design.",
     "driveway-expansions": "As households grow, a second parking spot is often the most useful upgrade on village lots. We look at your lot and recommend a width that fits.",
-    "pool-decks": "Being local makes it easy to schedule site visits around your pool opening and closing season.",
+    "pool-decks": "We can plan site visits and the pour around your pool’s opening and closing season.",
     "concrete-sealing": "Village driveways and walks take a beating from winter salt. Regular cleaning and sealing help them last longer.",
-    "concrete-slabs": "Shed pads and porch slabs are quick local jobs for us, and we’re nearby if you need anything after the pour.",
+    "concrete-slabs": "Shed pads and porch slabs are straightforward projects, and we’re available if you need anything after the pour.",
   },
   rural: {
     "concrete-driveways": "Rural driveways run longer and often carry heavier vehicles, so slab thickness, base preparation and edges deserve extra planning. Many owners also consider moving from gravel to concrete.",

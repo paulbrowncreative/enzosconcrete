@@ -12,7 +12,7 @@ import { cities, cityBySlug, cityPath, type City } from "@/content/cities";
 import {
   cityServicePath,
   cityTraits,
-  distance,
+  serviceArea,
   localCopy,
   macombRulesFor,
   touchesRoad,
@@ -91,12 +91,11 @@ export default async function CityServicePage({ params }: Props) {
   const nearby = city.nearby.map((s) => cityBySlug(s)!).filter(Boolean);
   const others = services.filter((s) => s.slug !== service.slug);
   const estimateHref = `/contact?service=${service.slug}&city=${encodeURIComponent(city.name)}`;
-  const where = distance(city).based;
 
   const faqs = [
     {
       q: `Do you ${copy.verb} ${copy.noun} in ${city.name}?`,
-      a: `Yes. Enzo’s Concrete LLC is a family-owned contractor based ${where}, and ${city.name} is part of the ${city.county} County area we serve. Send your project details or call ${business.phone.display} to set up an estimate.`,
+      a: `Yes. Enzo’s Concrete LLC is a family-owned contractor serving homeowners throughout ${city.name} and the rest of ${city.county} County. Send your project details or call ${business.phone.display} to set up an estimate.`,
     },
     service.slug === "concrete-sealing"
       ? {
@@ -128,7 +127,7 @@ export default async function CityServicePage({ params }: Props) {
               {service.name} · {city.name}, MI
             </p>
             <h1 className="service-hero__title">{h1}</h1>
-            <p className="service-hero__lede">{copy.lede(city, distance(city).sentence)}</p>
+            <p className="service-hero__lede">{copy.lede(city, serviceArea(city))}</p>
             <div className="hero__actions">
               <Link className="btn btn--primary btn--lg" href={estimateHref} data-track="cta_estimate" data-track-location={`local_hero_${city.slug}_${service.slug}`}>
                 Request an Estimate <Icon name="arrow" size={18} />
@@ -139,7 +138,7 @@ export default async function CityServicePage({ params }: Props) {
             </div>
             <ul className="hero__proof" role="list">
               <li>
-                <Icon name="pin" size={18} /> {distance(city).badge}
+                <Icon name="pin" size={18} /> Serving {city.name}, MI
               </li>
               <li>
                 <Icon name="shield" size={18} /> BBB Accredited · {business.bbb.rating}
@@ -280,7 +279,7 @@ export default async function CityServicePage({ params }: Props) {
       <section className="section" aria-labelledby="links-title">
         <div className="container">
           <h2 id="links-title" className="section-title section-title--sm">
-            {service.name} Near {city.name}
+            {service.name} in Other Communities
           </h2>
           <ul className="link-grid" role="list">
             {nearby.map((c) => (
@@ -289,7 +288,7 @@ export default async function CityServicePage({ params }: Props) {
                   <strong>
                     {service.label} in {c.name}
                   </strong>
-                  <span>{distance(c).line}</span>
+                  <span>{c.county} County</span>
                   <Icon name="arrow" size={18} />
                 </Link>
               </li>

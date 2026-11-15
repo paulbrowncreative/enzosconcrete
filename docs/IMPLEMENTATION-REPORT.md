@@ -67,7 +67,7 @@ _Prepared 2026-10-14. Covers the audit of the existing B12 site, the strategy, t
 The query clusters are hypotheses based on the services, the location and the competitor review. No keyword
 tool (volume or difficulty data) was available, so none is claimed. Validate with Search Console data after launch.
 
-**Location pages (added in a second pass):** 13 local landing pages at `/service-areas/[slug]`: New Haven, Lenox Township, New Baltimore, Chesterfield Township, Richmond, Ray Township, Armada, Macomb Township, Washington Township, Harrison Township, Clinton Township, Shelby Township and Sterling Heights. These are the Macomb County communities closest to the New Haven base. To avoid doorway pages, each one is built from researched, cited local facts and has its own:
+**Location pages (added in a second pass):** 13 local landing pages at `/service-areas/[slug]`: New Haven, Lenox Township, New Baltimore, Chesterfield Township, Richmond, Ray Township, Armada, Macomb Township, Washington Township, Harrison Township, Clinton Township, Shelby Township and Sterling Heights. These are the Macomb County communities in the service area. To avoid doorway pages, each one is built from researched, cited local facts and has its own:
 - **Title, meta description, H1 and lede**, aligned to "concrete contractor in {city}" intent and to that community's most likely projects
 - **Local context**: geography, growth and housing history, water and drainage factors (Wikipedia, citing the 2020 Census). Sources are recorded per city in `src/content/cities.ts`
 - **Services ranked by local relevance**, with city-specific reasoning, plus links to every service page
@@ -145,6 +145,9 @@ Not measured yet: real-user Core Web Vitals (they need production traffic in CrU
 | City prefill: city page CTA → `/contact?city=New Baltimore` fills the city field | ✅ |
 | City `Service` schema parses, `areaServed` correct | ✅ |
 | Lighthouse (mobile, simulated): Macomb Township page / hub | 84 / 96 performance; **100 accessibility, best practices and SEO** on both |
+
+### Local page copy update (2026-11-15)
+At the owner's request, the local service-area pages (13 city pages, 104 city × service pages and the hub) no longer mention mileage, distance or proximity to New Haven. They describe the area served instead: "We serve homeowners throughout {city} and the rest of {county} County", a "Serving {city}, MI" badge, and county labels on community links. Distance FAQs were replaced with service-area FAQs that name each community's neighborhoods (e.g. Shelby, Preston Corners and Yates in Shelby Township). The hub now lists communities alphabetically. "Based in New Haven" remains only where it identifies the business (meta descriptions, the New Haven page and the homepage), for consistent business details across the web.
 
 ### Pre-launch QA (2026-11-15)
 
