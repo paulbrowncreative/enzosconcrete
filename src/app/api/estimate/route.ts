@@ -19,7 +19,8 @@ function emailConfig() {
   const apiKey = process.env.RESEND_API_KEY?.trim();
   const to = (process.env.LEAD_TO_EMAIL || business.email)
     .split(",")
-    .map((s) => s.trim())
+    // Lowercased: Resend matches its test sender's recipient against the account email exactly.
+    .map((s) => s.trim().toLowerCase())
     .filter(Boolean);
   const from = process.env.LEAD_FROM_EMAIL?.trim() || DEFAULT_FROM;
   return { apiKey, to, from };
