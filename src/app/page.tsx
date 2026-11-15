@@ -75,8 +75,9 @@ export default function HomePage() {
               Concrete craftsmanship built to&nbsp;last.
             </h1>
             <p className="hero__lede">
-              Driveways, patios, walkways, retaining walls and pool decks for homeowners in New Haven and across Macomb
-              County. Family owned, with {business.yearsExperience} years of experience and a finish you’ll notice.
+              Driveways, patios, walkways, walls, pool decks, sealing and pole barn floors for homeowners in New Haven
+              and across Macomb County. Family owned, with {business.yearsExperience} years of experience and a finish
+              you’ll notice.
             </p>
             <div className="hero__actions">
               <Link className="btn btn--primary btn--lg" href="/contact" data-track="cta_estimate" data-track-location="hero">

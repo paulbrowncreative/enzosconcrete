@@ -146,6 +146,29 @@ Not measured yet: real-user Core Web Vitals (they need production traffic in CrU
 | City `Service` schema parses, `areaServed` correct | ✅ |
 | Lighthouse (mobile, simulated): Macomb Township page / hub | 84 / 96 performance; **100 accessibility, best practices and SEO** on both |
 
+### Pre-launch QA (2026-11-15)
+
+All checks were run against a production build with a real domain configured, except the Netlify build, which used Netlify's own CLI and runtime.
+
+| Area | Check | Result |
+|---|---|---|
+| Build | Next.js production build, TypeScript, `npm audit` | ✅ 0 errors, 0 warnings, 0 vulnerabilities (Next.js 16.4.6) |
+| Hosting | `netlify build` with Netlify Next.js Runtime 5.16.7 | ✅ Builds and packages the server function |
+| SEO | Crawl of all 132 sitemap URLs | ✅ 0 issues: 200s, unique titles (25–70 chars) and descriptions (70–165), self-canonicals, one H1 and no skipped heading levels, OG/Twitter tags, `lang`, viewport, call link on every page, no stray placeholder text |
+| SEO | Internal linking | ✅ 0 broken links, 0 orphans, every page has ≥11 inbound internal links |
+| SEO | Structured data | ✅ Valid JSON-LD on every page: GeneralContractor + WebSite (132), BreadcrumbList (131), Service (125) |
+| SEO | robots.txt, sitemap, legacy redirects, 404s | ✅ Real domain is indexable with a sitemap; review deploys are noindexed; 11 old B12 URLs 308-redirect; unknown pages, cities and services return 404 |
+| SEO | External links | ✅ Macomb County and Macomb Township sources live; BBB profile re-verified (Accredited, A+, 0 complaints) |
+| Accessibility | axe-core (WCAG 2.0–2.2 A/AA + best practice) on all 132 pages at 390, 768 and 1440px (~400 page loads) | ✅ 0 violations, 0 horizontal overflow, 0 broken images, 0 console errors |
+| UX | 30 interaction tests | ✅ 30/30. Covers the skip link, header tab order, visible focus rings, sticky header, mobile menu (open, scroll lock, Escape returns focus), 44px touch targets, mobile Call/Estimate bar, keyboard photo viewer with focus return, gallery filters, "Show more" with focus management, form validation (summary focus, linked errors, aria-invalid, phone/email rules), spam honeypot, double-submit guard, success state, city + service pre-fill, and analytics events (phone, email, estimate CTA, lead only on confirmed success) |
+| Visual | Desktop, tablet and phone review of key templates | ✅ No layout defects |
+| Performance | Lighthouse mobile (simulated slow 4G) | Home 85–88 · Service 91 · City 91 · City × service 90 · Our Work 86–89 (was 75) · Contact 98. **Accessibility, Best Practices and SEO 100 on every template.** CLS 0 everywhere |
+
+**Fixed during this QA pass:**
+- Homepage hero, About intro and default description listed 5 services instead of 8.
+- Added a web app manifest (home-screen name, icon and colors).
+- Our Work now renders 24 photos first, with a keyboard-accessible "Show more photos" button, cutting main-thread blocking on phones (TBT 590 ms → ~80–260 ms).
+
 ### Security patch (2026-11-15)
 Next.js was upgraded **16.4.0 → 16.4.6** (patch release, same minor). 16.0.0–16.4.0 are affected by
 critical advisories, including unauthenticated remote code execution (GHSA-2464-fhr4-w9xw,
@@ -182,15 +205,25 @@ production build passes, and all 132 pages pass the axe/overflow/console checks.
 | `npm audit --omit=dev` | ✅ 0 vulnerabilities |
 | Lighthouse mobile (simulated) | Home 89 · Shelby patios page 89 · Sealing service 96 · Our Work 89 · Contact 95. **Accessibility, Best Practices and SEO 100 on all.** CLS 0 |
 
-## 7. Owner checklist (needed before or at launch)
+## 7. Owner checklist
 
-0. **Review the local pages:** each of the 13 communities now has 8 service pages saying Enzo’s serves that town for that service. If there are towns or services (e.g. sealing in a far-off town) you don’t want to advertise, say so and they can be removed.
-1. **Domain:** which domain will the site live on? Set `NEXT_PUBLIC_SITE_URL` and point DNS at the deployment.
-2. **Form delivery:** create a Resend account, verify the sending domain, then set `RESEND_API_KEY`, `LEAD_TO_EMAIL` and `LEAD_FROM_EMAIL`. Send one real test request.
-3. **Confirm or correct these facts:** years in business (15+ vs. BBB's 1974), business hours, whether estimates are free (the site says "Request an Estimate", not "free"), whether you take texts (the form offers "Text message" as a contact preference), and "Foundations" / "Decorative concrete" as services.
-4. **Confirm the copy commitments** written in your voice: looking at the existing driveway with the customer before work; scheduling pours around the forecast; that every photo on the site is your own work; that you discuss the site in person. Edit any that don't match how you work (`src/content/services.ts`, `src/app/page.tsx`).
-5. **License and insurance:** if you hold a Michigan residential builder or M&A license and liability insurance, send the details. They're strong trust signals competitors use.
-6. **Locality:** choose "New Haven" or "Lenox" and make Google Business Profile, BBB and the site match.
+### Must do before the site goes live
+1. **Domain:** add the client's domain in Netlify (HTTPS is automatic), set `NEXT_PUBLIC_SITE_URL=https://www.theirdomain.com`, and redeploy. This turns indexing on and makes the canonicals, sitemap and structured data use the real domain.
+2. **Estimate form email:** create a Resend account, verify the sending domain (DNS records), and set `RESEND_API_KEY`, `LEAD_TO_EMAIL` and `LEAD_FROM_EMAIL` in Netlify. Then **send one real test request**. Until this is done the form shows "please call" instead of delivering.
+3. **Point the old address at the new site,** so the B12 redirects reach visitors and Google, and retire the B12 site.
+4. **Google Search Console:** verify the domain (or set `NEXT_PUBLIC_GSC_VERIFICATION`) and submit `/sitemap.xml`.
+
+### Client should confirm (copy is live on the site)
+5. **Every community × service page should be advertised** (13 towns × 8 services). Remove any you don't want.
+6. **Facts:** years in business (15+ vs. BBB's 1974 start date), business hours (not published until confirmed), whether estimates are free, whether customers can text the number (the form offers "Text message"), and "New Haven" vs. "Lenox" as the listed locality (BBB says Lenox).
+7. **Copy commitments written in their voice:** looking at the existing driveway with the customer before work, scheduling pours around the forecast, every photo being their own work, and sealing/slab descriptions. Edit any that don't match how they work.
+8. **License and insurance:** if they hold a Michigan residential builder or M&A license and liability insurance, add them; they're strong trust signals.
+
+### Recommended soon after launch
+9. **Google Analytics 4:** set `NEXT_PUBLIC_GA_ID`, then mark `generate_lead` and `phone_click` as key events. Events are already wired.
+10. **Google Business Profile:** list the same 13 communities as service areas, link to the new domain, and add photos.
+11. **Reviews:** start collecting Google reviews, then add real quotes to `business.reviews` (the section appears automatically).
+12. **Original photos and logo:** full-size originals of the Facebook photos, and a vector logo for print, will sharpen the site and brand.
 
 ## 8. Prioritized opportunities
 

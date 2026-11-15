@@ -38,7 +38,8 @@ export default function AboutPage() {
       <PageHero crumbs={[{ name: "About", path: "/about" }]} eyebrow="About us" title="A family-owned concrete company in New Haven, Michigan">
         <p>
           Enzo’s Concrete LLC has been pouring residential concrete for more than fifteen years. We focus on the
-          projects that make a home work better and look better: driveways, patios, walkways, walls and pool decks.
+          projects that make a home work better and look better: driveways, patios, walkways, walls, pool decks, sealing
+          and pole barn floors.
         </p>
       </PageHero>
 

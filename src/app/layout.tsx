@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: `%s | ${business.shortName}`,
   },
   description:
-    "Family-owned concrete contractor in New Haven, MI. Driveways, patios, walkways, retaining walls and pool decks across Macomb County. BBB A+ accredited.",
+    "Family-owned concrete contractor in New Haven, MI: driveways, patios, walkways, walls, pool decks, sealing and pole barn floors across Macomb County.",
   applicationName: business.name,
   ...(indexable ? {} : { robots: { index: false, follow: false } }),
   formatDetection: { telephone: false },
